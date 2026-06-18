@@ -190,6 +190,18 @@ h1,h2,h3,h4 { font-family: var(--font-disp); line-height: 1.35; font-weight: 700
 .svc-card ul.feat li::before { content:"✓"; position:absolute; left:0; top:0; width:20px;height:20px; border-radius:50%; background:var(--brand-grad); color:#fff; font-size:.7rem; display:grid; place-items:center; font-weight:700; }
 .svc-card .btn { margin-top: auto; }
 
+/* ---------- Service cards (category grid, article-like) ---------- */
+.svc-cards { display:grid; grid-template-columns: repeat(3,1fr); gap: 26px; margin-top: 44px; align-items: stretch; }
+.svc-cat { display:flex; align-items:flex-end; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+.svc-cat .count { font-size:.8rem; font-weight:700; color:var(--ink-mute); }
+.svc-card .price-row { display:flex; align-items:baseline; gap:6px; margin: 6px 0 2px; }
+.svc-card--soon { border:1px dashed var(--line); background: var(--bg-alt); display:flex; flex-direction:column; align-items:flex-start; justify-content:center; min-height: 240px; }
+.svc-card--soon .badge-soon { font-size:.72rem; letter-spacing:.14em; font-weight:700; color:var(--brand-red); border:1px solid currentColor; border-radius:999px; padding:4px 12px; }
+.svc-card--soon h3 { font-size:1.15rem; margin:14px 0 6px; }
+.svc-card--soon p { color:var(--ink-mute); font-size:.92rem; margin:0; }
+@media (max-width: 980px){ .svc-cards{ grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 620px){ .svc-cards{ grid-template-columns: 1fr; } }
+
 /* ---------- Steps ---------- */
 .steps { display:grid; grid-template-columns: repeat(4,1fr); gap: 22px; margin-top: 50px; counter-reset: step; }
 .step { position:relative; padding-top: 18px; }
