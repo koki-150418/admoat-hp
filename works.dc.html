@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;}
+body{margin:0;background:#FBFAF7;color:#1A1714;font-family:'Noto Sans JP',sans-serif;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+</style>
+</helmet>
+
+<dc-import name="Header" active="works" hint-size="100%,68px"></dc-import>
+
+<main style="overflow-x:hidden;">
+  <section style="background:#fff;border-bottom:1px solid #ECE7DE;">
+    <div style="max-width:1200px;margin:0 auto;padding:64px 32px 56px;">
+      <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:13px;letter-spacing:0.18em;color:#E8401D;">WORKS</div>
+      <h1 style="margin:14px 0 0;font-weight:900;font-size:44px;letter-spacing:-0.01em;color:#1A1714;">実績・対応事例</h1>
+      <p style="margin:16px 0 0;font-size:16px;line-height:1.85;color:#5C564C;max-width:640px;">幅広い業種・目的のMeta広告に対応しています。代表的な対応領域をご紹介します。</p>
+    </div>
+  </section>
+
+  <section style="max-width:1200px;margin:0 auto;padding:72px 32px;">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+      <sc-for list="{{ workTypes }}" as="w" hint-placeholder-count="3">
+        <div style="background:#fff;border:1px solid #ECE7DE;border-radius:20px;overflow:hidden;" style-hover="box-shadow:0 18px 40px rgba(26,23,20,0.08);transform:translateY(-4px);transition:all .2s;">
+          <div style="position:relative;height:180px;background:repeating-linear-gradient(135deg,#F3EEE5 0 14px,#FBFAF7 14px 28px);display:flex;align-items:center;justify-content:center;border-bottom:1px solid #ECE7DE;">
+            <span style="position:absolute;top:14px;left:14px;font-size:11px;font-weight:800;letter-spacing:0.06em;color:#fff;background:linear-gradient(100deg,#EE7A00,#E8401D);padding:5px 11px;border-radius:999px;">{{ w.label }}</span>
+            <span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#9A9488;">{{ w.ph }}</span>
+          </div>
+          <div style="padding:24px;">
+            <h3 style="margin:0;font-weight:700;font-size:18px;color:#1A1714;">{{ w.title }}</h3>
+            <p style="margin:10px 0 0;font-size:14px;line-height:1.8;color:#5C564C;">{{ w.desc }}</p>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <p style="margin:28px 0 0;font-size:14px;color:#7C766B;">※ 具体的な数値・事例は、準備が整い次第順次掲載いたします。</p>
+  </section>
+
+  <section style="background:#17140F;">
+    <div style="max-width:900px;margin:0 auto;padding:80px 32px;text-align:center;">
+      <h2 style="margin:0;font-weight:900;font-size:30px;color:#fff;line-height:1.5;">あなたの事業でも、成果を。</h2>
+      <p style="margin:16px 0 0;font-size:15px;color:#B7AFA2;line-height:1.9;">現状の課題を伺い、最適な広告運用をご提案します。</p>
+      <a href="contact.dc.html" style="display:inline-block;margin-top:28px;text-decoration:none;font-size:15px;font-weight:700;color:#17140F;padding:15px 32px;border-radius:999px;background:linear-gradient(100deg,#F4B400 0%,#EE7A00 48%,#E8401D 100%);" style-hover="opacity:0.92;">無料で相談する</a>
+    </div>
+  </section>
+</main>
+
+<dc-import name="Footer" hint-size="100%,320px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:820}}">
+class Component extends DCLogic {
+  renderVals() {
+    const workTypes = [
+      { label: '店舗集客', title: '来店・予約を増やす', desc: 'エリア・客層に合わせた配信設計で、店舗への送客を最大化します。', ph: '[ 事例ビジュアル ]' },
+      { label: '採用広告', title: '応募を集める', desc: '求人媒体に頼らない、Meta広告での採用母集団づくりを支援します。', ph: '[ 事例ビジュアル ]' },
+      { label: 'EC・サービス', title: '問い合わせ・購入を伸ばす', desc: '獲得効率を見ながら、予算とクリエイティブを継続的に改善します。', ph: '[ 事例ビジュアル ]' },
+    ];
+    return { workTypes };
+  }
+}
+</script>
+</body>
+</html>

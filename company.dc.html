@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;}
+body{margin:0;background:#FBFAF7;color:#1A1714;font-family:'Noto Sans JP',sans-serif;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+</style>
+</helmet>
+
+<dc-import name="Header" active="company" hint-size="100%,68px"></dc-import>
+
+<main style="overflow-x:hidden;">
+  <section style="background:#fff;border-bottom:1px solid #ECE7DE;">
+    <div style="max-width:1200px;margin:0 auto;padding:64px 32px 56px;">
+      <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:13px;letter-spacing:0.18em;color:#E8401D;">COMPANY</div>
+      <h1 style="margin:14px 0 0;font-weight:900;font-size:44px;letter-spacing:-0.01em;color:#1A1714;">会社概要</h1>
+    </div>
+  </section>
+
+  <section style="max-width:880px;margin:0 auto;padding:72px 32px;">
+    <div style="border-top:1px solid #E4DED3;">
+      <sc-for list="{{ companyRows }}" as="r" hint-placeholder-count="8">
+        <div style="display:grid;grid-template-columns:200px 1fr;gap:20px;padding:22px 8px;border-bottom:1px solid #E4DED3;">
+          <div style="font-weight:700;font-size:14.5px;color:#1A1714;">{{ r.k }}</div>
+          <div style="font-size:14.5px;line-height:1.85;color:#4A453D;">{{ r.v }}</div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="margin-top:40px;display:flex;gap:14px;flex-wrap:wrap;">
+      <a href="message.dc.html" style="text-decoration:none;font-size:15px;font-weight:700;color:#1A1714;padding:14px 28px;border-radius:999px;border:1.5px solid #1A1714;" style-hover="background:#1A1714;color:#fff;">代表メッセージを読む</a>
+      <a href="contact.dc.html" style="text-decoration:none;font-size:15px;font-weight:700;color:#fff;padding:14px 28px;border-radius:999px;background:linear-gradient(100deg,#F4B400 0%,#EE7A00 48%,#E8401D 100%);box-shadow:0 8px 22px rgba(232,64,29,0.26);" style-hover="opacity:0.92;">お問い合わせ</a>
+    </div>
+  </section>
+</main>
+
+<dc-import name="Footer" hint-size="100%,320px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:760}}">
+class Component extends DCLogic {
+  renderVals() {
+    const companyRows = [
+      { k: '会社名', v: '合同会社AdMoat（アドモート）' },
+      { k: '代表社員', v: '池田 昂生' },
+      { k: '事業内容', v: 'WEB広告代理事業／広告運用コンサルティング／広告教育事業' },
+      { k: '対応領域', v: 'Meta広告（Instagram・Facebook）を中心としたWEB広告全般、店舗集客支援、採用広告支援' },
+      { k: '社名の由来', v: '「AdMoat」は Advertising（広告）と Moat（堀）を組み合わせた造語です。広告を、競合に簡単には崩されない“事業の堀”にしたい——そんな想いを込めています。' },
+      { k: '所在地', v: '準備が整い次第、掲載いたします' },
+      { k: '設立', v: '準備が整い次第、掲載いたします' },
+      { k: '連絡先', v: 'info@admoat.net' },
+    ];
+    return { companyRows };
+  }
+}
+</script>
+</body>
+</html>

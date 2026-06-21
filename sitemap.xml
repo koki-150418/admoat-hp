@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://admoat.net/</loc><lastmod>2026-06-17</lastmod></url>
-  <url><loc>https://admoat.net/services.html</loc><lastmod>2026-06-17</lastmod></url>
-  <url><loc>https://admoat.net/about.html</loc><lastmod>2026-06-17</lastmod></url>
-  <url><loc>https://admoat.net/works.html</loc><lastmod>2026-06-17</lastmod></url>
-  <url><loc>https://admoat.net/faq.html</loc><lastmod>2026-06-17</lastmod></url>
-  <url><loc>https://admoat.net/contact.html</loc><lastmod>2026-06-17</lastmod></url>
-  <url><loc>https://admoat.net/blog/</loc><lastmod>2026-06-17</lastmod></url>
-  <url><loc>https://admoat.net/privacy.html</loc><lastmod>2026-06-17</lastmod></url>
-  <url><loc>https://admoat.net/legal.html</loc><lastmod>2026-06-17</lastmod></url>
-  <url><loc>https://admoat.net/blog/meta-ads-store-marketing.html</loc><lastmod>2026-06-17</lastmod></url>
-  <url><loc>https://admoat.net/blog/meta-ads-budget.html</loc><lastmod>2026-06-17</lastmod></url>
-  <url><loc>https://admoat.net/blog/recruiting-with-meta-ads.html</loc><lastmod>2026-06-17</lastmod></url>
+  <url><loc>https://admoat.net/</loc><lastmod>2026-06-21</lastmod><priority>1.0</priority></url>
+  <url><loc>https://admoat.net/services.dc.html</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://admoat.net/works.dc.html</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://admoat.net/company.dc.html</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://admoat.net/message.dc.html</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://admoat.net/news.dc.html</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://admoat.net/recruit.dc.html</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://admoat.net/blog.dc.html</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://admoat.net/faq.dc.html</loc><lastmod>2026-06-21</lastmod></url>
+  <url><loc>https://admoat.net/contact.dc.html</loc><lastmod>2026-06-21</lastmod></url>
 </urlset>
