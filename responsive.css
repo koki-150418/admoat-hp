@@ -33,8 +33,37 @@
   #dc-root header[style*="position:fixed"], #dc-root header[style*="position: fixed"] { position: static !important; }
   #dc-root [style*="height:67px"], #dc-root [style*="height: 67px"] { display: none !important; }
 
-  /* ナビの間隔を詰める */
-  #dc-root nav { gap: 10px 14px !important; }
+  /* ロゴを外し、メニューを折り返さない横一列にする */
+  #dc-root .site-header .site-header__inner { display: block !important; padding: 0 !important; }
+  #dc-root .site-header__brand { display: none !important; }
+  #dc-root .site-header__nav {
+    width: 100% !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    gap: 0 !important;
+    padding: 10px 8px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  #dc-root .site-header__nav::-webkit-scrollbar { display: none; }
+  #dc-root .site-header__nav a {
+    flex: 0 0 auto;
+    min-height: 40px;
+    padding: 10px 7px !important;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+  }
+
+  /* トップ画面の大型ロゴはスマホでは表示しない */
+  #dc-root .home-hero { padding-top: 56px !important; padding-bottom: 56px !important; }
+  #dc-root .home-hero__visual { display: none !important; }
+
+  /* その他のナビの間隔を詰める */
+  #dc-root nav:not(.site-header__nav) { gap: 10px 14px !important; }
 
   /* 画像がはみ出さないように（高さ固定の小さなロゴ等は除外） */
   #dc-root main img { max-width: 100% !important; }
