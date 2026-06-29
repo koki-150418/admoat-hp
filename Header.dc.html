@@ -4,36 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
-<link rel="stylesheet" href="/responsive.css">
 </head>
 <body>
 <x-dc>
-<helmet>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet"/>
-</helmet>
-<header style="position:fixed;top:0;left:0;right:0;width:100%;z-index:60;background:rgba(251,250,247,0.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid #ECE7DE;">
-  <div style="max-width:1200px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
-    <a href="./" style="display:flex;align-items:center;gap:11px;text-decoration:none;">
-      <img src="assets/logo.png" alt="AdMoat" style="height:30px;width:auto;display:block;"/>
-      <span style="font-family:Archivo,sans-serif;font-weight:800;font-size:20px;letter-spacing:-0.01em;color:#1A1714;">AdMoat</span>
-    </a>
-    <nav style="display:flex;align-items:center;gap:28px;flex-wrap:wrap;justify-content:flex-end;">
-      <sc-for list="{{ links }}" as="it" hint-placeholder-count="4">
-        <a href="{{ it.href }}" style="{{ it.style }}" style-hover="color:#E8401D;">{{ it.label }}</a>
-      </sc-for>
-      <a href="contact.dc.html" style="text-decoration:none;font-size:14px;font-weight:700;color:#fff;padding:10px 20px;border-radius:999px;background:linear-gradient(100deg,#F4B400 0%,#EE7A00 48%,#E8401D 100%);box-shadow:0 4px 14px rgba(232,64,29,0.28);" style-hover="opacity:0.92;">無料相談</a>
-    </nav>
-  </div>
-</header>
-<div style="height:67px;"></div>
+<helmet><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/><link rel="stylesheet" href="responsive.css"/><style>.hdr{position:fixed;top:0;left:0;right:0;width:100%;z-index:60;background:rgba(250,248,244,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #E7E1D7;font-family:'Noto Sans JP',sans-serif;}.hdrin{max-width:1120px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;}.bmark{font-weight:500;font-size:19px;letter-spacing:0.08em;color:#211C17;}.burger{display:none;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid #E7E1D7;border-radius:4px;background:#fff;cursor:pointer;font-size:17px;color:#211C17;line-height:1;padding:0;}.nav{display:flex;align-items:center;gap:30px;justify-content:flex-end;}.cta{text-decoration:none;font-size:12px;font-weight:500;letter-spacing:0.1em;color:#211C17;padding:11px 22px;border:1px solid #211C17;border-radius:2px;}.spacer{height:73px;}</style></helmet><header class="hdr"><div class="hdrin"><a href="./" class="brand"><img src="assets/logo.png" alt="AdMoat" style="height:28px;width:auto;display:block;"/><span class="bmark">AdMoat</span></a><button type="button" class="burger am-burger" onClick="{{ onToggle }}" aria-label="メニュー">{{ burgerIcon }}</button><nav class="nav am-nav" data-open="{{ openStr }}"><sc-for list="{{ links }}" as="it" hint-placeholder-count="6"><a href="{{ it.href }}" style="{{ it.style }}" style-hover="color:#BC4A28;">{{ it.label }}</a></sc-for><a href="contact.dc.html" class="cta am-cta" style-hover="background:#211C17;color:#fff;">お問い合わせ</a></nav></div></header><div class="spacer"></div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1200,&quot;height&quot;:68},&quot;active&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1120,&quot;height&quot;:73},&quot;active&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
 class Component extends DCLogic {
+  state = { open: false };
   renderVals() {
     const active = this.props.active ?? '';
     const items = [
+      { label: 'ホーム', href: './', key: 'home' },
       { label: 'サービス', href: 'services.dc.html', key: 'services' },
       { label: '実績', href: 'works.dc.html', key: 'works' },
       { label: '会社概要', href: 'company.dc.html', key: 'company' },
@@ -45,12 +27,18 @@ class Component extends DCLogic {
       href: it.href,
       style: {
         textDecoration: 'none',
-        fontSize: '14px',
-        fontWeight: active === it.key ? 700 : 500,
-        color: active === it.key ? '#E8401D' : '#3A352E',
+        fontSize: '13px',
+        letterSpacing: '0.04em',
+        fontWeight: active === it.key ? 700 : 400,
+        color: active === it.key ? '#BC4A28' : '#3A352E',
       },
     }));
-    return { links };
+    return {
+      links,
+      openStr: String(this.state.open),
+      burgerIcon: this.state.open ? '✕' : '☰',
+      onToggle: () => this.setState(s => ({ open: !s.open })),
+    };
   }
 }
 </script>

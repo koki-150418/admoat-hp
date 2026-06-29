@@ -4,224 +4,35 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
-<link rel="stylesheet" href="/responsive.css">
 </head>
 <body>
 <x-dc>
-<helmet>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet"/>
-<style>
-*{box-sizing:border-box;}
-body{margin:0;background:#FBFAF7;color:#1A1714;font-family:'Noto Sans JP',sans-serif;-webkit-font-smoothing:antialiased;}
-a{color:inherit;}
-@keyframes amBuwa{0%{opacity:0;transform:scale(.45) translateY(-12px);filter:blur(12px)}45%{opacity:1;filter:blur(1px)}72%{transform:scale(1.035) translateY(0);filter:blur(0)}88%{transform:scale(.99)}100%{opacity:1;transform:scale(1) translateY(0);filter:blur(0)}}
-@keyframes amFuwa{0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)}}
-@keyframes amSlide{0%{opacity:0;transform:translateX(-36px)}100%{opacity:1;transform:translateX(0)}}
-@keyframes amItem{0%{opacity:0;transform:translateY(14px)}100%{opacity:1;transform:translateY(0)}}
-</style>
-</helmet>
-
-<dc-import name="Header" active="services" hint-size="100%,68px"></dc-import>
-
-<main style="overflow-x:hidden;">
-
-  <!-- PAGE HEAD -->
-  <section style="background:#fff;border-bottom:1px solid #ECE7DE;">
-    <div style="max-width:1200px;margin:0 auto;padding:64px 32px 56px;">
-      <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:13px;letter-spacing:0.18em;color:#E8401D;">SERVICE</div>
-      <h1 style="margin:14px 0 0;font-weight:900;font-size:44px;letter-spacing:-0.01em;color:#1A1714;">サービス</h1>
-      <p style="margin:16px 0 0;font-size:16px;line-height:1.85;color:#5C564C;max-width:640px;">「任せたい」も「自分でできるようになりたい」も。お客様の状況に合わせてカスタマイズできます。</p>
-    </div>
-  </section>
-
-  <!-- PRICING HIGHLIGHT -->
-  <section style="background:#17140F;">
-    <div style="max-width:1200px;margin:0 auto;padding:44px 32px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;">
-      <div>
-        <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:12px;letter-spacing:0.16em;color:#F4B400;">SIMPLE PRICING</div>
-        <div style="margin-top:8px;font-weight:900;font-size:24px;color:#fff;">わかりやすい、月額固定制。</div>
-        <p style="margin:8px 0 0;font-size:14px;color:#B7AFA2;line-height:1.8;max-width:520px;">成果報酬や運用費率ではなく、月額固定。広告費の増減で料金が変わらないから、安心して続けられます。</p>
-      </div>
-      <div style="text-align:right;">
-        <div style="display:flex;align-items:baseline;gap:4px;justify-content:flex-end;">
-          <span style="font-size:15px;color:#B7AFA2;">月額</span>
-          <span style="font-family:Archivo,sans-serif;font-weight:900;font-size:46px;line-height:1;background:linear-gradient(100deg,#F4B400,#E8401D);-webkit-background-clip:text;background-clip:text;color:transparent;">50,000</span>
-          <span style="font-size:18px;font-weight:700;color:#fff;">円</span>
-        </div>
-        <div style="margin-top:6px;font-size:13px;color:#9A9488;">税別 ／ 運用代行・内製化支援 共通</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICE CARDS (clickable) -->
-  <section style="max-width:1200px;margin:0 auto;padding:72px 32px;">
-    <p style="margin:0 0 28px;font-size:14px;color:#7C766B;">▼ 各サービスをクリックすると、詳細が開きます。</p>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
-      <sc-for list="{{ cards }}" as="s" hint-placeholder-count="3">
-        <button type="button" onClick="{{ s.onSelect }}" style="{{ s.cardStyle }}" style-hover="border-color:#E8C4B0;">
-          <sc-if value="{{ s.badge }}" hint-placeholder-val="{{ false }}">
-            <div style="position:absolute;top:24px;right:24px;font-family:Archivo,sans-serif;font-size:10.5px;font-weight:800;letter-spacing:0.12em;color:#fff;background:#1A1714;padding:5px 10px;border-radius:999px;">{{ s.badge }}</div>
-          </sc-if>
-          <div style="font-family:Archivo,sans-serif;font-weight:800;font-size:14px;color:#E8401D;">{{ s.num }}</div>
-          <h3 style="margin:14px 0 0;font-weight:900;font-size:20px;line-height:1.5;color:#1A1714;">{{ s.title }}</h3>
-          <p style="margin:12px 0 0;font-size:14px;line-height:1.85;color:#5C564C;">{{ s.lead }}</p>
-          <div style="margin-top:18px;font-size:13.5px;font-weight:700;color:#1A1714;">{{ s.priceShort }}</div>
-          <div style="margin-top:18px;display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:#E8401D;">詳細を見る <span style="font-size:11px;">{{ s.arrow }}</span></div>
-        </button>
-      </sc-for>
-    </div>
-
-    <!-- DETAIL DRAWER -->
-    <sc-if value="{{ hasDetail }}" hint-placeholder-val="{{ true }}">
-      <div key="{{ detailKey }}" style="{{ detailStyle }}">
-        <div style="display:grid;grid-template-columns:1.15fr 0.85fr;gap:0;">
-          <div style="padding:48px;">
-            <div style="display:flex;align-items:center;gap:12px;">
-              <span style="font-family:Archivo,sans-serif;font-weight:800;font-size:14px;color:#E8401D;">{{ detail.num }}</span>
-              <span style="font-family:Archivo,sans-serif;font-weight:700;font-size:11px;letter-spacing:0.16em;color:#9A9488;">DETAIL</span>
-            </div>
-            <h2 style="margin:14px 0 0;font-weight:900;font-size:30px;line-height:1.45;letter-spacing:-0.01em;color:#1A1714;">{{ detail.title }}</h2>
-            <p style="margin:18px 0 0;font-size:15px;line-height:2;color:#4A453D;">{{ detail.desc }}</p>
-            <div style="margin-top:28px;font-family:Archivo,sans-serif;font-weight:700;font-size:11px;letter-spacing:0.14em;color:#9A9488;">INCLUDED</div>
-            <div style="margin-top:16px;display:flex;flex-direction:column;gap:12px;">
-              <sc-for list="{{ detail.features }}" as="f" hint-placeholder-count="5">
-                <div style="display:flex;align-items:flex-start;gap:11px;font-size:14.5px;color:#3A352E;line-height:1.6;">
-                  <span style="flex:none;width:18px;height:18px;border-radius:50%;background:linear-gradient(100deg,#F4B400,#E8401D);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:2px;">✓</span>
-                  <span>{{ f }}</span>
-                </div>
-              </sc-for>
-            </div>
-          </div>
-          <div style="background:#FBFAF7;border-left:1px solid #ECE7DE;padding:48px;display:flex;flex-direction:column;justify-content:center;">
-            <div style="font-size:13px;font-weight:700;color:#7C766B;">料金</div>
-            <div style="margin-top:12px;display:flex;align-items:baseline;gap:5px;">
-              <span style="font-size:15px;color:#5C564C;">{{ detail.pricePrefix }}</span>
-              <span style="font-family:Archivo,sans-serif;font-weight:900;font-size:40px;line-height:1;color:#1A1714;">{{ detail.priceMain }}</span>
-              <span style="font-size:16px;font-weight:700;color:#1A1714;">{{ detail.priceSuffix }}</span>
-            </div>
-            <div style="margin-top:8px;font-size:13px;color:#7C766B;">{{ detail.priceNote }}</div>
-            <div style="height:1px;background:#ECE7DE;margin:28px 0;"></div>
-            <p style="margin:0;font-size:14px;line-height:1.9;color:#5C564C;">{{ detail.summary }}</p>
-          </div>
-        </div>
-        <!-- CONTACT CTA at bottom of detail -->
-        <div style="background:#17140F;padding:36px 48px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
-          <div>
-            <div style="font-weight:900;font-size:19px;color:#fff;">このサービスについて相談する</div>
-            <div style="margin-top:6px;font-size:14px;color:#B7AFA2;">初回のご相談は無料です。お気軽にお問い合わせください。</div>
-          </div>
-          <div style="display:flex;gap:12px;flex-wrap:wrap;">
-            <a href="contact.dc.html" style="text-decoration:none;font-size:15px;font-weight:700;color:#17140F;padding:14px 28px;border-radius:999px;background:linear-gradient(100deg,#F4B400 0%,#EE7A00 48%,#E8401D 100%);" style-hover="opacity:0.92;">無料で相談する</a>
-            <a href="mailto:info@admoat.net" style="text-decoration:none;font-size:15px;font-weight:700;color:#fff;padding:14px 28px;border-radius:999px;border:1.5px solid #4A453D;" style-hover="border-color:#F4B400;color:#F4B400;">メールで問い合わせ</a>
-          </div>
-        </div>
-      </div>
-    </sc-if>
-  </section>
-
-  <!-- 対応領域 -->
-  <section style="background:#fff;border-top:1px solid #ECE7DE;">
-    <div style="max-width:1200px;margin:0 auto;padding:80px 32px;">
-      <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:13px;letter-spacing:0.18em;color:#E8401D;">SCOPE</div>
-      <h2 style="margin:12px 0 0;font-weight:900;font-size:30px;color:#1A1714;">対応領域</h2>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px;">
-        <div style="border:1px solid #ECE7DE;border-radius:16px;padding:28px;background:#FBFAF7;"><div style="font-weight:700;font-size:18px;color:#1A1714;">Meta広告全般</div><p style="margin:10px 0 0;font-size:14px;line-height:1.8;color:#5C564C;">Instagram・Facebookを中心としたWEB広告の設計・運用。</p></div>
-        <div style="border:1px solid #ECE7DE;border-radius:16px;padding:28px;background:#FBFAF7;"><div style="font-weight:700;font-size:18px;color:#1A1714;">店舗集客支援</div><p style="margin:10px 0 0;font-size:14px;line-height:1.8;color:#5C564C;">エリア・客層に合わせた配信で来店・予約を増やします。</p></div>
-        <div style="border:1px solid #ECE7DE;border-radius:16px;padding:28px;background:#FBFAF7;"><div style="font-weight:700;font-size:18px;color:#1A1714;">採用広告支援</div><p style="margin:10px 0 0;font-size:14px;line-height:1.8;color:#5C564C;">求人媒体に頼らない採用母集団づくりを支援します。</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section style="background:#FBFAF7;border-top:1px solid #ECE7DE;">
-    <div style="max-width:900px;margin:0 auto;padding:80px 32px;text-align:center;">
-      <h2 style="margin:0;font-weight:900;font-size:30px;color:#1A1714;line-height:1.5;">最適なプランをご提案します。</h2>
-      <p style="margin:16px 0 0;font-size:15px;color:#5C564C;line-height:1.9;">初回のご相談は無料です。お気軽にお問い合わせください。</p>
-      <a href="contact.dc.html" style="display:inline-block;margin-top:28px;text-decoration:none;font-size:15px;font-weight:700;color:#fff;padding:15px 32px;border-radius:999px;background:linear-gradient(100deg,#F4B400 0%,#EE7A00 48%,#E8401D 100%);box-shadow:0 8px 22px rgba(232,64,29,0.26);" style-hover="opacity:0.92;">無料で相談する</a>
-    </div>
-  </section>
-
-</main>
-
-<dc-import name="Footer" hint-size="100%,320px"></dc-import>
+<helmet><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/><link rel="stylesheet" href="responsive.css"/><style>*{box-sizing:border-box;}body{margin:0;background:#FAF8F4;color:#211C17;font-family:'Noto Sans JP',sans-serif;-webkit-font-smoothing:antialiased;}a{color:inherit;}.wrap{max-width:1120px;margin:0 auto;padding:0 32px;}.eyebrow{font-size:11px;letter-spacing:0.24em;color:#BC4A28;font-weight:500;}.disp{font-family:'Noto Serif JP',serif;font-weight:400;color:#211C17;letter-spacing:0.03em;}.lead{font-size:15px;line-height:2.2;color:#5A544C;}.btn{display:inline-block;text-decoration:none;font-size:13px;letter-spacing:0.1em;font-weight:500;color:#fff;background:#211C17;padding:16px 34px;border-radius:2px;}.lnk{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-size:13px;letter-spacing:0.08em;color:#211C17;border-bottom:1px solid #211C17;padding-bottom:4px;}.svc{display:grid;grid-template-columns:0.85fr 1.15fr;gap:56px;padding:64px 0;border-top:1px solid #E1DACE;align-items:start;}.svcno{font-family:'Noto Serif JP',serif;font-size:22px;color:#BC4A28;letter-spacing:0.1em;}.svct{margin:18px 0 0;font-family:'Noto Serif JP',serif;font-weight:500;font-size:26px;letter-spacing:0.03em;color:#211C17;}.svcl{margin:18px 0 0;font-size:14px;line-height:2.05;color:#6F6860;}.price{margin-top:26px;display:flex;align-items:baseline;gap:6px;}.pamt{font-family:'Noto Serif JP',serif;font-size:34px;color:#211C17;letter-spacing:0.02em;}.pnote{margin-top:7px;font-size:12px;color:#A89F92;letter-spacing:0.04em;}.inclabel{font-size:11px;letter-spacing:0.18em;color:#A89F92;font-weight:500;}.incrow{display:flex;align-items:flex-start;gap:13px;font-size:14px;line-height:1.7;color:#3A352E;padding:13px 0;border-bottom:1px solid #ECE6DC;}.incmark{flex:none;width:6px;height:6px;border-radius:50%;background:#BC4A28;margin-top:9px;}.badge{display:inline-block;font-size:10.5px;letter-spacing:0.14em;color:#A89F92;border:1px solid #DCD5C8;padding:5px 11px;border-radius:2px;}.scope{display:grid;grid-template-columns:repeat(3,1fr);gap:0;}.scopec{padding:38px 32px;border-top:1px solid #E1DACE;}.scopec:not(:last-child){border-right:1px solid #E1DACE;}.scopet{font-family:'Noto Serif JP',serif;font-weight:500;font-size:18px;letter-spacing:0.03em;color:#211C17;}.scoped{margin:12px 0 0;font-size:13px;line-height:1.9;color:#6F6860;}</style></helmet><dc-import name="Header" active="services" hint-size="100%,73px"></dc-import><main style="overflow-x:hidden;"><section style="background:#fff;border-bottom:1px solid #E7E1D7;"><div class="wrap" style="padding-top:80px;padding-bottom:72px;"><div class="eyebrow">SERVICE</div><h1 class="disp" style="margin:24px 0 0;font-size:40px;line-height:1.5;">サービス</h1><p class="lead" style="margin:24px 0 0;max-width:600px;">「任せたい」も「自分でできるようになりたい」も。店舗の状況に合わせてカスタマイズできます。料金は成果報酬や運用費率ではなく、月額固定。広告費の増減で料金が変わらないから、安心して続けられます。</p></div></section><section style="padding:8px 0 24px;"><div class="wrap"><sc-for list="{{ services }}" as="s" hint-placeholder-count="3"><div class="svc"><div><div class="svcno">{{ s.num }}</div><h2 class="svct">{{ s.title }}</h2><p class="svcl">{{ s.lead }}</p><div class="price"><span style="font-size:14px;color:#6F6860;">{{ s.pricePrefix }}</span><span class="pamt">{{ s.priceMain }}</span><span style="font-size:16px;color:#211C17;">{{ s.priceSuffix }}</span></div><div class="pnote">{{ s.priceNote }}</div><sc-if value="{{ s.comingSoon }}" hint-placeholder-val="{{ false }}"><div style="margin-top:18px;"><span class="badge">COMING SOON</span></div></sc-if></div><div><div class="inclabel">INCLUDED</div><div style="margin-top:8px;"><sc-for list="{{ s.features }}" as="f" hint-placeholder-count="5"><div class="incrow"><span class="incmark"></span><span>{{ f }}</span></div></sc-for></div></div></div></sc-for></div></section><section style="background:#fff;border-top:1px solid #E7E1D7;padding:96px 0;"><div class="wrap"><div class="eyebrow">SCOPE</div><h2 class="disp" style="margin:18px 0 40px;font-size:30px;">対応領域</h2><div class="scope"><div class="scopec"><div class="scopet">店舗集客</div><p class="scoped">エリア・客層に合わせた配信で、来店・予約・問い合わせを増やします。業態ごとの導線設計も。</p></div><div class="scopec"><div class="scopet">SNS広告運用</div><p class="scoped">Instagram・Facebookを中心としたWEB広告の設計・配信・改善。クリエイティブの提案まで。</p></div><div class="scopec"><div class="scopet">採用広告支援</div><p class="scoped">求人媒体に頼らない採用母集団づくり。店舗スタッフの採用課題にも対応します。</p></div></div></div></section><section style="padding:96px 0;border-top:1px solid #E7E1D7;"><div class="wrap" style="max-width:720px;text-align:center;"><h2 class="disp" style="margin:0;font-size:28px;line-height:1.7;">最適なプランを<br/>ご提案します。</h2><p class="lead" style="margin:24px auto 0;max-width:480px;">初回のご相談は無料です。お気軽にお問い合わせください。</p><div style="margin-top:38px;"><a href="contact.dc.html" class="btn" style-hover="background:#BC4A28;">無料で相談する</a></div></div></section></main><dc-import name="Footer" hint-size="100%,300px"></dc-import>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:960},&quot;revealStyle&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;ぶわっと（迫力）&quot;,&quot;ふわっと（やわらか）&quot;,&quot;スライド&quot;,&quot;なし&quot;],&quot;default&quot;:&quot;ぶわっと（迫力）&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;revealSpeed&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;ゆっくり&quot;,&quot;標準&quot;,&quot;はやい&quot;],&quot;default&quot;:&quot;標準&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:960}}">
 class Component extends DCLogic {
-  state = { selected: 0, revealCount: 0 };
   renderVals() {
-    const revealStyle = this.props.revealStyle ?? 'ぶわっと（迫力）';
-    const revealSpeed = this.props.revealSpeed ?? '標準';
-    const ANIM = {
-      'ぶわっと（迫力）': { name: 'amBuwa', ease: 'cubic-bezier(.22,1.25,.32,1)' },
-      'ふわっと（やわらか）': { name: 'amFuwa', ease: 'cubic-bezier(.2,.8,.2,1)' },
-      'スライド': { name: 'amSlide', ease: 'cubic-bezier(.2,.8,.2,1)' },
-      'なし': { name: 'none', ease: 'linear' },
-    };
-    const SPEED = { 'ゆっくり': 760, '標準': 480, 'はやい': 300 };
-    const a = ANIM[revealStyle] || ANIM['ぶわっと（迫力）'];
-    const ms = SPEED[revealSpeed] ?? 480;
-    const detailAnim = a.name === 'none' ? 'none' : a.name + ' ' + ms + 'ms ' + a.ease + ' both';
     const services = [
       {
-        num: '01', title: 'Meta広告 運用代行', badge: '',
-        lead: '戦略設計から配信・改善・レポートまで、まるごと代行します。',
-        priceShort: '月額 50,000円（税別・固定）',
-        desc: '戦略設計から日々の配信・改善・レポートまで、Meta広告の運用をまるごとお任せいただけます。料金は月額固定制。広告費の増減で費用が変わらないので、安心して継続いただけます。',
+        num: '01', title: '広告運用代行', comingSoon: false,
+        lead: '戦略設計から日々の配信・改善・レポートまで、店舗集客の広告運用をまるごとお任せいただけます。料金は月額固定制。広告費の増減で費用が変わらないので、安心して継続いただけます。',
+        pricePrefix: '月額', priceMain: '50,000', priceSuffix: '円', priceNote: '税別 ／ 月額固定制',
         features: ['アカウント構築・初期設定', 'ターゲティング・予算設計', 'クリエイティブの企画・提案', '週次の改善PDCA', '月次レポート＆定例ミーティング'],
-        pricePrefix: '月額', priceMain: '50,000', priceSuffix: '円', priceNote: '税別 ／ 月額固定制',
-        summary: '広告費とは別に、運用費は月額固定。成果報酬・運用費率ではありません。',
       },
       {
-        num: '02', title: '内製化支援｜伴走サービス', badge: '',
-        lead: '「自社で運用できる」状態を目指す、伴走型コンサルティング。',
-        priceShort: '月額 50,000円（税別・固定）',
-        desc: '運用を代行しきるのではなく、ノウハウを移管しながら一緒に運用する伴走型サービスです。最終的に「自社で回せる」状態を目指します。',
+        num: '02', title: '内製化支援｜伴走サービス', comingSoon: false,
+        lead: '運用を代行しきるのではなく、ノウハウを移管しながら一緒に運用する伴走型サービスです。最終的に「自社で回せる」状態を目指します。社内にノウハウが残るから、長期的な広告コストの最適化にも繋がります。',
+        pricePrefix: '月額', priceMain: '50,000', priceSuffix: '円', priceNote: '税別 ／ 月額固定制',
         features: ['戦略設計サポート', '運用レクチャー', 'オンライン定例MTG', 'チャットで随時相談', '改善の振り返り'],
-        pricePrefix: '月額', priceMain: '50,000', priceSuffix: '円', priceNote: '税別 ／ 月額固定制',
-        summary: 'ノウハウが社内に残るから、長期的には広告コストの最適化につながります。',
       },
       {
-        num: '03', title: 'コース', badge: 'COMING SOON',
-        lead: 'COMING SOON（準備中です）',
-        priceShort: 'COMING SOON',
-        desc: 'COMING SOON。準備中です。詳細は公開までいましばらくお待ちください。',
-        features: ['COMING SOON'],
-        pricePrefix: '', priceMain: 'COMING SOON', priceSuffix: '', priceNote: '',
-        summary: 'COMING SOON',
+        num: '03', title: 'コース｜教材・講座', comingSoon: true,
+        lead: '「店舗集客のための広告講座」を準備中です。実践的なカリキュラムで、自走できる広告運用を体系的に学べる内容を予定しています。リリース情報をご希望の方は、お問い合わせよりご連絡ください。',
+        pricePrefix: '', priceMain: '準備中', priceSuffix: '', priceNote: '詳細が決まり次第ご案内します',
+        features: ['店舗集客に特化したカリキュラム', '実践ワーク付き', '（内容は順次公開予定）'],
       },
     ];
-
-    const sel = this.state.selected;
-    const cards = services.map((s, i) => {
-      const on = sel === i;
-      return {
-        num: s.num, title: s.title, lead: s.lead, badge: s.badge, priceShort: s.priceShort,
-        arrow: on ? '▲' : '▼',
-        onSelect: () => this.setState(st => ({ selected: st.selected === i ? -1 : i, revealCount: st.revealCount + 1 })),
-        cardStyle: {
-          position: 'relative', textAlign: 'left', cursor: 'pointer', display: 'flex', flexDirection: 'column',
-          background: on ? '#FFF8F3' : '#fff',
-          border: on ? '1.5px solid #E8401D' : '1px solid #ECE7DE',
-          borderRadius: '20px', padding: '30px', font: 'inherit',
-          boxShadow: on ? '0 14px 36px rgba(232,64,29,0.12)' : 'none',
-          transition: 'all .18s',
-        },
-      };
-    });
-
-    const hasDetail = sel >= 0 && sel < services.length;
-    const detail = hasDetail ? services[sel] : {};
-    const detailKey = 'd' + sel + '-' + this.state.revealCount;
-    const originX = sel === 0 ? 17 : sel === 2 ? 83 : 50;
-    const detailStyle = {
-      marginTop: '32px', border: '1px solid #ECE7DE', borderRadius: '24px',
-      background: '#fff', overflow: 'hidden', boxShadow: '0 24px 60px rgba(26,23,20,0.08)',
-      transformOrigin: originX + '% top', willChange: 'transform, opacity, filter',
-      animation: detailAnim,
-    };
-    return { cards, hasDetail, detail, detailKey, detailStyle };
+    return { services };
   }
 }
 </script>
