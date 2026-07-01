@@ -59,7 +59,7 @@
   }
 
   /* hero image: trim height */
-  .heroimg { height: 320px !important; }
+  .heroimg { display: none !important; }
 
   /* --- horizontal padding on content wrappers --- */
   .wrap { padding-left: 20px !important; padding-right: 20px !important; }
