@@ -7,57 +7,51 @@
 </head>
 <body>
 <x-dc>
-<helmet>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="responsive.css"/>
-<style>
-*{box-sizing:border-box;}
-body{margin:0;background:#FBFAF7;color:#1A1714;font-family:'Noto Sans JP',sans-serif;-webkit-font-smoothing:antialiased;}
-a{color:inherit;}
-</style>
-</helmet>
+<helmet><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/><link rel="stylesheet" href="responsive.css"/><style>*{box-sizing:border-box;}body{margin:0;background:#FAF8F4;color:#211C17;font-family:'Noto Sans JP',sans-serif;-webkit-font-smoothing:antialiased;}a{color:inherit;}.wrap{max-width:1120px;margin:0 auto;padding:0 32px;}.disp{font-family:'Noto Serif JP',serif;font-weight:400;color:#211C17;letter-spacing:0.03em;}.lead{font-size:15px;line-height:2.2;color:#5A544C;}.btn{display:inline-block;text-decoration:none;font-size:13px;letter-spacing:0.1em;font-weight:500;color:#fff;background:#211C17;padding:16px 34px;border-radius:2px;}.lnk{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-size:13px;letter-spacing:0.08em;color:#211C17;border-bottom:1px solid #211C17;padding-bottom:4px;}.tag{display:inline-block;font-size:11px;font-weight:500;letter-spacing:0.06em;color:#fff;background:#BC4A28;padding:5px 12px;border-radius:2px;}.postdate{font-family:'Noto Sans JP',sans-serif;font-size:13px;font-weight:500;color:#A89F92;}.body{font-size:15px;line-height:2.1;color:#3A352E;}.body h2{margin:44px 0 0;font-family:'Noto Serif JP',serif;font-weight:500;font-size:20px;letter-spacing:0.03em;color:#211C17;}.body p{margin:16px 0 0;}.body blockquote{margin:36px 0;padding:20px 24px;border-left:3px solid #BC4A28;background:#fff;border-radius:0 4px 4px 0;font-size:15px;line-height:1.9;color:#4A453D;}</style></helmet>
 
-<dc-import name="Header" active="" hint-size="100%,68px"></dc-import>
+<dc-import name="Header" active="blog" hint-size="100%,73px"></dc-import>
 
 <main style="overflow-x:hidden;">
-  <article style="max-width:760px;margin:0 auto;padding:64px 32px 24px;">
-    <a href="blog.dc.html" style="text-decoration:none;font-size:13px;font-weight:700;color:#7C766B;" style-hover="color:#E8401D;">← ブログ一覧へ</a>
-    <div style="margin-top:24px;display:flex;align-items:center;gap:12px;">
-      <span style="font-size:12px;font-weight:800;letter-spacing:0.04em;color:#fff;background:linear-gradient(100deg,#EE7A00,#E8401D);padding:5px 12px;border-radius:999px;">運用ノウハウ</span>
-      <span style="font-family:Archivo,sans-serif;font-size:13px;font-weight:600;color:#9A9488;">2026.06.20</span>
-    </div>
-    <h1 style="margin:18px 0 0;font-weight:900;font-size:34px;line-height:1.5;letter-spacing:-0.01em;color:#1A1714;">Meta広告で“最初の1万円”を無駄にしない初期設計の考え方</h1>
-
-    <div style="margin:36px 0;height:300px;border-radius:18px;background:repeating-linear-gradient(135deg,#F3EEE5 0 14px,#FBFAF7 14px 28px);border:1px solid #ECE7DE;display:flex;align-items:center;justify-content:center;">
-      <span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#9A9488;">[ アイキャッチ画像 ]</span>
-    </div>
-
-    <div style="font-size:16px;line-height:2.1;color:#33302A;">
-      <p style="margin:0;">※ こちらはダミー記事です。実際の記事に差し替えてご利用ください。</p>
-      <p style="margin:28px 0 0;">はじめてMeta広告に取り組むとき、多くの方が「とりあえず配信してみる」状態でスタートしてしまいます。しかし、最初の数千円〜1万円をどう使うかで、その後の改善スピードは大きく変わります。</p>
-      <h2 style="margin:44px 0 0;font-weight:900;font-size:22px;color:#1A1714;">1. まず「誰に届けるか」を決める</h2>
-      <p style="margin:18px 0 0;">広告は、ターゲットの解像度がそのまま成果に直結します。年齢・地域・興味関心だけでなく、「どんな悩みを持つ人か」まで言語化しておくことが大切です。</p>
-      <h2 style="margin:44px 0 0;font-weight:900;font-size:22px;color:#1A1714;">2. 予算は「学習」に使う前提で組む</h2>
-      <p style="margin:18px 0 0;">初期の広告費は、売上ではなく「どのクリエイティブ・どの訴求が刺さるか」を知るための学習費用です。最初から完璧を狙わず、検証できる設計にしておきましょう。</p>
-      <blockquote style="margin:36px 0;padding:20px 24px;border-left:3px solid #E8401D;background:#fff;border-radius:0 12px 12px 0;font-size:16px;line-height:1.9;color:#4A453D;">広告は「出して終わり」ではなく、データを得るための入り口。最初の1万円は、未来の改善への投資です。</blockquote>
-      <h2 style="margin:44px 0 0;font-weight:900;font-size:22px;color:#1A1714;">3. 数字を見て、次の一手を決める</h2>
-      <p style="margin:18px 0 0;">配信後は、クリック率・保存率・遷移率などの指標を確認し、何が効いたのかを振り返ります。この振り返りを繰り返すことで、成果は「再現できる仕組み」になっていきます。</p>
+  <article style="background:#fff;border-bottom:1px solid #E7E1D7;">
+    <div class="wrap" style="max-width:760px;padding-top:56px;padding-bottom:56px;">
+      <a href="blog.dc.html" class="lnk" style-hover="color:#BC4A28;border-color:#BC4A28;">← ブログ一覧へ</a>
+      <div style="margin-top:28px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+        <span class="tag">運用ノウハウ</span>
+        <span class="postdate">2026.06.20</span>
+      </div>
+      <h1 class="disp" style="margin:18px 0 0;font-size:32px;line-height:1.6;">Meta広告で“最初の1万円”を無駄にしない初期設計の考え方</h1>
     </div>
   </article>
 
-  <!-- CONTACT CTA -->
-  <section style="background:#17140F;margin-top:48px;">
-    <div style="max-width:900px;margin:0 auto;padding:72px 32px;text-align:center;">
-      <h2 style="margin:0;font-weight:900;font-size:28px;color:#fff;line-height:1.5;">Meta広告の運用、ご相談ください。</h2>
-      <p style="margin:16px 0 0;font-size:15px;color:#B7AFA2;line-height:1.9;">初回のご相談は無料です。お気軽にお問い合わせください。</p>
-      <a href="contact.dc.html" style="display:inline-block;margin-top:28px;text-decoration:none;font-size:15px;font-weight:700;color:#17140F;padding:15px 32px;border-radius:999px;background:linear-gradient(100deg,#F4B400 0%,#EE7A00 48%,#E8401D 100%);" style-hover="opacity:0.92;">無料で相談する</a>
+  <section style="padding:56px 0 96px;">
+    <div class="wrap" style="max-width:760px;">
+      <div style="height:300px;border-radius:4px;background:repeating-linear-gradient(135deg,#F3EFE8 0 14px,#FAF8F4 14px 28px);border:1px solid #E1DACE;display:flex;align-items:center;justify-content:center;">
+        <span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#A89F92;">[ アイキャッチ画像 ]</span>
+      </div>
+      <div class="body">
+        <p style="color:#BC4A28;font-weight:500;">※ こちらはダミー記事です。実際の記事に差し替えてご利用ください。</p>
+        <p>はじめてMeta広告に取り組むとき、多くの方が「とりあえず配信してみる」状態でスタートしてしまいます。しかし、最初の数千円〜1万円をどう使うかで、その後の改善スピードは大きく変わります。</p>
+        <h2>1. まず「誰に届けるか」を決める</h2>
+        <p>広告は、ターゲットの解像度がそのまま成果に直結します。年齢・地域・興味関心だけでなく、「どんな悩みを持つ人か」まで言語化しておくことが大切です。</p>
+        <h2>2. 予算は「学習」に使う前提で組む</h2>
+        <p>初期の広告費は、売上ではなく「どのクリエイティブ・どの訴求が刺さるか」を知るための学習費用です。最初から完璧を狙わず、検証できる設計にしておきましょう。</p>
+        <blockquote>広告は「出して終わり」ではなく、データを得るための入り口。最初の1万円は、未来の改善への投資です。</blockquote>
+        <h2>3. 数字を見て、次の一手を決める</h2>
+        <p>配信後は、クリック率・保存率・遷移率などの指標を確認し、何が効いたのかを振り返ります。この振り返りを繰り返すことで、成果は「再現できる仕組み」になっていきます。</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:96px 0;border-top:1px solid #E7E1D7;">
+    <div class="wrap" style="max-width:720px;text-align:center;">
+      <h2 class="disp" style="margin:0;font-size:28px;line-height:1.7;">Meta広告の運用、<br/>ご相談ください。</h2>
+      <p class="lead" style="margin:24px auto 0;max-width:480px;">初回のご相談は無料です。お気軽にお問い合わせください。</p>
+      <div style="margin-top:38px;"><a href="contact.dc.html" class="btn" style-hover="background:#BC4A28;">無料で相談する</a></div>
     </div>
   </section>
 </main>
 
-<dc-import name="Footer" hint-size="100%,320px"></dc-import>
+<dc-import name="Footer" hint-size="100%,300px"></dc-import>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}"></script>
 </body>
