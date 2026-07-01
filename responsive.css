@@ -95,4 +95,34 @@
   [style*="font-size: 28px"] { font-size: 24px !important; }
   [style*="font-size: 27px"] { font-size: 22px !important; }
   [style*="font-size: 26px"] { font-size: 22px !important; }
+
+  /* --- top hero: 3 tag chips ("店舗集客に特化" 等) must stay on one line --- */
+  [style*="gap: 24px"][style*="margin-top: 38px"],
+  [style*="gap:24px"][style*="margin-top:38px"] {
+    flex-wrap: nowrap !important;
+    gap: 6px !important;
+  }
+  [style*="gap: 24px"][style*="margin-top: 38px"] .tag,
+  [style*="gap:24px"][style*="margin-top:38px"] .tag {
+    font-size: 10px !important;
+    white-space: nowrap !important;
+  }
+  [style*="gap: 24px"][style*="margin-top: 38px"] .dot,
+  [style*="gap:24px"][style*="margin-top:38px"] .dot {
+    margin-right: 3px !important;
+  }
+
+  /* --- works page: 3-up case grid becomes a single column --- */
+  [style*="grid-template-columns: repeat(3,1fr)"],
+  [style*="grid-template-columns: repeat(3, 1fr)"],
+  [style*="grid-template-columns:repeat(3,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* --- company page: label/value rows stack instead of a cramped 200px column --- */
+  [style*="grid-template-columns: 200px 1fr"],
+  [style*="grid-template-columns:200px 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 6px !important;
+  }
 }
