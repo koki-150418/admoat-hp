@@ -7,59 +7,50 @@
 </head>
 <body>
 <x-dc>
-<helmet>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="responsive.css"/>
-<style>
-*{box-sizing:border-box;}
-body{margin:0;background:#FBFAF7;color:#1A1714;font-family:'Noto Sans JP',sans-serif;-webkit-font-smoothing:antialiased;}
-a{color:inherit;}
-input,textarea{font-family:'Noto Sans JP',sans-serif;}
-</style>
-</helmet>
+<helmet><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/><link rel="stylesheet" href="responsive.css"/><style>*{box-sizing:border-box;}body{margin:0;background:#FAF8F4;color:#211C17;font-family:'Noto Sans JP',sans-serif;-webkit-font-smoothing:antialiased;}a{color:inherit;}input,textarea,button{font-family:'Noto Sans JP',sans-serif;}.wrap{max-width:1120px;margin:0 auto;padding:0 32px;}.eyebrow{font-size:11px;letter-spacing:0.24em;color:#BC4A28;font-weight:500;}.disp{font-family:'Noto Serif JP',serif;font-weight:400;color:#211C17;letter-spacing:0.03em;}.lead{font-size:15px;line-height:2.2;color:#5A544C;}.emailcard{margin-top:28px;padding:24px 26px;background:#F3EFE8;border-radius:4px;}.field{display:flex;flex-direction:column;gap:7px;font-size:13px;font-weight:500;color:#3A352E;}.field input,.field textarea{padding:13px 15px;border:1px solid #E1DACE;border-radius:2px;font-size:15px;color:#211C17;outline:none;background:#fff;}.formbtn{margin-top:6px;border:none;cursor:pointer;font-size:14px;letter-spacing:0.08em;font-weight:500;color:#fff;padding:16px;border-radius:2px;background:#211C17;}</style></helmet>
 
-<dc-import name="Header" active="" hint-size="100%,68px"></dc-import>
+<dc-import name="Header" active="" hint-size="100%,73px"></dc-import>
 
 <main style="overflow-x:hidden;">
-  <section style="background:#fff;border-bottom:1px solid #ECE7DE;">
-    <div style="max-width:1200px;margin:0 auto;padding:64px 32px 56px;">
-      <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:13px;letter-spacing:0.18em;color:#E8401D;">CONTACT</div>
-      <h1 style="margin:14px 0 0;font-weight:900;font-size:44px;letter-spacing:-0.01em;color:#1A1714;">お問い合わせ</h1>
-      <p style="margin:16px 0 0;font-size:16px;line-height:1.85;color:#5C564C;max-width:640px;">広告運用のご相談、内製化支援、講座について。初回のご相談は無料です。</p>
+  <section style="background:#fff;border-bottom:1px solid #E7E1D7;">
+    <div class="wrap" style="padding-top:80px;padding-bottom:72px;">
+      <div class="eyebrow">CONTACT</div>
+      <h1 class="disp" style="margin:24px 0 0;font-size:40px;line-height:1.5;">お問い合わせ</h1>
+      <p class="lead" style="margin:24px 0 0;max-width:600px;">広告運用のご相談、内製化支援、講座について。初回のご相談は無料です。</p>
     </div>
   </section>
 
-  <section style="max-width:1100px;margin:0 auto;padding:72px 32px;display:grid;grid-template-columns:0.9fr 1.1fr;gap:56px;align-items:start;">
-    <div>
-      <h2 style="margin:0;font-weight:900;font-size:24px;line-height:1.6;color:#1A1714;">お気軽にご連絡ください。</h2>
-      <p style="margin:16px 0 0;font-size:15px;line-height:1.95;color:#5C564C;">現状の課題やご要望を伺い、最適なご提案をいたします。メールでも、フォームからでも承ります。</p>
-      <div style="margin-top:28px;padding:22px 24px;background:#fff;border:1px solid #ECE7DE;border-radius:16px;">
-        <div style="font-size:12px;font-weight:700;letter-spacing:0.06em;color:#7C766B;">EMAIL</div>
-        <a href="mailto:info@admoat.net" style="display:inline-block;margin-top:6px;font-weight:800;font-size:20px;color:#1A1714;text-decoration:none;" style-hover="color:#E8401D;">info@admoat.net</a>
+  <section style="padding:72px 0 96px;">
+    <div class="wrap" style="display:grid;grid-template-columns:0.85fr 1.15fr;gap:56px;align-items:start;">
+      <div>
+        <h2 class="disp" style="margin:0;font-size:22px;line-height:1.7;">お気軽にご連絡ください。</h2>
+        <p class="lead" style="margin:16px 0 0;">現状の課題やご要望を伺い、最適なご提案をいたします。メールでも、フォームからでも承ります。</p>
+        <div class="emailcard">
+          <div class="eyebrow">EMAIL</div>
+          <a href="mailto:info@admoat.net" class="disp" style="display:inline-block;margin-top:8px;font-size:19px;text-decoration:none;" style-hover="color:#BC4A28;">info@admoat.net</a>
+        </div>
       </div>
+      <form onSubmit="{{ onSubmit }}" style="background:#fff;border:1px solid #E1DACE;border-radius:4px;padding:36px;display:flex;flex-direction:column;gap:18px;">
+        <label class="field">お名前
+          <input type="text" placeholder="山田 太郎" style-focus="border-color:#BC4A28;"/>
+        </label>
+        <label class="field">会社名・屋号
+          <input type="text" placeholder="株式会社○○ / 個人事業" style-focus="border-color:#BC4A28;"/>
+        </label>
+        <label class="field">メールアドレス
+          <input type="email" placeholder="you@example.com" style-focus="border-color:#BC4A28;"/>
+        </label>
+        <label class="field">ご相談内容
+          <textarea rows="5" placeholder="ご相談内容をご記入ください" style="resize:vertical;" style-focus="border-color:#BC4A28;"></textarea>
+        </label>
+        <button type="submit" class="formbtn" style-hover="background:#BC4A28;">この内容で送信する</button>
+        <p style="margin:0;font-size:12px;color:#A89F92;text-align:center;">※ こちらはデモ用のフォームです。</p>
+      </form>
     </div>
-    <form onSubmit="{{ onSubmit }}" style="background:#fff;border:1px solid #ECE7DE;border-radius:20px;padding:36px;display:flex;flex-direction:column;gap:18px;box-shadow:0 18px 48px rgba(26,23,20,0.06);">
-      <label style="display:flex;flex-direction:column;gap:7px;font-size:13px;font-weight:700;color:#3A352E;">お名前
-        <input type="text" placeholder="山田 太郎" style="padding:13px 15px;border:1px solid #DDD7CC;border-radius:10px;font-size:15px;color:#1A1714;outline:none;background:#FBFAF7;" style-focus="border-color:#E8401D;background:#fff;"/>
-      </label>
-      <label style="display:flex;flex-direction:column;gap:7px;font-size:13px;font-weight:700;color:#3A352E;">会社名・屋号
-        <input type="text" placeholder="株式会社○○ / 個人事業" style="padding:13px 15px;border:1px solid #DDD7CC;border-radius:10px;font-size:15px;color:#1A1714;outline:none;background:#FBFAF7;" style-focus="border-color:#E8401D;background:#fff;"/>
-      </label>
-      <label style="display:flex;flex-direction:column;gap:7px;font-size:13px;font-weight:700;color:#3A352E;">メールアドレス
-        <input type="email" placeholder="you@example.com" style="padding:13px 15px;border:1px solid #DDD7CC;border-radius:10px;font-size:15px;color:#1A1714;outline:none;background:#FBFAF7;" style-focus="border-color:#E8401D;background:#fff;"/>
-      </label>
-      <label style="display:flex;flex-direction:column;gap:7px;font-size:13px;font-weight:700;color:#3A352E;">ご相談内容
-        <textarea rows="5" placeholder="ご相談内容をご記入ください" style="padding:13px 15px;border:1px solid #DDD7CC;border-radius:10px;font-size:15px;color:#1A1714;outline:none;background:#FBFAF7;resize:vertical;" style-focus="border-color:#E8401D;background:#fff;"></textarea>
-      </label>
-      <button type="submit" style="margin-top:6px;border:none;cursor:pointer;font-family:'Noto Sans JP',sans-serif;font-size:16px;font-weight:700;color:#fff;padding:16px;border-radius:999px;background:linear-gradient(100deg,#F4B400 0%,#EE7A00 48%,#E8401D 100%);box-shadow:0 8px 22px rgba(232,64,29,0.28);" style-hover="opacity:0.92;">この内容で送信する</button>
-      <p style="margin:0;font-size:12px;color:#9A9488;text-align:center;">※ こちらはデモ用のフォームです。</p>
-    </form>
   </section>
 </main>
 
-<dc-import name="Footer" hint-size="100%,320px"></dc-import>
+<dc-import name="Footer" hint-size="100%,300px"></dc-import>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:760}}">
 class Component extends DCLogic {
