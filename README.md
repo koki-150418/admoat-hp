@@ -17,8 +17,10 @@
 | URL | ファイル | 内容 |
 |---|---|---|
 | `/` | `index.html` | トップ |
-| `/services.dc.html` | サービス（運用代行 / 内製化支援 / コース） |
-| `/works.dc.html` | 実績 |
+| `/services.dc.html` | サービス（運用代行 / 内製化支援 / コース、クリック可能なパネル形式） |
+| `/service-detail.dc.html` | サービス詳細（ダミー・全パネル共通・`noindex`） |
+| `/works.dc.html` | 事例（クリック可能なパネル形式） |
+| `/case-detail.dc.html` | 事例詳細（ダミー・全パネル共通・`noindex`） |
 | `/company.dc.html` | 会社概要 |
 | `/message.dc.html` | 代表メッセージ |
 | `/news.dc.html` | ニュース |
@@ -38,6 +40,12 @@
 4. ページ内の `href="index.dc.html"` を `href="./"` に置換（トップをクリーンURLに）
 5. 必要に応じて `sitemap.xml` を更新
 6. `main` ブランチへ反映すると `admoat.net` が自動更新されます
+
+> ⚠️ `service-detail.dc.html` と `case-detail.dc.html` はビルダー側には無い、
+> このリポジトリ側で追加したダミー詳細ページです。ビルダーから再エクスポートして
+> `services.dc.html` / `works.dc.html` を上書きすると、パネルのリンク先や
+> デザインクラス（`.svcgrid` / `.casegrid` 等）が失われる可能性があります。
+> 上書き後は、パネルのクリック導線とダミーページへのリンクが保たれているか確認してください。
 
 ## 未掲載（必要に応じて追加）
 
