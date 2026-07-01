@@ -7,47 +7,39 @@
 </head>
 <body>
 <x-dc>
-<helmet>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="responsive.css"/>
-<style>
-*{box-sizing:border-box;}
-body{margin:0;background:#FBFAF7;color:#1A1714;font-family:'Noto Sans JP',sans-serif;-webkit-font-smoothing:antialiased;}
-a{color:inherit;}
-</style>
-</helmet>
+<helmet><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/><link rel="stylesheet" href="responsive.css"/><style>*{box-sizing:border-box;}body{margin:0;background:#FAF8F4;color:#211C17;font-family:'Noto Sans JP',sans-serif;-webkit-font-smoothing:antialiased;}a{color:inherit;}.wrap{max-width:1120px;margin:0 auto;padding:0 32px;}.eyebrow{font-size:11px;letter-spacing:0.24em;color:#BC4A28;font-weight:500;}.disp{font-family:'Noto Serif JP',serif;font-weight:400;color:#211C17;letter-spacing:0.03em;}.lead{font-size:15px;line-height:2.2;color:#5A544C;}.btn{display:inline-block;text-decoration:none;font-size:13px;letter-spacing:0.1em;font-weight:500;color:#fff;background:#211C17;padding:16px 34px;border-radius:2px;}.msgphoto{position:relative;border-radius:4px;overflow:hidden;border:1px solid #E1DACE;aspect-ratio:4/5;background:repeating-linear-gradient(135deg,#F3EFE8 0 14px,#FAF8F4 14px 28px);display:flex;align-items:center;justify-content:center;}.msgbody p{margin:20px 0 0;font-size:15px;line-height:2.1;color:#3A352E;}.msgbody p:first-of-type{margin-top:24px;}</style></helmet>
 
-<dc-import name="Header" active="company" hint-size="100%,68px"></dc-import>
+<dc-import name="Header" active="company" hint-size="100%,73px"></dc-import>
 
 <main style="overflow-x:hidden;">
-  <section style="background:#fff;border-bottom:1px solid #ECE7DE;">
-    <div style="max-width:1200px;margin:0 auto;padding:64px 32px 56px;">
-      <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:13px;letter-spacing:0.18em;color:#E8401D;">MESSAGE</div>
-      <h1 style="margin:14px 0 0;font-weight:900;font-size:44px;letter-spacing:-0.01em;color:#1A1714;">代表メッセージ</h1>
+  <section style="background:#fff;border-bottom:1px solid #E7E1D7;">
+    <div class="wrap" style="padding-top:80px;padding-bottom:72px;">
+      <div class="eyebrow">MESSAGE</div>
+      <h1 class="disp" style="margin:24px 0 0;font-size:40px;line-height:1.5;">代表メッセージ</h1>
     </div>
   </section>
 
-  <section style="max-width:1100px;margin:0 auto;padding:72px 32px;display:grid;grid-template-columns:0.8fr 1.2fr;gap:56px;align-items:start;">
-    <div style="position:relative;border-radius:20px;overflow:hidden;border:1px solid #ECE7DE;aspect-ratio:4/5;background:repeating-linear-gradient(135deg,#F3EEE5 0 14px,#FBFAF7 14px 28px);display:flex;align-items:center;justify-content:center;">
-      <span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#9A9488;">[ 代表写真 ]</span>
-    </div>
-    <div>
-      <h2 style="margin:0;font-weight:900;font-size:30px;line-height:1.55;letter-spacing:-0.01em;color:#1A1714;">広告を「コスト」から、<br/>「資産」へ。</h2>
-      <p style="margin:24px 0 0;font-size:15.5px;line-height:2.05;color:#4A453D;">広告は、出して終わりではありません。何が効いたのかを数字で捉え、改善を積み重ねることで、成果は再現できる“仕組み”になります。</p>
-      <p style="margin:20px 0 0;font-size:15.5px;line-height:2.05;color:#4A453D;">私たちは、ただ運用を代行するだけでなく、お客様自身が広告を武器にできる状態を目指します。だからこそ、運用代行に加えて「内製化支援」という選択肢を大切にしています。</p>
-      <p style="margin:20px 0 0;font-size:15.5px;line-height:2.05;color:#4A453D;">広告を、競合に簡単には崩されない事業の強みに。その想いで、一社一社に丁寧に向き合っていきます。</p>
-      <div style="margin-top:32px;display:flex;align-items:baseline;gap:12px;">
-        <span style="font-size:13px;color:#7C766B;">代表社員</span>
-        <span style="font-weight:900;font-size:22px;color:#1A1714;">池田 昂生</span>
+  <section style="padding:72px 0 96px;">
+    <div class="wrap" style="display:grid;grid-template-columns:0.85fr 1.15fr;gap:56px;align-items:start;">
+      <div class="msgphoto">
+        <span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#A89F92;">[ 代表写真 ]</span>
       </div>
-      <a href="contact.dc.html" style="display:inline-block;margin-top:32px;text-decoration:none;font-size:15px;font-weight:700;color:#fff;padding:14px 28px;border-radius:999px;background:linear-gradient(100deg,#F4B400 0%,#EE7A00 48%,#E8401D 100%);box-shadow:0 8px 22px rgba(232,64,29,0.26);" style-hover="opacity:0.92;">お問い合わせ</a>
+      <div class="msgbody">
+        <h2 class="disp" style="margin:0;font-size:28px;line-height:1.7;">広告を「コスト」から、<br/>「資産」へ。</h2>
+        <p>広告は、出して終わりではありません。何が効いたのかを数字で捉え、改善を積み重ねることで、成果は再現できる“仕組み”になります。</p>
+        <p>私たちは、ただ運用を代行するだけでなく、お客様自身が広告を武器にできる状態を目指します。だからこそ、運用代行に加えて「内製化支援」という選択肢を大切にしています。</p>
+        <p>広告を、競合に簡単には崩されない事業の強みに。その想いで、一社一社に丁寧に向き合っていきます。</p>
+        <div style="margin-top:32px;display:flex;align-items:baseline;gap:14px;">
+          <span style="font-size:13px;color:#A89F92;">代表社員</span>
+          <span class="disp" style="font-size:20px;">池田 昂生</span>
+        </div>
+        <a href="contact.dc.html" class="btn" style="margin-top:32px;" style-hover="background:#BC4A28;">お問い合わせ</a>
+      </div>
     </div>
   </section>
 </main>
 
-<dc-import name="Footer" hint-size="100%,320px"></dc-import>
+<dc-import name="Footer" hint-size="100%,300px"></dc-import>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:760}}"></script>
 </body>
