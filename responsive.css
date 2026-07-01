@@ -46,12 +46,13 @@
   .whyrow, .scope, .svcgrid, .casegrid, .postgrid, .panel { grid-template-columns: 1fr !important; }
   .panel { padding: 32px !important; gap: 24px !important; }
   .panel > div:last-child { text-align: left !important; }
-  /* hero / two-column inline grids */
-  [style*="grid-template-columns: 1fr 1fr"],
-  [style*="grid-template-columns: 0.85fr 1.15fr"] {
+  /* hero / two-column layouts (class-based — reliable regardless of how
+     the runtime serializes inline style values) */
+  .twocol {
     grid-template-columns: 1fr !important;
     gap: 40px !important;
   }
+  .ctform { padding: 24px !important; }
 
   /* why cards: drop vertical dividers, keep a single horizontal rule */
   .whyc { padding: 32px 0 !important; border-right: none !important; }
@@ -109,17 +110,6 @@
     margin-right: 3px !important;
   }
 
-  /* --- works page: 3-up case grid becomes a single column --- */
-  [style*="grid-template-columns: repeat(3,1fr)"],
-  [style*="grid-template-columns: repeat(3, 1fr)"],
-  [style*="grid-template-columns:repeat(3,1fr)"] {
-    grid-template-columns: 1fr !important;
-  }
-
   /* --- company page: label/value rows stack instead of a cramped 200px column --- */
-  [style*="grid-template-columns: 200px 1fr"],
-  [style*="grid-template-columns:200px 1fr"] {
-    grid-template-columns: 1fr !important;
-    gap: 6px !important;
-  }
+  .rowgrid { grid-template-columns: 1fr !important; gap: 6px !important; }
 }

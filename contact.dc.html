@@ -7,7 +7,7 @@
 </head>
 <body>
 <x-dc>
-<helmet><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/><link rel="stylesheet" href="responsive.css"/><style>*{box-sizing:border-box;}body{margin:0;background:#FAF8F4;color:#211C17;font-family:'Noto Sans JP',sans-serif;-webkit-font-smoothing:antialiased;}a{color:inherit;}input,textarea,button{font-family:'Noto Sans JP',sans-serif;}.wrap{max-width:1120px;margin:0 auto;padding:0 32px;}.eyebrow{font-size:11px;letter-spacing:0.24em;color:#BC4A28;font-weight:500;}.disp{font-family:'Noto Serif JP',serif;font-weight:400;color:#211C17;letter-spacing:0.03em;}.lead{font-size:15px;line-height:2.2;color:#5A544C;}.emailcard{margin-top:28px;padding:24px 26px;background:#F3EFE8;border-radius:4px;}.field{display:flex;flex-direction:column;gap:7px;font-size:13px;font-weight:500;color:#3A352E;}.field input,.field textarea{padding:13px 15px;border:1px solid #E1DACE;border-radius:2px;font-size:15px;color:#211C17;outline:none;background:#fff;}.formbtn{margin-top:6px;border:none;cursor:pointer;font-size:14px;letter-spacing:0.08em;font-weight:500;color:#fff;padding:16px;border-radius:2px;background:#211C17;}</style></helmet>
+<helmet><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/><link rel="stylesheet" href="responsive.css"/><style>*{box-sizing:border-box;}body{margin:0;background:#FAF8F4;color:#211C17;font-family:'Noto Sans JP',sans-serif;-webkit-font-smoothing:antialiased;}a{color:inherit;}input,textarea,button{font-family:'Noto Sans JP',sans-serif;}.wrap{max-width:1120px;margin:0 auto;padding:0 32px;}.eyebrow{font-size:11px;letter-spacing:0.24em;color:#BC4A28;font-weight:500;}.disp{font-family:'Noto Serif JP',serif;font-weight:400;color:#211C17;letter-spacing:0.03em;}.lead{font-size:15px;line-height:2.2;color:#5A544C;}.emailcard{margin-top:28px;padding:24px 26px;background:#F3EFE8;border-radius:4px;}.field{display:flex;flex-direction:column;gap:7px;font-size:13px;font-weight:500;color:#3A352E;}.field input,.field textarea{width:100%;max-width:100%;box-sizing:border-box;padding:13px 15px;border:1px solid #E1DACE;border-radius:2px;font-size:15px;color:#211C17;outline:none;background:#fff;}.formbtn{margin-top:6px;border:none;cursor:pointer;font-size:14px;letter-spacing:0.08em;font-weight:500;color:#fff;padding:16px;border-radius:2px;background:#211C17;}</style></helmet>
 
 <dc-import name="Header" active="" hint-size="100%,73px"></dc-import>
 
@@ -21,7 +21,7 @@
   </section>
 
   <section style="padding:72px 0 96px;">
-    <div class="wrap" style="display:grid;grid-template-columns:0.85fr 1.15fr;gap:56px;align-items:start;">
+    <div class="wrap twocol" style="display:grid;grid-template-columns:0.85fr 1.15fr;gap:56px;align-items:start;">
       <div>
         <h2 class="disp" style="margin:0;font-size:22px;line-height:1.7;">お気軽にご連絡ください。</h2>
         <p class="lead" style="margin:16px 0 0;">現状の課題やご要望を伺い、最適なご提案をいたします。メールでも、フォームからでも承ります。</p>
@@ -30,7 +30,7 @@
           <a href="mailto:info@admoat.net" class="disp" style="display:inline-block;margin-top:8px;font-size:19px;text-decoration:none;" style-hover="color:#BC4A28;">info@admoat.net</a>
         </div>
       </div>
-      <form onSubmit="{{ onSubmit }}" style="background:#fff;border:1px solid #E1DACE;border-radius:4px;padding:36px;display:flex;flex-direction:column;gap:18px;">
+      <form onSubmit="{{ onSubmit }}" class="ctform" style="width:100%;box-sizing:border-box;background:#fff;border:1px solid #E1DACE;border-radius:4px;padding:36px;display:flex;flex-direction:column;gap:18px;">
         <label class="field">お名前
           <input type="text" placeholder="山田 太郎" style-focus="border-color:#BC4A28;"/>
         </label>
