@@ -32,16 +32,16 @@
       </div>
       <form onSubmit="{{ onSubmit }}" class="ctform" style="width:100%;box-sizing:border-box;background:#fff;border:1px solid #E1DACE;border-radius:4px;padding:36px;display:flex;flex-direction:column;gap:18px;">
         <label class="field">お名前
-          <input type="text" placeholder="山田 太郎" style-focus="border-color:#BC4A28;"/>
+          <input type="text" name="name" required="required" placeholder="山田 太郎" style-focus="border-color:#BC4A28;"/>
         </label>
         <label class="field">会社名・屋号
-          <input type="text" placeholder="株式会社○○ / 個人事業" style-focus="border-color:#BC4A28;"/>
+          <input type="text" name="company" placeholder="株式会社○○ / 個人事業" style-focus="border-color:#BC4A28;"/>
         </label>
         <label class="field">メールアドレス
-          <input type="email" placeholder="you@example.com" style-focus="border-color:#BC4A28;"/>
+          <input type="email" name="email" required="required" placeholder="you@example.com" style-focus="border-color:#BC4A28;"/>
         </label>
         <label class="field">ご相談内容
-          <textarea rows="5" placeholder="ご相談内容をご記入ください" style="resize:vertical;" style-focus="border-color:#BC4A28;"></textarea>
+          <textarea rows="5" name="message" required="required" placeholder="ご相談内容をご記入ください" style="resize:vertical;" style-focus="border-color:#BC4A28;"></textarea>
         </label>
         <button type="submit" class="formbtn" style-hover="background:#BC4A28;">この内容で送信する</button>
         <p style="margin:0;font-size:12px;color:#A89F92;text-align:center;">※ こちらはデモ用のフォームです。</p>
