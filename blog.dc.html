@@ -24,7 +24,7 @@
     <div class="wrap">
       <div class="postgrid">
         <sc-for list="{{ posts }}" as="p" hint-placeholder-count="3">
-          <a href="blog-post.dc.html" class="postcard" style-hover="border-color:#BC4A28;transform:translateY(-4px);box-shadow:0 18px 40px rgba(33,28,23,0.08);transition:all .2s;">
+          <a href="{{ p.href }}" class="postcard" style-hover="border-color:#BC4A28;transform:translateY(-4px);box-shadow:0 18px 40px rgba(33,28,23,0.08);transition:all .2s;">
             <div class="postimg">
               <span class="posttag">{{ p.cat }}</span>
               <span class="postph">[ アイキャッチ画像 ]</span>
@@ -57,9 +57,10 @@
 class Component extends DCLogic {
   renderVals() {
     const posts = [
-      { cat: '運用ノウハウ', date: '2026.06.20', title: 'Meta広告で“最初の1万円”を無駄にしない初期設計の考え方', excerpt: 'はじめてのMeta広告で意識したい、予算配分とターゲティングの基本を整理しました。' },
-      { cat: '店舗集客', date: '2026.06.12', title: '来店に繋がる店舗向けクリエイティブ、3つのポイント', excerpt: '「保存される」「来店したくなる」広告クリエイティブに共通する要素を解説します。' },
-      { cat: '採用広告', date: '2026.06.03', title: '求人媒体に頼らない。Meta広告で採用母集団をつくる', excerpt: '採用にもMeta広告が有効な理由と、応募に繋げるための配信設計を紹介します。' },
+      { cat: '運用ノウハウ', date: '2026.06.20', title: 'Meta広告で“最初の1万円”を無駄にしない初期設計の考え方', excerpt: 'はじめてのMeta広告で意識したい、予算配分とターゲティングの基本を整理しました。', href: 'blog-post.dc.html' },
+      { cat: '店舗集客', date: '2026.06.12', title: '来店に繋がる店舗向けクリエイティブ、3つのポイント', excerpt: '「保存される」「来店したくなる」広告クリエイティブに共通する要素を解説します。', href: 'blog-post.dc.html' },
+      { cat: '採用広告', date: '2026.06.03', title: '求人媒体に頼らない。Meta広告で採用母集団をつくる', excerpt: '採用にもMeta広告が有効な理由と、応募に繋げるための配信設計を紹介します。', href: 'blog-post.dc.html' },
+      /* AUTO-GENERATED POSTS BELOW — do not edit by hand, managed by Apps Script */
     ];
     return { posts };
   }
