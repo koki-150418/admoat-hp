@@ -7,7 +7,7 @@
 </head>
 <body>
 <x-dc>
-<helmet><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/><link rel="stylesheet" href="responsive.css"/><style>*{box-sizing:border-box;}body{margin:0;background:#FAF8F4;color:#211C17;font-family:'Noto Sans JP',sans-serif;-webkit-font-smoothing:antialiased;}a{color:inherit;}input,textarea,button{font-family:'Noto Sans JP',sans-serif;}.wrap{max-width:1120px;margin:0 auto;padding:0 32px;}.eyebrow{font-size:11px;letter-spacing:0.24em;color:#BC4A28;font-weight:500;}.disp{font-family:'Noto Serif JP',serif;font-weight:400;color:#211C17;letter-spacing:0.03em;}.lead{font-size:15px;line-height:2.2;color:#5A544C;}.emailcard{margin-top:28px;padding:24px 26px;background:#F3EFE8;border-radius:4px;}.field{display:flex;flex-direction:column;gap:7px;font-size:13px;font-weight:500;color:#3A352E;}.field input,.field textarea{width:100%;max-width:100%;box-sizing:border-box;padding:13px 15px;border:1px solid #E1DACE;border-radius:2px;font-size:15px;color:#211C17;outline:none;background:#fff;}.formbtn{margin-top:6px;border:none;cursor:pointer;font-size:14px;letter-spacing:0.08em;font-weight:500;color:#fff;padding:16px;border-radius:2px;background:#211C17;}</style></helmet>
+<helmet><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/><link rel="stylesheet" href="responsive.css"/><style>*{box-sizing:border-box;}body{margin:0;background:#FAF8F4;color:#211C17;font-family:'Noto Sans JP',sans-serif;-webkit-font-smoothing:antialiased;}a{color:inherit;}input,textarea,button{font-family:'Noto Sans JP',sans-serif;}.wrap{max-width:1120px;margin:0 auto;padding:0 32px;}.eyebrow{font-size:11px;letter-spacing:0.24em;color:#BC4A28;font-weight:500;}.disp{font-family:'Noto Serif JP',serif;font-weight:400;color:#211C17;letter-spacing:0.03em;}.lead{font-size:15px;line-height:2.2;color:#5A544C;}.emailcard{margin-top:28px;padding:24px 26px;background:#F3EFE8;border-radius:4px;}.field{display:flex;flex-direction:column;gap:7px;font-size:13px;font-weight:500;color:#3A352E;}.field input,.field textarea{width:100%;max-width:100%;box-sizing:border-box;padding:13px 15px;border:1px solid #E1DACE;border-radius:2px;font-size:15px;color:#211C17;outline:none;background:#fff;}.field input:disabled,.field textarea:disabled{background:#F3EFE8;color:#A89F92;}.formbtn{margin-top:6px;border:none;cursor:pointer;font-size:14px;letter-spacing:0.08em;font-weight:500;color:#fff;padding:16px;border-radius:2px;background:#211C17;}.formbtn:disabled{background:#A89F92;cursor:default;}.formerr{margin:0;font-size:13px;font-weight:500;color:#B23B3B;text-align:center;}</style></helmet>
 
 <dc-import name="Header" active="" hint-size="100%,73px"></dc-import>
 
@@ -30,22 +30,34 @@
           <a href="mailto:info@admoat.net" class="disp" style="display:inline-block;margin-top:8px;font-size:19px;text-decoration:none;" style-hover="color:#BC4A28;">info@admoat.net</a>
         </div>
       </div>
-      <form onSubmit="{{ onSubmit }}" class="ctform" style="width:100%;box-sizing:border-box;background:#fff;border:1px solid #E1DACE;border-radius:4px;padding:36px;display:flex;flex-direction:column;gap:18px;">
-        <label class="field">お名前
-          <input type="text" name="name" required="required" placeholder="山田 太郎" style-focus="border-color:#BC4A28;"/>
-        </label>
-        <label class="field">会社名・屋号
-          <input type="text" name="company" placeholder="株式会社○○ / 個人事業" style-focus="border-color:#BC4A28;"/>
-        </label>
-        <label class="field">メールアドレス
-          <input type="email" name="email" required="required" placeholder="you@example.com" style-focus="border-color:#BC4A28;"/>
-        </label>
-        <label class="field">ご相談内容
-          <textarea rows="5" name="message" required="required" placeholder="ご相談内容をご記入ください" style="resize:vertical;" style-focus="border-color:#BC4A28;"></textarea>
-        </label>
-        <button type="submit" class="formbtn" style-hover="background:#BC4A28;">この内容で送信する</button>
-        <p style="margin:0;font-size:12px;color:#A89F92;text-align:center;">※ こちらはデモ用のフォームです。</p>
-      </form>
+
+      <sc-if value="{{ isSuccess }}" hint-placeholder-val="{{ false }}">
+        <div style="background:#fff;border:1px solid #E1DACE;border-radius:4px;padding:48px 36px;text-align:center;">
+          <div class="eyebrow">THANK YOU</div>
+          <h2 class="disp" style="margin:16px 0 0;font-size:22px;line-height:1.6;">送信しました。<br/>ありがとうございます。</h2>
+          <p class="lead" style="margin:16px 0 0;">内容を確認のうえ、担当より折り返しご連絡いたします。今しばらくお待ちください。</p>
+        </div>
+      </sc-if>
+      <sc-if value="{{ isFormVisible }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ onSubmit }}" class="ctform" style="width:100%;box-sizing:border-box;background:#fff;border:1px solid #E1DACE;border-radius:4px;padding:36px;display:flex;flex-direction:column;gap:18px;">
+          <label class="field">お名前
+            <input type="text" name="name" required="required" placeholder="山田 太郎" disabled="{{ isSending }}" style-focus="border-color:#BC4A28;"/>
+          </label>
+          <label class="field">会社名・屋号
+            <input type="text" name="company" placeholder="株式会社○○ / 個人事業" disabled="{{ isSending }}" style-focus="border-color:#BC4A28;"/>
+          </label>
+          <label class="field">メールアドレス
+            <input type="email" name="email" required="required" placeholder="you@example.com" disabled="{{ isSending }}" style-focus="border-color:#BC4A28;"/>
+          </label>
+          <label class="field">ご相談内容
+            <textarea rows="5" name="message" required="required" placeholder="ご相談内容をご記入ください" disabled="{{ isSending }}" style="resize:vertical;" style-focus="border-color:#BC4A28;"></textarea>
+          </label>
+          <button type="submit" class="formbtn" disabled="{{ isSending }}" style-hover="background:#BC4A28;">{{ submitLabel }}</button>
+          <sc-if value="{{ isError }}" hint-placeholder-val="{{ false }}">
+            <p class="formerr">送信に失敗しました。恐れ入りますが、上記メールアドレスまで直接ご連絡ください。</p>
+          </sc-if>
+        </form>
+      </sc-if>
     </div>
   </section>
 </main>
@@ -54,8 +66,27 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:760}}">
 class Component extends DCLogic {
+  state = { status: 'idle' };
   renderVals() {
-    return { onSubmit: (e) => { e.preventDefault(); } };
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw-S00h1MxMbpOmohK906et8tqBes2cmulWAAz8Tk3sm9FhdQrch5I-cJBGRGrHCQ-R/exec';
+    const status = this.state.status;
+    const onSubmit = (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const data = new URLSearchParams(new FormData(form));
+      this.setState({ status: 'sending' });
+      fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: data })
+        .then(() => { this.setState({ status: 'success' }); })
+        .catch(() => { this.setState({ status: 'error' }); });
+    };
+    return {
+      onSubmit,
+      isSending: status === 'sending',
+      isSuccess: status === 'success',
+      isFormVisible: status !== 'success',
+      isError: status === 'error',
+      submitLabel: status === 'sending' ? '送信中…' : 'この内容で送信する',
+    };
   }
 }
 </script>
