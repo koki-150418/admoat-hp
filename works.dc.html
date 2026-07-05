@@ -24,7 +24,7 @@
     <div class="wrap">
       <div class="casegrid">
         <sc-for list="{{ cases }}" as="c" hint-placeholder-count="3">
-          <a href="case-detail.dc.html" class="casecard" style-hover="border-color:#BC4A28;transform:translateY(-4px);box-shadow:0 18px 40px rgba(33,28,23,0.08);transition:all .2s;">
+          <a href="{{ c.href }}" class="casecard" style-hover="border-color:#BC4A28;transform:translateY(-4px);box-shadow:0 18px 40px rgba(33,28,23,0.08);transition:all .2s;">
             <div class="caseimg">
               <span class="casetag">{{ c.label }}</span>
               <span class="caseph">[ 事例ビジュアル ]</span>
@@ -56,9 +56,8 @@
 class Component extends DCLogic {
   renderVals() {
     const cases = [
-      { label: '店舗集客', title: '来店・予約を増やした事例', desc: 'エリア・客層に合わせた配信設計で、店舗への送客を最大化した事例です。' },
-      { label: '採用広告', title: '応募を集めた事例', desc: '求人媒体に頼らない、Meta広告での採用母集団づくりを支援した事例です。' },
-      { label: 'EC・サービス', title: '問い合わせ・購入を伸ばした事例', desc: '獲得効率を見ながら、予算とクリエイティブを継続的に改善した事例です。' },
+      /* CASES:START */
+      /* CASES:END */
     ];
     return { cases };
   }
