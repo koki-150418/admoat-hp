@@ -25,9 +25,11 @@
       <div class="postgrid">
         <sc-for list="{{ posts }}" as="p" hint-placeholder-count="3">
           <a href="{{ p.href }}" class="postcard" style-hover="border-color:#BC4A28;transform:translateY(-4px);box-shadow:0 18px 40px rgba(33,28,23,0.08);transition:all .2s;">
-            <div class="postimg">
+            <div class="postimg" style="{{ p.imgStyle }}">
               <span class="posttag">{{ p.cat }}</span>
-              <span class="postph">[ アイキャッチ画像 ]</span>
+              <sc-if value="{{ !p.hasImage }}" hint-placeholder-val="{{ true }}">
+                <span class="postph">[ アイキャッチ画像 ]</span>
+              </sc-if>
             </div>
             <div class="postbody">
               <div class="postdate">{{ p.date }}</div>
