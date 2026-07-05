@@ -25,9 +25,11 @@
       <div class="casegrid">
         <sc-for list="{{ cases }}" as="c" hint-placeholder-count="3">
           <a href="{{ c.href }}" class="casecard" style-hover="border-color:#BC4A28;transform:translateY(-4px);box-shadow:0 18px 40px rgba(33,28,23,0.08);transition:all .2s;">
-            <div class="caseimg">
+            <div class="caseimg" style="{{ c.imgStyle }}">
               <span class="casetag">{{ c.label }}</span>
-              <span class="caseph">[ 事例ビジュアル ]</span>
+              <sc-if value="{{ !c.hasImage }}" hint-placeholder-val="{{ true }}">
+                <span class="caseph">[ 事例ビジュアル ]</span>
+              </sc-if>
             </div>
             <div class="casebody">
               <h3 class="caset">{{ c.title }}</h3>
