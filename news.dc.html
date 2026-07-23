@@ -10,25 +10,57 @@
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="responsive.css"/>
-<style>*{box-sizing:border-box;}body{margin:0;background:#FBFAF7;color:#1A1714;font-family:'Noto Sans JP',sans-serif;-webkit-font-smoothing:antialiased;}a{color:inherit;text-decoration:none;}.news-grid{display:grid;gap:24px;}.news-card{display:block;border:1px solid #ECE7DE;border-radius:20px;background:#fff;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;}.news-card.has-image{display:grid;grid-template-columns:minmax(220px,320px) 1fr;}.news-card-visual{min-height:220px;background:#F3EFE8;}.news-card-visual img{width:100%;height:100%;display:block;object-fit:cover;}.news-card-body{padding:28px 30px 30px;}.news-card-date{font-size:12px;letter-spacing:.08em;color:#A89F92;}.news-card-title{margin:10px 0 0;font-size:28px;line-height:1.45;color:#1A1714;}.news-card-excerpt{margin:14px 0 0;font-size:15px;line-height:1.9;color:#5C564C;}.news-card-link{display:inline-block;margin-top:18px;font-size:13px;font-weight:700;letter-spacing:.08em;color:#E8401D;}@media (max-width:840px){.news-card.has-image{grid-template-columns:1fr;}.news-card-visual{min-height:200px;}.news-card-title{font-size:24px;}}@media (max-width:640px){.news-card-body{padding:22px 22px 24px;}.news-card-title{font-size:22px;}}</style>
+<style>
+*{box-sizing:border-box;}
+body{margin:0;background:#FAF8F4;color:#211C17;font-family:'Noto Sans JP',sans-serif;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px;}
+.eyebrow{font-size:11px;letter-spacing:0.24em;color:#BC4A28;font-weight:500;}
+.disp{font-family:'Noto Serif JP',serif;font-weight:400;color:#211C17;letter-spacing:0.03em;}
+.lead{font-size:15px;line-height:2.2;color:#5A544C;}
+.btn{display:inline-block;text-decoration:none;font-size:13px;letter-spacing:0.1em;font-weight:500;color:#fff;background:#211C17;padding:16px 34px;border-radius:2px;}
+.news-grid{display:grid;gap:0;border-top:1px solid #E1DACE;}
+.news-card{display:grid;grid-template-columns:160px 1fr;gap:28px;padding:30px 4px;border-bottom:1px solid #E1DACE;align-items:start;}
+.news-card.has-image{grid-template-columns:220px 1fr;}
+.news-card-visual{min-height:150px;background:#F3EFE8;overflow:hidden;}
+.news-card-visual img{width:100%;height:100%;display:block;object-fit:cover;}
+.news-card-body{padding:0;}
+.news-card-date{font-size:12px;letter-spacing:.08em;color:#A89F92;}
+.news-card-title{margin:8px 0 0;font-family:'Noto Serif JP',serif;font-weight:500;font-size:19px;line-height:1.65;color:#211C17;}
+.news-card-excerpt{margin:12px 0 0;font-size:14px;line-height:1.9;color:#6F6860;}
+.news-card-link{display:inline-block;margin-top:14px;font-size:12px;letter-spacing:.1em;color:#BC4A28;}
+.empty-news{padding:64px 24px;border-bottom:1px solid #E1DACE;text-align:center;}
+@media (max-width:640px){
+  .news-card,.news-card.has-image{grid-template-columns:1fr;gap:18px;}
+  .news-card-visual{min-height:190px;}
+}
+</style>
 </helmet>
-<dc-import name="Header" active="news" hint-size="100%,68px"></dc-import>
+<dc-import name="Header" active="news" hint-size="100%,73px"></dc-import>
 <main style="overflow-x:hidden;">
-  <section style="background:#fff;border-bottom:1px solid #ECE7DE;">
-    <div style="max-width:1200px;margin:0 auto;padding:64px 32px 56px;">
-      <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:13px;letter-spacing:0.18em;color:#E8401D;">NEWS</div>
-      <h1 style="margin:14px 0 0;font-weight:900;font-size:44px;letter-spacing:-0.01em;color:#1A1714;">ニュース</h1>
-      <p style="margin:16px 0 0;font-size:16px;line-height:1.85;color:#5C564C;max-width:640px;">サービスや実績に関するお知らせを発信していきます。</p>
+  <section style="background:#fff;border-bottom:1px solid #E7E1D7;">
+    <div class="wrap" style="padding-top:80px;padding-bottom:72px;">
+      <div class="eyebrow">NEWS</div>
+      <h1 class="disp" style="margin:24px 0 0;font-size:40px;line-height:1.5;">お知らせ</h1>
+      <p class="lead" style="margin:24px 0 0;max-width:600px;">サービスや事例に関するお知らせを発信していきます。</p>
     </div>
   </section>
-  <section style="max-width:1120px;margin:0 auto;padding:56px 32px 84px;">
-    <div class="news-grid"><div style="border:1px solid #ECE7DE;border-radius:20px;padding:72px 32px;text-align:center;background:#fff;"><div style="font-family:Archivo,sans-serif;font-weight:800;font-size:13px;letter-spacing:0.16em;color:#C23A14;">COMING SOON</div><p style="margin:16px 0 0;font-size:16px;line-height:1.9;color:#5C564C;">最新のお知らせは準備中です。<br/>更新情報は、こちらのページで順次お届けします。</p><a href="contact.dc.html" style="display:inline-block;margin-top:28px;text-decoration:none;font-size:15px;font-weight:700;color:#fff;padding:14px 28px;border-radius:999px;background:linear-gradient(100deg,#F4B400 0%,#EE7A00 48%,#E8401D 100%);box-shadow:0 8px 22px rgba(232,64,29,0.26);" style-hover="opacity:0.92;">お問い合わせ</a></div></div>
+  <section style="padding:56px 0 96px;">
+    <div class="wrap" style="max-width:760px;">
+      <div class="news-grid">
+        <div class="empty-news">
+          <div class="eyebrow">COMING SOON</div>
+          <p class="lead" style="margin:16px auto 0;max-width:480px;">最新のお知らせは準備中です。<br/>更新情報は、こちらのページで順次お届けします。</p>
+          <div style="margin-top:32px;"><a href="contact.dc.html" class="btn" style-hover="background:#BC4A28;">お問い合わせ</a></div>
+        </div>
+      </div>
+    </div>
   </section>
 </main>
-<dc-import name="Footer" hint-size="100%,320px"></dc-import>
+<dc-import name="Footer" hint-size="100%,300px"></dc-import>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:1440}}"></script>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:760}}"></script>
 </body>
 </html>
