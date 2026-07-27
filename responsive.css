@@ -60,10 +60,10 @@
     content: "";
     position: absolute;
     z-index: -1;
-    width: 390px;
-    height: 304px;
+    width: 330px;
+    height: 256px;
     top: 36px;
-    right: -146px;
+    right: 10px;
     background: url("assets/logo.png") center / contain no-repeat;
     filter: grayscale(1);
     opacity: 0.07;
