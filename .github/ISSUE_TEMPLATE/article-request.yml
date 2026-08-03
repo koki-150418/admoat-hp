@@ -1,0 +1,119 @@
+name: 記事追加依頼
+description: 既存ブログの構造を踏襲した記事追加を依頼します
+title: "[記事追加] "
+labels:
+  - article-request
+body:
+  - type: input
+    id: article_title
+    attributes:
+      label: タイトル
+      placeholder: 確定タイトル、または仮タイトル
+    validations:
+      required: true
+  - type: input
+    id: audience
+    attributes:
+      label: 想定読者
+    validations:
+      required: true
+  - type: textarea
+    id: purpose
+    attributes:
+      label: 目的
+      description: 読了後に読者へ期待する理解・行動を記載してください。
+    validations:
+      required: true
+  - type: input
+    id: main_keyword
+    attributes:
+      label: メインキーワード
+    validations:
+      required: true
+  - type: input
+    id: related_keywords
+    attributes:
+      label: 関連キーワード
+      description: 複数ある場合は読点で区切ってください。
+  - type: textarea
+    id: appeal
+    attributes:
+      label: 訴求軸
+    validations:
+      required: true
+  - type: textarea
+    id: required_content
+    attributes:
+      label: 必須内容
+    validations:
+      required: true
+  - type: textarea
+    id: approved_facts
+    attributes:
+      label: 使用してよい事実 / 実績
+      description: 根拠も併記してください。未記載の数値・実績は使用しません。
+  - type: textarea
+    id: prohibited_content
+    attributes:
+      label: 禁止表現 / 使用禁止情報
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: 参考資料
+      description: 公開可能なURL・添付資料を記載してください。転載許可のない本文やsecretは貼らないでください。
+  - type: input
+    id: cta
+    attributes:
+      label: CTA
+      description: 確定済みの文言とリンク先を記載してください。不要なら「なし」。
+    validations:
+      required: true
+  - type: textarea
+    id: internal_links
+    attributes:
+      label: 関連記事 / 内部リンク
+      description: 実在するURLを記載してください。不明なら「候補提案のみ」。
+  - type: input
+    id: word_count
+    attributes:
+      label: 希望文字数
+      placeholder: 例）2,000〜3,000字
+  - type: input
+    id: desired_publish_date
+    attributes:
+      label: 公開希望日
+      placeholder: YYYY-MM-DD / 指定なし
+  - type: dropdown
+    id: eyecatch
+    attributes:
+      label: アイキャッチの扱い
+      options:
+        - 既存画像を指定する
+        - 新規画像を別途用意する
+        - 画像なし
+        - PRでは仮置きにして承認者が判断する
+    validations:
+      required: true
+  - type: textarea
+    id: additional_conditions
+    attributes:
+      label: 追加条件
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: 依頼前の確認
+      options:
+        - label: 使用可能な事実・実績には根拠を提示しました
+          required: true
+        - label: 価格・割引・数値・公開日・著者・slugを推測させません
+          required: true
+        - label: Pull Requestを確認した後に公開します
+          required: true
+  - type: markdown
+    attributes:
+      value: |
+        Issue作成後、次のコメントを投稿してください。
+
+        `@codex このIssueを基に記事を追加してください。既存記事の構造とデザインを踏襲し、メタデータ、内部リンク、モバイル表示、ビルドを確認してPull Requestを作成してください。本番ブランチへ直接Push・Mergeしないでください。`

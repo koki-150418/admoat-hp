@@ -1,0 +1,114 @@
+name: Mobile approval notification
+
+on:
+  pull_request_target:
+    types:
+      - opened
+      - reopened
+      - ready_for_review
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  notify:
+    if: startsWith(github.event.pull_request.head.ref, 'codex/') || contains(github.event.pull_request.labels.*.name, 'codex-generated')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Assign approver and post mobile instructions
+        uses: actions/github-script@v7
+        env:
+          APPROVER_GITHUB_USERNAME: ${{ vars.APPROVER_GITHUB_USERNAME }}
+        with:
+          script: |
+            const marker = '<!-- codex-mobile-approval-notification -->';
+            const configured = (process.env.APPROVER_GITHUB_USERNAME || '').trim().replace(/^@/, '');
+            const repositoryOwner = context.payload.repository?.owner;
+
+            let approver = configured;
+            if (!approver) {
+              if (repositoryOwner?.type === 'User' && repositoryOwner?.login) {
+                approver = repositoryOwner.login;
+                core.notice(`APPROVER_GITHUB_USERNAME未設定のため、個人repository owner ${approver} を使用します。`);
+              } else {
+                core.warning('承認者を安全に判定できません。APPROVER_GITHUB_USERNAMEをRepository Variableに設定してください。');
+                return;
+              }
+            }
+
+            const { owner, repo } = context.repo;
+            const issue_number = context.issue.number;
+
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner,
+              repo,
+              issue_number,
+              per_page: 100,
+            });
+            if (comments.some(comment => (comment.body || '').includes(marker))) {
+              core.notice('通知済みのため重複commentを作成しません。');
+              return;
+            }
+
+            try {
+              await github.rest.issues.getLabel({ owner, repo, name: 'needs-mobile-approval' });
+            } catch (error) {
+              if (error.status === 404) {
+                await github.rest.issues.createLabel({
+                  owner,
+                  repo,
+                  name: 'needs-mobile-approval',
+                  color: 'FBCA04',
+                  description: 'GitHub Mobileで公開承認が必要',
+                });
+              } else {
+                throw error;
+              }
+            }
+
+            await github.rest.issues.addLabels({
+              owner,
+              repo,
+              issue_number,
+              labels: ['needs-mobile-approval'],
+            });
+
+            try {
+              await github.rest.issues.addAssignees({
+                owner,
+                repo,
+                issue_number,
+                assignees: [approver],
+              });
+            } catch (error) {
+              core.warning(`assignに失敗しました: ${error.message}`);
+            }
+
+            try {
+              await github.rest.pulls.requestReviewers({
+                owner,
+                repo,
+                pull_number: issue_number,
+                reviewers: [approver],
+              });
+            } catch (error) {
+              core.warning(`review requestに失敗しました（PR作成者と同一user等の場合があります）: ${error.message}`);
+            }
+
+            const prUrl = context.payload.pull_request.html_url;
+            const body = `${marker}
+            @${approver} 公開前のスマートフォン確認をお願いします。
+
+            1. GitHub MobileでこのPRの「Files changed」と「Checks」を確認
+            2. PRのConversationまたはChecksに表示されるVercel Previewをスマートフォンで確認
+            3. 修正が必要なら \`@codex 修正内容\` とコメント
+            4. CI・Preview・公開内容を確認できたら、承認者本人がGitHub MobileまたはWebからMerge
+
+            Checks: ${prUrl}/checks
+
+            CodexはこのPRを自動Mergeしません。`;
+
+            await github.rest.issues.createComment({ owner, repo, issue_number, body });
