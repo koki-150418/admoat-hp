@@ -13,7 +13,7 @@
 | Production build | 対象scriptなし。HTML、CSS、JavaScript、画像等をそのまま公開 |
 | Validation | CIの標準PythonによるHTML内ローカル参照、sitemap XML、必須公開ファイルの検査 |
 | 公開先 | READMEではGitHub Pages＋独自domain `admoat.net` |
-| Vercel | repository内に `vercel.json` 等はなく、Git連携・Production Branch・Preview・build/output/root・環境変数は未確認 |
+| Vercel / Preview | repository内に `vercel.json` 等はなく、VercelのGit連携・Production Branch・Preview・build/output/root・環境変数は未確認。初回PRではVercel checkは表示されず、既存のNetlify Deploy Preview checkが失敗した |
 
 主要ページはrootの `index.html` と `*.dc.html`、共通パーツは `Header.dc.html` / `Footer.dc.html`、runtimeは `support.js`、モバイル調整は `responsive.css` です。トップページだけ `index.html` で、他ページは `.dc.html` のURLを使います。
 
@@ -84,4 +84,4 @@ Production build: 対象scriptなし
 ローカル表示: python3 -m http.server 8000
 ```
 
-外部Vercel設定、Codex Cloud接続、repository rulesetはrepositoryファイルだけでは断定しません。未確認項目は `docs/MANUAL_SETUP_CHECKLIST.md` で設定・確認します。
+外部Vercel設定、Codex Cloud接続、repository rulesetはrepositoryファイルだけでは断定しません。初回PRで検出したNetlify連携を含む未確認項目は `docs/MANUAL_SETUP_CHECKLIST.md` で設定・確認します。

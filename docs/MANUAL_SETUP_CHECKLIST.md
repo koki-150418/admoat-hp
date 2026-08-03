@@ -34,6 +34,8 @@ repository外の設定は、このPRで推測・上書きしません。管理�
 
 ## Vercel
 
+- [ ] 初回PRで既存のNetlify Deploy Preview checkが失敗したため、Netlify Projectの接続先、失敗理由、現在も必要な連携かを確認する
+- [ ] Netlify、GitHub Pages、Vercelのうち、どれをProduction / Previewに使うか整理し、同一domainや本番branchへの競合deployを避ける。不要な連携を止める場合も既存公開への影響を確認して別途承認する
 - [ ] Vercel ProjectがGitHub repository `koki-150418/admoat-hp` に接続されているか確認する
 - [ ] Production Branchが `main` か確認する。現在のGitHub Pages公開と競合・二重公開にならないか確認する
 - [ ] Pull RequestごとのPreview Deploymentを有効にする
@@ -59,6 +61,7 @@ repository外の設定は、このPRで推測・上書きしません。管理�
 ## 現時点でrepositoryから確認できない項目
 
 - Vercel Projectの有無、Git連携、Production Branch、Preview、build/output/root、環境変数
+- 初回PRで失敗したNetlify Deploy PreviewのProject設定と失敗理由
 - GitHub Pagesの管理画面上のSource設定
 - branch protection / ruleset / required checks
 - Codex Cloud Environment、GitHub連携範囲、Automatic Reviews
