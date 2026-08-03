@@ -1,0 +1,100 @@
+name: サイト修正依頼
+description: 既存ページの文章・画像・リンク・レイアウト・不具合・SEO修正を依頼します
+title: "[サイト修正] "
+labels:
+  - site-update
+body:
+  - type: input
+    id: request_title
+    attributes:
+      label: 依頼タイトル
+      placeholder: 例）サービスページのCTAリンク修正
+    validations:
+      required: true
+  - type: input
+    id: target
+    attributes:
+      label: 対象URL / ページ
+      description: 公開URLと、分かればファイル名を記載してください。
+      placeholder: https://admoat.net/services.dc.html
+    validations:
+      required: true
+  - type: dropdown
+    id: update_type
+    attributes:
+      label: 更新種別
+      multiple: true
+      options:
+        - 文章
+        - 画像
+        - CTA・リンク
+        - レイアウト
+        - 不具合
+        - SEO
+        - その他
+    validations:
+      required: true
+  - type: textarea
+    id: before
+    attributes:
+      label: 変更前
+      description: 現在の文言・状態・スクリーンショットの位置を具体的に記載してください。
+    validations:
+      required: true
+  - type: textarea
+    id: after
+    attributes:
+      label: 変更後
+      description: 確定済みの文言・URL・数値・完成条件をそのまま記載してください。
+    validations:
+      required: true
+  - type: textarea
+    id: allowed_scope
+    attributes:
+      label: 変更してよい範囲
+      placeholder: 例）CTAボタンのhrefのみ
+    validations:
+      required: true
+  - type: textarea
+    id: prohibited_scope
+    attributes:
+      label: 変更してはいけない範囲
+      placeholder: 例）文言、色、余白、計測タグは変更不可
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: 参考資料
+      description: 使用許可のある画像、Issue添付、URLなどを記載してください。secretは貼らないでください。
+  - type: textarea
+    id: mobile_focus
+    attributes:
+      label: モバイルで重視する点
+      placeholder: 例）375px幅でCTAが折り返さないこと
+  - type: input
+    id: desired_publish_date
+    attributes:
+      label: 公開希望日
+      placeholder: YYYY-MM-DD / 指定なし
+  - type: textarea
+    id: additional_conditions
+    attributes:
+      label: 追加条件
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: 依頼前の確認
+      options:
+        - label: 変更内容は確定済みです
+          required: true
+        - label: URL・料金・割引・実績などの数値は正確です
+          required: true
+        - label: Pull Requestを確認した後に公開します
+          required: true
+  - type: markdown
+    attributes:
+      value: |
+        Issue作成後、次のコメントを投稿してください。
+
+        `@codex このIssueの内容を実装してください。既存デザインを維持し、検証後にPull Requestを作成してください。本番ブランチへ直接Push・Mergeしないでください。`
