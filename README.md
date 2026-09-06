@@ -18,6 +18,7 @@
 |---|---|---|
 | `/` | `index.html` | トップ |
 | `/services.dc.html` | サービス（運用代行 / 内製化支援 / コース、クリック可能なパネル形式） |
+| `/accompaniment-support.dc.html` | 伴走支援専用LP（広告動線構築・AI導入支援） |
 | `/service-detail.dc.html` | サービス詳細（ダミー・全パネル共通・`noindex`） |
 | `/works.dc.html` | 事例（クリック可能なパネル形式） |
 | `/case-detail.dc.html` | 事例詳細（ダミー・全パネル共通・`noindex`） |
