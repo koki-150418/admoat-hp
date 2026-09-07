@@ -143,6 +143,28 @@
     @media(max-width:760px){.container{width:min(100% - 34px,1160px)}.topbar-inner{height:62px}.brand::after{display:none}.topbar .top-cta{font-size:10px;padding:0 13px}.hero{padding:52px 0 59px}.hero::after{font-size:72px}.hero-grid{gap:37px}h1{font-size:42px;line-height:1.3}.hero-copy{font-size:14px}.hero-card{padding:27px 22px;box-shadow:8px 8px 0 var(--lime)}.section{padding:72px 0}.section-head{margin-bottom:32px}.section-head h2{font-size:31px}.pain-card,.support-card,.deliver-card{padding:28px 24px}.shift{grid-template-columns:1fr}.shift-arrow{height:50px}.flow{grid-template-columns:1fr}.timeline{grid-template-columns:1fr}.phase,.phase:nth-child(2){border-right:0;border-bottom:1px solid #b9bdb4}.phase:last-child{border-bottom:0}.ai-band{padding:28px 23px}.price-box{box-shadow:8px 8px 0 #090a0a}.price-big{font-size:31px}.price-total strong{font-size:24px}.coverage-grid{grid-template-columns:1fr}.consult::before{font-size:65px}.consult-copy h2{font-size:29px}.chatwork-card{padding:27px 22px;box-shadow:8px 8px 0 var(--lime)}.footer{padding-bottom:93px}.mobile-cta{left:10px;right:10px;bottom:10px}.mobile-cta .button{box-shadow:4px 4px 0 #fff}}
     @media(prefers-reduced-motion:reduce){.ticker-track{animation:none}.top-cta,.button{transition:none}}
   </style>
+  <style>
+    .bonus{position:relative;overflow:hidden;padding:94px 0;background:var(--lime);color:#090a0a;border-block:3px solid #090a0a}
+    .bonus::after{content:'BONUS';position:absolute;right:-18px;bottom:-28px;color:transparent;-webkit-text-stroke:2px rgba(9,10,10,.14);font:900 160px/1 'Inter',sans-serif;letter-spacing:-.08em}
+    .bonus-inner{position:relative;z-index:1}
+    .bonus-head{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:end}
+    .bonus-kicker{font:900 11px/1 'Inter',sans-serif;letter-spacing:.18em}
+    .bonus h2{margin:17px 0 0;font:900 clamp(35px,4.8vw,58px)/1.35 'Noto Sans JP',sans-serif;letter-spacing:-.055em}
+    .bonus h2 span{display:inline;background:#090a0a;color:var(--lime);padding:0 .12em}
+    .bonus-lead{margin:0;padding-bottom:7px;font-size:14px;line-height:2;font-weight:700}
+    .bonus-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:42px}
+    .bonus-card{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:end;padding:32px 30px;background:#fff;border:3px solid #090a0a;box-shadow:8px 8px 0 #090a0a}
+    .bonus-card small{display:block;font:900 10px/1 'Inter',sans-serif;letter-spacing:.16em;color:var(--accent)}
+    .bonus-card h3{margin:13px 0 0;font-size:23px;line-height:1.45;font-weight:900}
+    .bonus-count{font:900 57px/1 'Inter','Noto Sans JP',sans-serif;letter-spacing:-.08em;white-space:nowrap}
+    .bonus-count span{font:900 18px/1 'Noto Sans JP',sans-serif;letter-spacing:0}
+    .bonus-condition{display:grid;grid-template-columns:140px 1fr;gap:25px;margin-top:28px;padding:22px 26px;background:#090a0a;color:#fff}
+    .bonus-condition b{color:var(--lime);font-size:13px}
+    .bonus-condition p{margin:0;color:#d9dcd4;font-size:12px;line-height:1.9}
+    .bonus-condition strong{color:#fff}
+    .bonus-mini{margin-top:18px;padding:13px 14px;background:var(--lime);border:1px solid #090a0a;font-size:11px;font-weight:900;text-align:center}
+    @media(max-width:760px){.bonus{padding:70px 0}.bonus::after{font-size:82px}.bonus-head,.bonus-grid{grid-template-columns:1fr}.bonus-head{gap:18px}.bonus-grid{gap:13px;margin-top:30px}.bonus-card{padding:27px 22px;box-shadow:6px 6px 0 #090a0a}.bonus-card h3{font-size:20px}.bonus-count{font-size:46px}.bonus-condition{grid-template-columns:1fr;gap:9px;padding:20px 21px}}
+  </style>
 </head>
 <body>
   <header class="topbar">
@@ -175,6 +197,7 @@
             <div class="quick-item"><b>02</b><span>1年間、いつでも相談できるチャットサポート</span></div>
             <div class="quick-item"><b>03</b><span>実務でそのまま使えるマニュアル配布</span></div>
           </div>
+          <div class="bonus-mini">契約特典：スワイプLP 1本＋動画3本</div>
         </aside>
       </div>
     </section>
@@ -229,6 +252,20 @@
       </div>
     </section>
 
+    <section class="bonus" aria-labelledby="bonus-title">
+      <div class="container bonus-inner">
+        <div class="bonus-head">
+          <div><div class="bonus-kicker">CONTRACT BONUS</div><h2 id="bonus-title">契約特典で、<br><span>制作物もプレゼント。</span></h2></div>
+          <p class="bonus-lead">伴走支援で設計した広告動線を、実際の集客に使えるクリエイティブへ。6ヶ月間継続いただく方へ、LPと動画を制作してお渡しします。</p>
+        </div>
+        <div class="bonus-grid">
+          <article class="bonus-card"><div><small>SWIPE LANDING PAGE</small><h3>スワイプLP</h3></div><div class="bonus-count">1<span>本</span></div></article>
+          <article class="bonus-card"><div><small>MARKETING VIDEO</small><h3>広告・集客用動画</h3></div><div class="bonus-count">3<span>本</span></div></article>
+        </div>
+        <div class="bonus-condition"><b>特典の適用条件</b><p><strong>6ヶ月間継続いただくこと</strong>が条件です。早期解約の場合は、制作費として<strong>動画1本につき11,000円、スワイプLP 1本につき50,000円</strong>をご請求します。</p></div>
+      </div>
+    </section>
+
     <section class="section">
       <div class="container">
         <div class="section-head"><div class="eyebrow">ROADMAP</div><h2>6ヶ月で構築し、<br>その後も止まらない仕組みへ。</h2><p>進行は一例です。事業の状況や課題に応じて、優先順位を組み替えます。</p></div>
@@ -266,6 +303,7 @@
           <div class="faq-item"><div class="faq-q"><span class="qa">Q.</span><span>広告運用の経験がなくても大丈夫ですか？</span></div><div class="faq-a"><span class="qa">A.</span><span>はい。現在の知識や体制に合わせて進めます。操作だけでなく、判断の基準から一緒に整理します。</span></div></div>
           <div class="faq-item"><div class="faq-q"><span class="qa">Q.</span><span>毎回の支援内容は決まっていますか？</span></div><div class="faq-a"><span class="qa">A.</span><span>固定のカリキュラムではありません。現状の課題とデータを見ながら、優先順位の高いテーマから取り組みます。</span></div></div>
           <div class="faq-item"><div class="faq-q"><span class="qa">Q.</span><span>AIに詳しくなくても導入できますか？</span></div><div class="faq-a"><span class="qa">A.</span><span>問題ありません。ツールの説明から始め、実際の業務で無理なく使える範囲を一緒に決めます。</span></div></div>
+          <div class="faq-item"><div class="faq-q"><span class="qa">Q.</span><span>契約特典に条件はありますか？</span></div><div class="faq-a"><span class="qa">A.</span><span>6ヶ月間継続いただくことが条件です。早期解約の場合は、動画1本につき11,000円、スワイプLP 1本につき50,000円をご請求します。</span></div></div>
           <div class="faq-item"><div class="faq-q"><span class="qa">Q.</span><span>6ヶ月が終わった後も相談できますか？</span></div><div class="faq-a"><span class="qa">A.</span><span>個別オンラインMTGは6ヶ月間ですが、チャット相談は開始から1年間ご利用いただけます。</span></div></div>
         </div>
       </div>
