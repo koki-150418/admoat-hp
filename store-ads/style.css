@@ -268,3 +268,91 @@ footer .container{display:flex;justify-content:space-between;gap:24px;font-size:
   html{scroll-behavior:auto}
   .cta{transition:none}
 }
+
+/* Keep the LP at a phone-sized canvas on desktop. */
+html{background:#000}
+body{width:100%;max-width:430px;margin-inline:auto}
+
+/* Apply the existing responsive rules when the outer viewport is desktop-sized. */
+@media(min-width:821px){
+  .container,.narrow{width:min(100% - 36px,780px)}
+  .sp-only{display:block}
+  .hero{padding:58px 0 48px}
+  h1{font-size:clamp(43px,13vw,60px);line-height:1.4}
+  .hero-statement{font-size:24px;line-height:1.85}
+  .hero-copy{font-size:14px;line-height:2.05}
+  .premise{margin-top:35px;padding:23px 24px}
+  .support-facts{grid-template-columns:1fr;margin-top:39px}
+  .support-facts div{justify-content:space-between;padding:18px 6px}
+  .support-facts div+div{border-left:0;border-top:1px solid var(--line)}
+  .support-facts strong{font-size:21px}
+  .section{padding:76px 0}
+  .section-heading{margin-bottom:36px}
+  .section-heading h2,.multi-store h2,.final-cta h2{font-size:33px;line-height:1.58;letter-spacing:.02em}
+  .section-heading>p:last-child:not(.section-label){font-size:13px}
+  .section-heading>p br{display:none}
+  .worry-groups article{grid-template-columns:1fr;gap:18px;padding:27px 0}
+  .check-list{grid-template-columns:1fr;gap:10px}
+  .choice-grid{grid-template-columns:1fr}
+  .choice-grid article{padding:30px 25px}
+  .choice-grid article+article{border-left:0;border-top:1px solid var(--line)}
+  .choice-lead{font-size:18px!important}
+  .answer-panel{padding:33px 20px}
+  .answer-panel h3{font-size:22px}
+  .process{gap:8px;flex-wrap:wrap}
+  .process span{padding:8px 10px;font-size:10px}
+  .funnel-line{grid-template-columns:1fr;padding:26px 24px;gap:9px}
+  .funnel-line i{transform:rotate(90deg)}
+  .concept-grid{grid-template-columns:1fr}
+  .concept-grid article,.concept-grid article+article{padding:25px 0;border-left:0;border-bottom:1px solid var(--line)}
+  .concept-grid article:last-child{border-bottom:0}
+  .interview-grid{grid-template-columns:1fr;gap:24px}
+  .interview-card{padding:26px 23px}
+  .support-grid{grid-template-columns:1fr 1fr}
+  .support-grid article{min-height:230px;padding:27px 23px}
+  .support-grid article:nth-child(3){border-left:0;border-top:1px solid var(--line)}
+  .support-grid article:nth-child(4){border-top:1px solid var(--line)}
+  .support-grid h3{margin-top:46px}
+  .method-list article{grid-template-columns:50px 1fr;gap:20px}
+  .bonus{align-items:flex-start;flex-direction:column;padding:27px 24px}
+  .bonus>p{max-width:none}
+  .timeline li{grid-template-columns:1fr;gap:10px}
+  .ai-grid{grid-template-columns:1fr 1fr}
+  .ai-grid div:nth-child(3){border-left:0;border-top:1px solid var(--line)}
+  .ai-grid div:nth-child(4){border-top:1px solid var(--line)}
+  .price-card{grid-template-columns:1fr}
+  .price-card>p{padding:29px 26px}
+  .price-card .monthly{border-left:0;border-top:1px solid var(--line)}
+  .price-card ul{grid-template-columns:1fr 1fr}
+  .price-card li:nth-child(3){border-left:0;border-top:1px solid var(--line)}
+  .price-card li:nth-child(4){border-top:1px solid var(--line)}
+  .sub-heading{margin-top:72px}
+  .comparison-cards{grid-template-columns:1fr}
+  .comparison-cards article{padding:27px 24px}
+  .cta{min-height:78px;font-size:15px}
+  .final-cta{padding:80px 0}
+
+}
+
+@media(min-width:431px){
+  .container,.narrow{width:calc(100% - 28px)}
+  .eyebrow,.section-label{font-size:10px;line-height:1.8;letter-spacing:.15em}
+  h1{font-size:42px;letter-spacing:.02em}
+  .hero-statement{font-size:22px}
+  .hero-copy br:not(.sp-only){display:none}
+  .premise .premise-label{font-size:16px}
+  .section-heading h2,.multi-store h2,.final-cta h2{font-size:30px}
+  .support-grid{grid-template-columns:1fr}
+  .support-grid article{min-height:0}
+  .support-grid article+article,.support-grid article:nth-child(3),.support-grid article:nth-child(4){border-left:0;border-top:1px solid var(--line)}
+  .support-grid h3{margin-top:32px}
+  .method-list article{grid-template-columns:1fr;gap:8px}
+  .method-number{font-size:17px}
+  .ai-grid{grid-template-columns:1fr}
+  .ai-grid div+div,.ai-grid div:nth-child(3),.ai-grid div:nth-child(4){border-left:0;border-top:1px solid var(--line)}
+  .price-card ul{grid-template-columns:1fr}
+  .price-card li+li,.price-card li:nth-child(3),.price-card li:nth-child(4){border-left:0;border-top:1px solid var(--line)}
+  .consult-flow{gap:7px;font-size:9px}
+  .cta{padding-inline:18px;font-size:14px}
+
+}
