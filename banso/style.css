@@ -1,7 +1,7 @@
 *{box-sizing:border-box}
-html{background:#0b0903}
-body{margin:0;background:#0b0903}
-.wire-page{width:min(1080px,100%);margin:0 auto;background:#0b0903}
+html{background:#000}
+body{margin:0;background:#000}
+.wire-page{width:min(430px,100%);margin:0 auto;background:#0b0903}
 .wire-slice{position:relative;margin:0;padding:0;line-height:0}
 .wire-slice img{display:block;width:100%;height:auto;margin:0;padding:0}
 .cta-hit,.email-hit{position:absolute;z-index:2;display:block;overflow:hidden;color:transparent;font-size:0;line-height:0;text-decoration:none}
