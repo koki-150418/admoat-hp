@@ -45,29 +45,50 @@ body {
   width: 100%;
 }
 
+.lp-art {
+  margin-top: -17.3333%;
+}
+
 .lp-art img {
   height: auto;
 }
 
 .target-fix {
   position: absolute;
-  z-index: 1;
-  top: 0.3275%;
-  left: 0;
+  z-index: 4;
+  top: 8px;
+  left: 4%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 0.2252%;
+  gap: 3px;
+  width: 92%;
+  min-height: 76px;
+  padding: 8px 6px;
   margin: 0;
-  background: #f8f4ee;
-  color: #6e3027;
+  background: #783428;
+  color: #fffaf3;
   font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
-  font-size: min(4.67vw, 20px);
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.25;
   letter-spacing: 0;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(76, 34, 27, 0.2);
+}
+
+.target-fix strong,
+.target-fix span {
+  display: block;
   white-space: nowrap;
+}
+
+.target-fix strong {
+  font-size: min(4.2vw, 18px);
+}
+
+.target-fix span {
+  font-size: min(3.3vw, 14px);
 }
 
 .hotspot {
@@ -86,31 +107,31 @@ body {
 }
 
 .hotspot-video {
-  top: 32.77%;
+  top: 32.5906%;
   left: 2.13%;
   width: 95.74%;
-  height: 4.73%;
+  height: 4.7427%;
 }
 
 .hotspot-consultation {
-  top: 85.84%;
+  top: 85.8022%;
   left: 4.13%;
   width: 91.74%;
-  height: 1.29%;
+  height: 1.2934%;
 }
 
 .hotspot-final-consultation {
-  top: 97.08%;
+  top: 97.0724%;
   left: 4.13%;
   width: 91.74%;
-  height: 1.57%;
+  height: 1.5742%;
 }
 
 .hotspot-email {
-  top: 98.91%;
+  top: 98.9072%;
   left: 34%;
   width: 39%;
-  height: 0.32%;
+  height: 0.3209%;
 }
 
 .visually-hidden {
