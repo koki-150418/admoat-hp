@@ -217,6 +217,74 @@ body {
   font-weight: 700;
 }
 
+.flow-fix {
+  position: absolute;
+  z-index: 3;
+  top: 23.7438%;
+  left: 4%;
+  display: grid;
+  grid-template-rows: 136px 80px 136px 80px 136px 80px 136px;
+  align-content: center;
+  width: 92%;
+  height: 3.0692%;
+  padding: 26px 16px 38px;
+  border: 1px solid #ddd5cc;
+  background: #fffdf9;
+}
+
+.flow-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-left: 4px solid #8b4032;
+  background: #f8f4ee;
+  text-align: center;
+}
+
+.flow-step strong {
+  color: #251f1c;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.flow-step span {
+  color: #827971;
+  font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.flow-connector {
+  position: relative;
+}
+
+.flow-connector::before {
+  content: "";
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  width: 2px;
+  height: 34px;
+  background: #9a4939;
+  transform: translateX(-50%);
+}
+
+.flow-connector::after {
+  content: "";
+  position: absolute;
+  top: 42px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #9a4939;
+  border-bottom: 2px solid #9a4939;
+  transform: translateX(-50%) rotate(45deg);
+}
+
 .hotspot {
   position: absolute;
   z-index: 2;
