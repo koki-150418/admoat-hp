@@ -231,6 +231,69 @@ body {
   font-weight: 700;
 }
 
+.difficulty-fix {
+  position: absolute;
+  z-index: 4;
+  top: 13.5741%;
+  left: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 92%;
+  height: 1.6431%;
+  padding: 24px 18px 22px;
+  border-top: 4px solid #c87966;
+  border-bottom: 1px solid #c87966;
+  background: #2e2926;
+  box-shadow: 0 0 0 18px #211e1c;
+  color: #fffaf5;
+  text-align: center;
+}
+
+.difficulty-label {
+  margin: 0 0 22px;
+  padding: 10px 16px 9px;
+  background: #e4b3a7;
+  color: #2b2522;
+  font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+  font-size: min(3.55vw, 15px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.difficulty-fix h2 {
+  margin: 0 0 24px;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: min(6.95vw, 29.5px);
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: 0.02em;
+}
+
+.difficulty-fix h2 span,
+.difficulty-body span {
+  display: block;
+}
+
+.difficulty-body {
+  margin: 0;
+  color: #d9cfca;
+  font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+  font-size: min(3.5vw, 15px);
+  line-height: 1.72;
+  letter-spacing: 0.01em;
+}
+
+.difficulty-rule {
+  width: 52px;
+  height: 3px;
+  margin-top: 24px;
+  background: #c87966;
+}
+
 .flow-fix {
   position: absolute;
   z-index: 3;
@@ -345,10 +408,59 @@ body {
   white-space: nowrap;
 }
 
+.talk-intro-fix {
+  position: absolute;
+  z-index: 4;
+  top: 31.7786%;
+  left: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 92%;
+  height: 1.1912%;
+  padding: 26px 22px 15px;
+  border-top: 4px solid #8b4032;
+  background: #eee5d7;
+  color: #2d2723;
+  text-align: center;
+}
+
+.talk-label {
+  margin: 0 0 17px;
+  padding: 7px 13px 6px;
+  background: #984b39;
+  color: #fffaf3;
+  font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+  font-size: min(3.25vw, 14px);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.03em;
+}
+
+.talk-intro-fix h2 {
+  margin: 0;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: min(5vw, 21.5px);
+  font-weight: 600;
+  line-height: 1.48;
+  letter-spacing: 0.015em;
+}
+
+.talk-intro-fix h2 span {
+  display: block;
+}
+
+.talk-rule {
+  width: 45px;
+  height: 2px;
+  margin: 12px 0 9px;
+  background: #984b39;
+}
+
 .video-feature {
   position: absolute;
   z-index: 4;
-  top: 32.9708%;
+  top: 32.9699%;
   left: 4%;
   width: 92%;
   height: 1.413%;
@@ -372,8 +484,9 @@ body {
 }
 
 .club-note {
-  margin: 11px 10px 0;
-  padding: 10px 12px 9px;
+  width: 100%;
+  margin: 0;
+  padding: 7px 0 0;
   border-top: 1px solid #d9d0c7;
   color: #736a64;
   font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
@@ -381,23 +494,210 @@ body {
 }
 
 .club-note h3 {
-  margin: 0 0 5px;
+  margin: 0 0 3px;
   color: #6e3027;
-  font-size: min(3.05vw, 13px);
+  font-size: min(2.85vw, 12px);
   font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.35;
 }
 
 .club-note p {
   margin: 0;
-  font-size: min(2.75vw, 12px);
-  line-height: 1.55;
+  font-size: min(2.55vw, 11px);
+  line-height: 1.45;
 }
 
 .club-note-meta {
-  margin-top: 3px !important;
+  margin-top: 2px !important;
   color: #91867f;
-  font-size: min(2.4vw, 10.5px) !important;
+  font-size: min(2.25vw, 9.8px) !important;
+}
+
+.case-label-fix {
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.case-label-fix {
+  top: 34.6055%;
+  left: 20%;
+  width: 60%;
+  height: 0.1606%;
+  background: #efc6bf;
+  color: #6f392f;
+  font-size: min(3vw, 12.9px);
+}
+
+.interview-card-fix {
+  position: absolute;
+  z-index: 4;
+  top: 40.4342%;
+  left: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 92%;
+  height: 3.1495%;
+  padding: 30px 18px 28px;
+  border-top: 4px solid #8b4032;
+  background: #eee5d7;
+  color: #2d2723;
+  text-align: center;
+}
+
+.interview-card-label {
+  margin: 0;
+  padding: 9px 15px 8px;
+  background: #984b39;
+  color: #fffaf3;
+  font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+  font-size: min(3.1vw, 13.3px);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.interview-card-fix h2 {
+  margin: 25px 0 22px;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: min(6.2vw, 26.5px);
+  font-weight: 500;
+  line-height: 1.48;
+  letter-spacing: 0.01em;
+}
+
+.interview-card-fix h2 span,
+.interview-card-body span {
+  display: block;
+}
+
+.interview-card-video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-bottom: 22px;
+  overflow: hidden;
+  background: #251f1c;
+}
+
+.interview-card-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.interview-card-body {
+  margin: 0;
+  color: #5f5752;
+  font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+  font-size: min(3.45vw, 14.7px);
+  line-height: 1.78;
+}
+
+.interview-card-rule {
+  width: 46px;
+  height: 2px;
+  margin-top: 25px;
+  background: #984b39;
+}
+
+.support-heading-fix,
+.ai-heading-fix {
+  position: absolute;
+  z-index: 4;
+  left: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 92%;
+  border-top: 4px solid #8b4032;
+  background: #eee5d7;
+  box-shadow: 0 0 0 18px #fffdf9;
+  color: #2d2723;
+  text-align: center;
+}
+
+.support-heading-fix {
+  top: 51.0437%;
+  height: 1.0979%;
+  padding: 25px 18px 20px;
+}
+
+.support-heading-fix p,
+.ai-heading-fix > p {
+  margin: 0;
+  padding: 7px 13px 6px;
+  background: #984b39;
+  color: #fffaf3;
+  font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+  font-size: min(3.3vw, 14px);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.03em;
+}
+
+.support-heading-fix h2 {
+  margin: 22px 0 18px;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: min(6.2vw, 26.5px);
+  font-weight: 500;
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+}
+
+.support-heading-fix h2 span,
+.ai-heading-fix h2 span,
+.ai-heading-fix div span {
+  display: block;
+}
+
+.support-heading-fix > span {
+  width: 46px;
+  height: 2px;
+  background: #984b39;
+}
+
+.ai-heading-fix {
+  top: 66.0518%;
+  height: 1.5012%;
+  padding: 35px 18px 28px;
+}
+
+.ai-heading-fix h2 {
+  margin: 26px 0 24px;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: min(5.9vw, 25px);
+  font-weight: 500;
+  line-height: 1.52;
+  letter-spacing: 0.01em;
+}
+
+.ai-heading-fix div {
+  color: #5f5752;
+  font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+  font-size: min(3.45vw, 14.7px);
+  line-height: 1.8;
+}
+
+.ai-heading-fix i {
+  width: 46px;
+  height: 2px;
+  margin-top: 25px;
+  background: #984b39;
 }
 
 .hotspot {
@@ -446,6 +746,53 @@ body {
   clip: rect(0, 0, 0, 0) !important;
   white-space: nowrap !important;
   border: 0 !important;
+}
+
+@media (max-width: 430px) {
+  .fv-copy {
+    padding: 4.65vw 4.2vw 4.2vw;
+  }
+
+  .fv-heading,
+  .fv-lead {
+    margin-bottom: 5.6vw;
+  }
+
+  .fv-description {
+    padding: 3.25vw 2.8vw;
+  }
+
+  .flow-fix {
+    grid-template-rows:
+      31vw 18vw
+      31vw 18vw
+      31vw 18vw
+      31vw;
+    padding: 6vw 3.7vw 8vw;
+  }
+
+  .flow-step {
+    gap: 2.3vw;
+  }
+
+  .flow-step strong {
+    font-size: 6.05vw;
+  }
+
+  .flow-step span {
+    font-size: 3.5vw;
+  }
+
+  .flow-connector::before {
+    top: 3.7vw;
+    height: 8vw;
+  }
+
+  .flow-connector::after {
+    top: 9.7vw;
+    width: 2.3vw;
+    height: 2.3vw;
+  }
 }
 
 @media (max-width: 750px) {
