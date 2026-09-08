@@ -70,11 +70,19 @@ body {
 }
 
 .lp-slice-after-fv {
-  aspect-ratio: 750 / 6480;
+  aspect-ratio: 750 / 480;
 }
 
 .lp-slice-after-fv img {
   transform: translateY(-19%);
+}
+
+.lp-slice-main-content {
+  aspect-ratio: 750 / 5750;
+}
+
+.lp-slice-main-content img {
+  transform: translateY(-28.125%);
 }
 
 .target-fix {
@@ -134,13 +142,13 @@ body {
 .fv-copy {
   position: absolute;
   z-index: 3;
-  top: 0.673%;
+  top: 0.6765%;
   left: 4%;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   width: 92%;
-  height: 1.74%;
+  height: 1.749%;
   padding: 20px 18px 18px;
   background: #f8f4ee;
   color: #28211e;
@@ -225,31 +233,31 @@ body {
 }
 
 .hotspot-video {
-  top: 32.2848%;
+  top: 31.9339%;
   left: 2.13%;
   width: 95.74%;
-  height: 4.7641%;
+  height: 4.7888%;
 }
 
 .hotspot-consultation {
-  top: 85.7378%;
+  top: 85.6639%;
   left: 4.13%;
   width: 91.74%;
-  height: 1.2993%;
+  height: 1.306%;
 }
 
 .hotspot-final-consultation {
-  top: 97.0589%;
+  top: 97.0437%;
   left: 4.13%;
   width: 91.74%;
-  height: 1.5813%;
+  height: 1.5895%;
 }
 
 .hotspot-email {
-  top: 98.9021%;
+  top: 98.8964%;
   left: 34%;
   width: 39%;
-  height: 0.3223%;
+  height: 0.324%;
 }
 
 .visually-hidden {
