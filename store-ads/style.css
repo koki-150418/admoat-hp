@@ -85,6 +85,20 @@ body {
   transform: translateY(-28.125%);
 }
 
+.lp-video-replacement-space {
+  width: 100%;
+  aspect-ratio: 750 / 660;
+  background: #fffdf9;
+}
+
+.lp-slice-03-after-video {
+  aspect-ratio: 750 / 5800;
+}
+
+.lp-slice-03-after-video img {
+  transform: translateY(-27.5%);
+}
+
 .target-fix {
   position: absolute;
   z-index: 4;
@@ -142,13 +156,13 @@ body {
 .fv-copy {
   position: absolute;
   z-index: 3;
-  top: 0.6765%;
+  top: 0.6988%;
   left: 4%;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   width: 92%;
-  height: 1.749%;
+  height: 1.8067%;
   padding: 20px 18px 18px;
   background: #f8f4ee;
   color: #28211e;
@@ -220,13 +234,13 @@ body {
 .flow-fix {
   position: absolute;
   z-index: 3;
-  top: 23.7438%;
+  top: 24.5267%;
   left: 4%;
   display: grid;
   grid-template-rows: 136px 80px 136px 80px 136px 80px 136px;
   align-content: center;
   width: 92%;
-  height: 3.0692%;
+  height: 3.1704%;
   padding: 26px 16px 38px;
   border: 1px solid #ddd5cc;
   background: #fffdf9;
@@ -285,6 +299,61 @@ body {
   transform: translateX(-50%) rotate(45deg);
 }
 
+.video-feature {
+  position: absolute;
+  z-index: 4;
+  top: 32.9708%;
+  left: 4%;
+  width: 92%;
+  height: 1.413%;
+  background: #fffdf9;
+}
+
+.video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #251f1c;
+}
+
+.video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.club-note {
+  margin: 11px 10px 0;
+  padding: 10px 12px 9px;
+  border-top: 1px solid #d9d0c7;
+  color: #736a64;
+  font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+  text-align: left;
+}
+
+.club-note h3 {
+  margin: 0 0 5px;
+  color: #6e3027;
+  font-size: min(3.05vw, 13px);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.club-note p {
+  margin: 0;
+  font-size: min(2.75vw, 12px);
+  line-height: 1.55;
+}
+
+.club-note-meta {
+  margin-top: 3px !important;
+  color: #91867f;
+  font-size: min(2.4vw, 10.5px) !important;
+}
+
 .hotspot {
   position: absolute;
   z-index: 2;
@@ -300,32 +369,25 @@ body {
   box-shadow: inset 0 0 0 7px #9d4938;
 }
 
-.hotspot-video {
-  top: 31.9339%;
-  left: 2.13%;
-  width: 95.74%;
-  height: 4.7888%;
-}
-
 .hotspot-consultation {
-  top: 85.6639%;
+  top: 85.1912%;
   left: 4.13%;
   width: 91.74%;
-  height: 1.306%;
+  height: 1.3491%;
 }
 
 .hotspot-final-consultation {
-  top: 97.0437%;
+  top: 96.9462%;
   left: 4.13%;
   width: 91.74%;
-  height: 1.5895%;
+  height: 1.6419%;
 }
 
 .hotspot-email {
-  top: 98.8964%;
+  top: 98.86%;
   left: 34%;
   width: 39%;
-  height: 0.324%;
+  height: 0.3347%;
 }
 
 .visually-hidden {
