@@ -21,10 +21,22 @@ body {
 .lp-shell {
   position: relative;
   width: 100%;
-  max-width: 750px;
+  max-width: 430px;
   margin-inline: auto;
   overflow: hidden;
   background: #f8f4ee;
+}
+
+.lp-shell::before {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background: #f8f4ee;
+  pointer-events: none;
 }
 
 .lp-art,
@@ -51,7 +63,7 @@ body {
   background: #f8f4ee;
   color: #6e3027;
   font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
-  font-size: min(4.67vw, 35px);
+  font-size: min(4.67vw, 20px);
   font-weight: 700;
   line-height: 1;
   letter-spacing: 0;
