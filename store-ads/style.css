@@ -20,11 +20,11 @@ body {
 
 .lp-shell {
   position: relative;
-  width: min(100%, 750px);
+  width: 100%;
+  max-width: 750px;
   margin-inline: auto;
   overflow: hidden;
   background: #f8f4ee;
-  box-shadow: 0 0 0 1px rgba(73, 48, 38, 0.05);
 }
 
 .lp-art,
