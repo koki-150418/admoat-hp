@@ -1420,14 +1420,70 @@ h3 {
   color: var(--brown-dark);
 }
 
+.contact-guide {
+  padding: 18px 16px 16px;
+  margin-top: 18px;
+  border: 1px solid rgb(255 255 255 / 30%);
+  text-align: left;
+}
+
+.contact-guide > p {
+  margin: 0 0 13px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.contact-guide ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.contact-guide li {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+}
+
+.contact-guide li + li {
+  margin-top: 10px;
+}
+
+.contact-guide li > span {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  background: #fffaf5;
+  color: var(--brown-dark);
+  font-size: 0.6875rem;
+  font-weight: 800;
+}
+
+.contact-guide li > strong {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+.email-guide {
+  margin: 22px 0 0 !important;
+  color: #f4e7e2;
+  font-size: 0.8125rem !important;
+  line-height: 1.7 !important;
+}
+
 .email-link {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
   padding: 4px 2px;
-  margin-top: 18px;
-  color: #e9cfc8;
-  font-size: 0.875rem;
+  margin-top: 4px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
   text-underline-offset: 4px;
 }
 
