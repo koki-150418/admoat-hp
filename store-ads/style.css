@@ -35,8 +35,15 @@ body {
   font-size: 1rem;
   line-height: 1.85;
   line-break: strict;
-  overflow-wrap: anywhere;
+  word-break: normal;
+  overflow-wrap: normal;
   text-size-adjust: 100%;
+}
+
+@supports (word-break: auto-phrase) {
+  body {
+    word-break: auto-phrase;
+  }
 }
 
 button,
@@ -107,7 +114,7 @@ h2 {
   line-height: 1.48;
   letter-spacing: 0.025em;
   text-align: center;
-  text-wrap: pretty;
+  text-wrap: balance;
 }
 
 h3 {
@@ -115,7 +122,7 @@ h3 {
   font-weight: 600;
   line-height: 1.5;
   letter-spacing: 0.015em;
-  text-wrap: pretty;
+  text-wrap: balance;
 }
 
 .eyebrow {
@@ -163,9 +170,19 @@ h3 {
   text-wrap: pretty;
 }
 
+.hero-lead p,
+.reason-panel > strong,
+.reason-conclusion > strong {
+  text-wrap: balance;
+}
+
 .section-lead-light,
 .body-copy-light {
   color: #f7ede9;
+}
+
+.nowrap {
+  white-space: nowrap;
 }
 
 .note {
@@ -872,6 +889,10 @@ h3 {
 }
 
 /* Timeline */
+.process h2 {
+  font-size: clamp(1.6rem, 6.6vw, 1.8rem);
+}
+
 .timeline {
   position: relative;
   padding: 0 0 0 30px;
@@ -1324,6 +1345,11 @@ h3 {
 
   .hero h1 {
     letter-spacing: 0;
+  }
+
+  .hero h1 strong {
+    font-size: 0.92em;
+    white-space: nowrap;
   }
 
   .audience-copy {
