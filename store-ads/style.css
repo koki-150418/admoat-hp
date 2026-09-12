@@ -806,23 +806,10 @@ h3 {
   text-wrap: pretty;
 }
 
-.interview-faq-group {
-  margin-top: 32px;
-}
-
-.interview-faq-group + .interview-faq-group {
-  margin-top: 38px;
-}
-
-.interview-faq-group > h4 {
-  margin-bottom: 14px;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
 .interview-faq-list {
   display: grid;
   gap: 10px;
+  margin-top: 28px;
 }
 
 .interview-faq-list details {
