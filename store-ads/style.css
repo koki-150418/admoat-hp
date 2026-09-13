@@ -1158,31 +1158,6 @@ h3 {
   background: #fff;
 }
 
-.swipe-example > strong {
-  display: block;
-  margin-top: 7px;
-  font-size: 0.9375rem;
-  line-height: 1.5;
-}
-
-.swipe-example > a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  margin-top: 2px;
-  color: var(--brown-2);
-  font-size: 0.8125rem;
-  font-weight: 700;
-  line-height: 1.6;
-  text-underline-offset: 3px;
-}
-
-.swipe-example > a b {
-  margin-left: 5px;
-  font-size: 0.875rem;
-  font-weight: 500;
-}
-
 .swipe-live-hint {
   position: relative;
   width: fit-content;
