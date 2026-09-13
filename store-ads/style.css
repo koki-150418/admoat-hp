@@ -1128,16 +1128,18 @@ h3 {
 
 .swipe-examples {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 34px;
   margin-top: 18px;
 }
 
 .swipe-example {
+  width: 100%;
+  max-width: 356px;
   min-width: 0;
+  margin-inline: auto;
   color: var(--ink);
   text-align: center;
-  text-decoration: none;
 }
 
 .swipe-phone {
@@ -1147,34 +1149,50 @@ h3 {
   background: var(--black);
 }
 
-.swipe-phone img {
+.swipe-phone iframe {
   display: block;
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 9 / 16;
+  border: 0;
   border-radius: 15px;
-  object-fit: cover;
-  object-position: top center;
+  background: #fff;
 }
 
 .swipe-example > strong {
   display: block;
-  margin-top: 10px;
+  margin-top: 7px;
   font-size: 0.9375rem;
   line-height: 1.5;
 }
 
-.swipe-example > span:last-child {
-  display: block;
+.swipe-example > a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   margin-top: 2px;
   color: var(--brown-2);
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 700;
   line-height: 1.6;
+  text-underline-offset: 3px;
 }
 
-.swipe-example > span:last-child b {
+.swipe-example > a b {
+  margin-left: 5px;
   font-size: 0.875rem;
   font-weight: 500;
+}
+
+.swipe-live-hint {
+  position: relative;
+  width: fit-content;
+  padding: 5px 11px;
+  margin: -18px auto 0;
+  background: var(--brown-dark);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.5;
 }
 
 .swipe-example-note {
