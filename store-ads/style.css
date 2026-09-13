@@ -1198,9 +1198,15 @@ h3 {
   font-weight: 700;
 }
 
-.bonus-offer h3 {
+.bonus-offer > h3 {
   margin-bottom: 8px;
   font-size: clamp(1.75rem, 7vw, 2.1rem);
+}
+
+.bonus-offer .swipe-example-heading {
+  padding-top: 26px;
+  margin-top: 26px;
+  border-top: 1px solid var(--line);
 }
 
 .bonus-price-gift {
