@@ -1181,7 +1181,7 @@ h3 {
 /* Bonus */
 .bonus-market {
   padding: 20px 16px 18px;
-  margin-top: 26px;
+  margin: 0 0 20px;
   background: #f3e5da;
   color: var(--ink);
   text-align: center;
@@ -1244,7 +1244,7 @@ h3 {
 
 .bonus-offer {
   padding: 24px 20px 20px;
-  margin-top: 14px;
+  margin-top: 26px;
   border: 6px solid #bc7464;
   background: var(--paper);
   color: var(--ink);
