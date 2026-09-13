@@ -1179,69 +1179,6 @@ h3 {
 }
 
 /* Bonus */
-.bonus-market {
-  padding: 20px 16px 18px;
-  margin: 0 0 20px;
-  background: #f3e5da;
-  color: var(--ink);
-  text-align: center;
-}
-
-.bonus-market > span {
-  display: table;
-  padding: 4px 11px;
-  margin: 0 auto 10px;
-  background: var(--brown-dark);
-  color: #fff;
-  font-size: 0.75rem;
-  font-weight: 700;
-}
-
-.bonus-market > p {
-  margin-bottom: 0;
-  font-size: 0.875rem;
-  font-weight: 700;
-}
-
-.bonus-market > strong {
-  display: block;
-  margin-top: 2px;
-  color: var(--brown-2);
-  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
-  font-size: clamp(1.8rem, 8.5vw, 2.35rem);
-  font-weight: 600;
-  line-height: 1.45;
-  text-wrap: balance;
-}
-
-.bonus-market ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 6px;
-  padding: 0;
-  margin: 12px 0 0;
-  list-style: none;
-}
-
-.bonus-market li {
-  padding: 4px 8px;
-  border: 1px solid #d6b7ac;
-  background: var(--paper);
-  font-size: 0.75rem;
-  font-weight: 700;
-  line-height: 1.5;
-}
-
-.bonus-market small {
-  display: block;
-  margin-top: 12px;
-  color: var(--muted);
-  font-size: 0.75rem;
-  line-height: 1.65;
-  text-align: left;
-}
-
 .bonus-offer {
   padding: 24px 20px 20px;
   margin-top: 26px;
@@ -1266,15 +1203,80 @@ h3 {
   font-size: clamp(1.75rem, 7vw, 2.1rem);
 }
 
-.bonus-offer > strong {
-  display: block;
-  color: var(--brown-2);
-  font-size: clamp(2.35rem, 10.5vw, 3rem);
-  font-weight: 600;
-  line-height: 1.35;
+.bonus-price-gift {
+  padding: 18px 16px 16px;
+  margin-top: 15px;
+  border: 2px solid #d6b7ac;
+  background: #f3e5da;
 }
 
-.bonus-offer p {
+.bonus-price-gift > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.bonus-price-gift > del {
+  display: block;
+  margin-top: 2px;
+  color: #645850;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(1.8rem, 8vw, 2.3rem);
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration-color: var(--brown-2);
+  text-decoration-thickness: 3px;
+}
+
+.bonus-price-gift > span {
+  display: block;
+  margin: 3px 0;
+  color: var(--brown-2);
+  font-size: 1.65rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.bonus-price-gift > strong {
+  display: block;
+  color: var(--brown-2);
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(2.8rem, 13vw, 3.65rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.bonus-price-gift > b {
+  display: block;
+  padding: 8px 10px;
+  margin-top: 6px;
+  background: var(--brown-2);
+  color: #fff;
+  font-size: clamp(1.15rem, 5.2vw, 1.4rem);
+  line-height: 1.45;
+}
+
+.bonus-includes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  padding: 0;
+  margin: 14px 0 0;
+  list-style: none;
+}
+
+.bonus-includes li {
+  padding: 5px 8px;
+  border: 1px solid #d6b7ac;
+  background: #f8eee6;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.bonus-offer > p {
   margin: 12px 0 0;
   font-size: 0.9375rem;
 }
