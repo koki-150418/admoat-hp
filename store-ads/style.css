@@ -99,6 +99,7 @@ h1,
 h2,
 h3,
 .service-band,
+.hero-title,
 .reason-panel > strong,
 .reason-conclusion > strong,
 .monthly-fee > strong,
@@ -250,7 +251,7 @@ h3 {
   letter-spacing: 0.025em;
 }
 
-.hero h1 {
+.hero-title {
   display: flex;
   flex-direction: column;
   gap: 2px;
@@ -261,7 +262,7 @@ h3 {
   letter-spacing: 0.02em;
 }
 
-.hero h1 strong {
+.hero-title strong {
   color: var(--brown);
   font-weight: 700;
 }
@@ -1806,11 +1807,11 @@ h3 {
     padding-inline: 15px;
   }
 
-  .hero h1 {
+  .hero-title {
     letter-spacing: 0;
   }
 
-  .hero h1 strong {
+  .hero-title strong {
     font-size: 0.92em;
     white-space: nowrap;
   }
