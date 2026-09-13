@@ -20,7 +20,10 @@
 | `/services.dc.html` | サービス（運用代行 / 内製化支援 / コース、クリック可能なパネル形式） |
 | `/accompaniment-support.dc.html` | 伴走支援専用LP（広告動線構築・AI導入支援） |
 | `/banso/` | HP共通ナビから独立した伴走支援LP（ページ内相談フォーム付き） |
-| `/service-detail.dc.html` | サービス詳細（ダミー・全パネル共通・`noindex`） |
+| `/service-detail.dc.html` | 広告運用代行 詳細 |
+| `/ad-video-production.dc.html` | 広告動画制作 詳細 |
+| `/spot-consulting.dc.html` | スポットコンサル 詳細 |
+| `/course.dc.html` | 広告マーケティングコース（公開準備中・`noindex`） |
 | `/works.dc.html` | 事例（クリック可能なパネル形式） |
 | `/case-detail.dc.html` | 事例詳細（ダミー・全パネル共通・`noindex`） |
 | `/company.dc.html` | 会社概要 |
@@ -43,11 +46,11 @@
 5. 必要に応じて `sitemap.xml` を更新
 6. `main` ブランチへ反映すると `admoat.net` が自動更新されます
 
-> ⚠️ `service-detail.dc.html` と `case-detail.dc.html` はビルダー側には無い、
-> このリポジトリ側で追加したダミー詳細ページです。ビルダーから再エクスポートして
+> ⚠️ サービス詳細ページ群と `case-detail.dc.html` はビルダー側には無い、
+> このリポジトリ側で追加したページです。ビルダーから再エクスポートして
 > `services.dc.html` / `works.dc.html` を上書きすると、パネルのリンク先や
 > デザインクラス（`.svcgrid` / `.casegrid` 等）が失われる可能性があります。
-> 上書き後は、パネルのクリック導線とダミーページへのリンクが保たれているか確認してください。
+> 上書き後は、パネルのクリック導線と各詳細ページへのリンクが保たれているか確認してください。
 
 ## 未掲載（必要に応じて追加）
 
