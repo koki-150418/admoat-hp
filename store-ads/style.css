@@ -1057,10 +1057,201 @@ h3 {
   font-size: clamp(1.15rem, 5vw, 1.42rem);
 }
 
+/* Swipe LP guide */
+.swipe-guide {
+  background: var(--cream);
+}
+
+.swipe-guide h2 {
+  font-size: clamp(1.55rem, 6.5vw, 1.9rem);
+}
+
+.swipe-guide-lead {
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.9;
+  text-align: left;
+  text-wrap: pretty;
+}
+
+.swipe-features {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+  padding: 0;
+  margin: 22px 0 0;
+  list-style: none;
+}
+
+.swipe-features li {
+  padding: 12px 4px 11px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  text-align: center;
+}
+
+.swipe-features strong,
+.swipe-features span {
+  display: block;
+  line-height: 1.5;
+}
+
+.swipe-features strong {
+  color: var(--brown-2);
+  font-size: 0.875rem;
+}
+
+.swipe-features span {
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.swipe-example-heading {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.swipe-example-heading > span {
+  display: table;
+  padding: 3px 10px;
+  margin: 0 auto 7px;
+  background: var(--brown-2);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.swipe-example-heading h3 {
+  margin-bottom: 0;
+  font-size: clamp(1.2rem, 5vw, 1.42rem);
+}
+
+.swipe-examples {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.swipe-example {
+  min-width: 0;
+  color: var(--ink);
+  text-align: center;
+  text-decoration: none;
+}
+
+.swipe-phone {
+  display: block;
+  padding: 7px;
+  border-radius: 22px;
+  background: var(--black);
+}
+
+.swipe-phone img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 15px;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.swipe-example > strong {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.swipe-example > span:last-child {
+  display: block;
+  margin-top: 2px;
+  color: var(--brown-2);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.swipe-example > span:last-child b {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.swipe-example-note {
+  margin: 13px 0 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.65;
+  text-align: center;
+}
+
 /* Bonus */
+.bonus-market {
+  padding: 20px 16px 18px;
+  margin-top: 26px;
+  background: #f3e5da;
+  color: var(--ink);
+  text-align: center;
+}
+
+.bonus-market > span {
+  display: table;
+  padding: 4px 11px;
+  margin: 0 auto 10px;
+  background: var(--brown-dark);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.bonus-market > p {
+  margin-bottom: 0;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.bonus-market > strong {
+  display: block;
+  margin-top: 2px;
+  color: var(--brown-2);
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(1.8rem, 8.5vw, 2.35rem);
+  font-weight: 600;
+  line-height: 1.45;
+  text-wrap: balance;
+}
+
+.bonus-market ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  padding: 0;
+  margin: 12px 0 0;
+  list-style: none;
+}
+
+.bonus-market li {
+  padding: 4px 8px;
+  border: 1px solid #d6b7ac;
+  background: var(--paper);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.bonus-market small {
+  display: block;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.65;
+  text-align: left;
+}
+
 .bonus-offer {
   padding: 24px 20px 20px;
-  margin-top: 26px;
+  margin-top: 14px;
   border: 6px solid #bc7464;
   background: var(--paper);
   color: var(--ink);
@@ -1564,7 +1755,7 @@ h3 {
   height: 30px;
   background: #fffaf5;
   color: var(--brown-dark);
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 800;
 }
 
