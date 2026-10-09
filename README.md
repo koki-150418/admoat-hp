@@ -34,7 +34,7 @@
 | `/news.dc.html` | ニュース |
 | `/recruit.dc.html` | 採用情報 |
 | `/blog.dc.html` ・ `/blog-post.dc.html` | ブログ（一覧・記事） |
-| `/column-*.dc.html` | 用語・計測コラム（10本。手動管理・スプレッドシート同期の対象外。一覧は `blog.dc.html` の `columns` 配列、sitemapは `COLUMNS (manual)` 欄） |
+| `/column-*.dc.html` | 用語・計測コラム10本＋Meta広告実践ガイド106本（旧サービスサイトのブログから移植）。手動管理・スプレッドシート同期の対象外。一覧は `blog.dc.html` の `columns` / `library` 配列（カテゴリ絞り込み・12件ごとのページ送り付き）、sitemapは `COLUMNS (manual)` / `LIBRARY (manual)` 欄 |
 | `/faq.dc.html` | よくある質問 |
 | `/contact.dc.html` | お問い合わせ |
 
