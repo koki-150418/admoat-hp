@@ -17,10 +17,12 @@
 | URL | ファイル | 内容 |
 |---|---|---|
 | `/` | `index.html` | トップ |
-| `/services.dc.html` | サービス（Meta広告伴走支援のみ。詳細・料金は bansou.admoat.net へ誘導） |
-| `/accompaniment-support.dc.html` | 旧・伴走支援LP → `https://bansou.admoat.net/service/` へ転送 |
-| `/banso/` | 旧・伴走支援LP → `https://bansou.admoat.net/service/` へ転送 |
-| `/store-ads/` | 旧・伴走支援LP → `https://bansou.admoat.net/service/` へ転送 |
+| `/services.dc.html` | サービス一覧（Meta広告伴走支援のみ。詳細は `/accompaniment-support.dc.html`） |
+| `/case-soshin-omiya.dc.html` ・ `/case-interview-sofue.dc.html` | 伴走支援の事例・利用者インタビュー（手動管理。`works.dc.html` の `featured` 配列） |
+| `/privacy.dc.html` | プライバシーポリシー |
+| `/accompaniment-support.dc.html` | Meta広告伴走支援サービス詳細（旧 bansou.admoat.net の内容を移植。料金・特典・事例・FAQ） |
+| `/banso/` | 旧・伴走支援LP → `/accompaniment-support.dc.html` へ転送 |
+| `/store-ads/` | 旧・伴走支援LP → `/accompaniment-support.dc.html` へ転送 |
 | `/service-detail.dc.html` | 旧・広告運用代行（受付終了）→ `/services.dc.html` へ転送 |
 | `/ad-video-production.dc.html` | 旧・広告動画制作 → `/services.dc.html` へ転送 |
 | `/spot-consulting.dc.html` | 旧・スポットコンサル → `/services.dc.html` へ転送 |
@@ -56,7 +58,6 @@
 
 ## 未掲載（必要に応じて追加）
 
-- プライバシーポリシー
 - 特定商取引法に基づく表記（有料サービス・教材を販売する場合は必須）
 
 ## ローカル確認

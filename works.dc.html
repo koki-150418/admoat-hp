@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>事例｜Meta広告伴走支援｜合同会社AdMoat</title>
+<meta name="description" content="合同会社AdMoatのMeta広告伴走支援の事例。痩身革命 大宮店の改善施策、パーソナルジム経営者の利用者インタビューなどをご紹介します。">
+<link rel="canonical" href="https://admoat.net/works.dc.html">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -64,7 +67,12 @@ class Component extends DCLogic {
       { label: 'EC・サービス', title: '問い合わせ・購入を伸ばした事例', desc: '獲得効率の見方を共有し、予算とクリエイティブの継続的な改善を支援した事例です。', href: 'case-1783310104616r50jokuk.dc.html', imgStyle: '', hasImage: false },
       /* CASES:END */
     ];
-    return { cases };
+    // 伴走支援の事例（手動管理。スプレッドシート同期の対象外）
+    const featured = [
+      { label: '美容サロン', title: '痩身革命 大宮店｜目的別・5つの改善施策', desc: '2ベッドのエステサロンで、従来の月間平均売上230万円から、2026年5月に月間売上400万円を達成した施策を紹介します。', href: 'case-soshin-omiya.dc.html', imgStyle: 'background:url(assets/banso-industry-salon.jpg) center/cover no-repeat;', hasImage: true },
+      { label: 'パーソナルジム', title: '利用者インタビュー｜祖父江誠さん', desc: '6ヶ月の伴走後に聞く、店舗経営者のリアルな声。伴走支援を選んだ理由と集客の変化を16のQ&Aで紹介します。', href: 'case-interview-sofue.dc.html', imgStyle: 'background:url(assets/banso-industry-gym.jpg) center/cover no-repeat;', hasImage: true },
+    ];
+    return { cases: [...featured, ...cases] };
   }
 }
 </script>
