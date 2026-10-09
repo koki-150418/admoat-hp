@@ -1,0 +1,117 @@
+/* =====================================================================
+   AdMoat theme — "white / serif / bold accent" redesign (2026-10-09)
+   Loaded LAST on every page (<link rel="stylesheet" href="theme.css"/>
+   at the end of each <helmet>). Removing that link (or emptying this
+   file) restores the previous look of every page except the new top page.
+   The DC runtime re-serialises inline styles as "prop: value" with rgb()
+   colours, so inline-style selectors below match both forms.
+   ===================================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;600;700;800&display=swap");
+
+:root{
+  --am-accent:#C2410C;      /* AdMoat orange (deepened from the logo for contrast) */
+  --am-accent-d:#9A3412;
+  --am-navy:#1A364D;
+  --am-text:#333;
+  --am-muted:#777;
+  --am-line:#E2E2E2;
+  --am-gray:#F5F5F5;
+  --am-mincho:"Shippori Mincho B1","Noto Serif JP",serif;
+  --am-sans:"Noto Sans JP",sans-serif;
+}
+
+/* ---------- base ---------- */
+html{scroll-behavior:smooth;}
+html body{background:#fff !important;color:var(--am-text);font-family:var(--am-sans);letter-spacing:.03em;}
+html body h1,html body h2,html body .disp,html body .serif,html body .postt,html body .whyno,html body .snum,
+html body .faqq,html body .stitle,html body .scopetitle,html body .phasetitle,html body .includedtitle,
+html body .includednum,html body .pricebig,html body .flowtitle,html body .herotitle{
+  font-family:var(--am-mincho) !important;
+}
+html body h1,html body h2,html body .disp{color:#111 !important;font-weight:700 !important;letter-spacing:.06em;}
+html body h3{letter-spacing:.04em;}
+html body .lead{color:#555;}
+
+/* page backgrounds: beige → white / light gray */
+html body [style*="background:#FAF8F4"],html body [style*="background: rgb(250, 248, 244)"],
+html body [style*="background-color: rgb(250, 248, 244)"]{background:#fff !important;}
+html body [style*="background:#F3EFE8"],html body [style*="background: rgb(243, 239, 232)"],
+html body [style*="background-color: rgb(243, 239, 232)"]{background:var(--am-gray) !important;}
+html body [style*="border-top:1px solid #E7E1D7"],html body [style*="border-top: 1px solid rgb(231, 225, 215)"],
+html body [style*="border-bottom:1px solid #E7E1D7"],html body [style*="border-bottom: 1px solid rgb(231, 225, 215)"]{border-color:var(--am-line) !important;}
+
+/* ---------- section label ---------- */
+html body .eyebrow{display:block;font-family:var(--am-mincho);font-weight:700;font-size:13px;letter-spacing:.2em;color:var(--am-accent) !important;}
+html body .eyebrow::before{content:"";display:inline-block;vertical-align:middle;width:28px;height:2px;margin:0 10px 3px 0;background:var(--am-accent);}
+
+/* ---------- buttons & links ---------- */
+html body .btn{background:var(--am-accent) !important;color:#fff !important;font-family:var(--am-mincho);font-weight:700;font-size:15px;letter-spacing:.12em;padding:17px 44px;border-radius:3px;box-shadow:0 6px 14px rgba(0,0,0,.18);transition:background .2s,transform .2s;}
+html body .btn:hover{background:var(--am-accent-d) !important;transform:translateY(-1px);}
+html body .btnsub{font-family:var(--am-mincho);font-weight:700;border-color:var(--am-navy) !important;color:var(--am-navy) !important;}
+html body .lnk{font-family:var(--am-mincho);font-weight:700;color:var(--am-navy) !important;border-bottom-color:var(--am-navy) !important;}
+html body .lnk:hover{color:var(--am-accent) !important;border-bottom-color:var(--am-accent) !important;}
+html body .tag,html body .posttag{background:var(--am-accent) !important;color:#fff !important;border-radius:2px;}
+
+/* ---------- header ---------- */
+html body .hdr{background:rgba(255,255,255,.97) !important;border-bottom:1px solid var(--am-line) !important;box-shadow:0 2px 10px rgba(0,0,0,.04);}
+html body .hdr .bmark{font-family:var(--am-mincho);font-weight:700;font-size:21px;color:#111;letter-spacing:.1em;}
+html body .hdr .cta{background:var(--am-accent);border-color:var(--am-accent) !important;color:#fff !important;font-family:var(--am-mincho);font-weight:700;font-size:13px;padding:11px 24px;border-radius:3px;box-shadow:0 3px 8px rgba(0,0,0,.18);}
+html body .hdr .cta:hover{background:var(--am-accent-d) !important;}
+@media (max-width:768px){
+  html body .am-nav{background:rgba(255,255,255,.99) !important;}
+  html body .am-nav a.am-cta{background:var(--am-accent) !important;border-color:var(--am-accent) !important;color:#fff !important;}
+}
+
+/* ---------- footer ---------- */
+html body .ft{background:var(--am-navy) !important;color:#fff !important;border-top:4px solid var(--am-accent) !important;}
+html body .ft .brand span{color:#fff !important;font-family:var(--am-mincho);font-weight:700;}
+html body .ft .ftlead{color:rgba(255,255,255,.75) !important;}
+html body .ft .ftlabel{color:rgba(255,255,255,.5) !important;font-family:var(--am-mincho);}
+html body .ft .ftlink{color:rgba(255,255,255,.85) !important;}
+html body .ft .ftlink:hover{color:#fff !important;text-decoration:underline !important;}
+html body .ft .ftcopy{color:rgba(255,255,255,.5) !important;border-top-color:rgba(255,255,255,.15) !important;}
+
+/* ---------- cards ---------- */
+html body .postcard,html body .casecard,html body .paincard,html body .scopecard,html body .includedcard,
+html body .phase,html body .pointcard,html body .indcard,html body .fitcard,html body .measure,html body .whycard{
+  border:none !important;box-shadow:0 0 12px rgba(0,0,0,.08);border-radius:2px;background:#fff;
+}
+html body .postcard:hover{box-shadow:0 8px 24px rgba(0,0,0,.12) !important;}
+html body .postt{font-weight:700 !important;}
+html body .postarrow,html body .sarrow{color:var(--am-accent) !important;font-family:var(--am-mincho);font-weight:700;}
+
+/* blog filter / pager */
+html body .catbtn.on,html body .pgbtn.on{background:var(--am-navy) !important;border-color:var(--am-navy) !important;}
+
+/* ---------- article / column pages ---------- */
+html body .body h2{font-family:var(--am-mincho) !important;font-weight:700;font-size:23px;color:#111;border-bottom:none !important;border-left:4px solid var(--am-accent);padding:4px 0 4px 16px !important;background:linear-gradient(90deg,#fafafa,#fff);}
+html body .body h3{font-family:var(--am-mincho);font-weight:700;color:var(--am-navy);}
+html body .formula,html body .answer-box,html body .leadbox{border-left-color:var(--am-accent) !important;}
+html body .answer-box strong{color:var(--am-accent) !important;}
+html body .article-toc{background:var(--am-gray) !important;}
+html body .body th{background:#EEF2F5 !important;color:var(--am-navy) !important;}
+html body .ctabox{background:var(--am-navy) !important;border-top:none !important;}
+html body .ctabox h2,html body .ctabox .disp{color:#fff !important;}
+html body .ctabox .lead{color:rgba(255,255,255,.85) !important;}
+html body .ctabox .lnk{color:#fff !important;border-bottom-color:#fff !important;}
+
+/* ---------- CTA bands on legacy pages ---------- */
+html body .finalcta{background:var(--am-navy) !important;}
+html body .finalcta h2{color:#fff !important;}
+
+/* ---------- service detail page & legacy page heroes ---------- */
+html body main:not(.tp) > .hero{background:radial-gradient(ellipse at 70% 30%,rgba(255,255,255,.95),rgba(255,255,255,0) 60%),repeating-linear-gradient(115deg,rgba(26,54,77,.035) 0 2px,transparent 2px 22px),linear-gradient(135deg,#F4F4F4,#E9ECEF 55%,#F6F6F6) !important;border-bottom-color:var(--am-line) !important;}
+html body .lpnav{background:rgba(255,255,255,.97) !important;border-bottom-color:var(--am-line) !important;}
+html body .lpnavtitle{font-family:var(--am-mincho);font-weight:700;color:var(--am-navy);}
+html body .pricecard,html body .ovcard{border-top:4px solid var(--am-accent) !important;}
+html body .needband:not([style*="background"]){background:var(--am-navy) !important;}
+html body .bonus{border-top:4px solid var(--am-accent) !important;}
+
+/* ---------- forms ---------- */
+html body .formbtn{background:var(--am-accent) !important;font-family:var(--am-mincho);font-weight:700;letter-spacing:.12em;border-radius:3px;box-shadow:0 6px 14px rgba(0,0,0,.18);}
+html body .formbtn:hover{background:var(--am-accent-d) !important;}
+
+/* ---------- remaining beige surfaces → light gray ---------- */
+html body .posthero,html body .emailcard,html body .panel,html body .whycard,html body .scopeicon,
+html body .pricetotal,html body .news-card-visual,html body .bad{background:var(--am-gray) !important;border-color:var(--am-line) !important;}
+html body .emailcard{border-top:3px solid var(--am-accent) !important;}
