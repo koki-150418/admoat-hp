@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UTMパラメータとは？Meta広告での設定方法と、動的パラメータの使い方｜AdMoat</title>
+<meta name="description" content="UTMパラメータの意味と5つの種類、Meta広告マネージャの「URLパラメータ」欄での設定方法、campaign.nameなどの動的パラメータの使い方と注意点、Googleアナリティクスでの確認方法を解説します。">
+<link rel="canonical" href="https://admoat.net/column-utm.dc.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="合同会社AdMoat">
+<meta property="og:url" content="https://admoat.net/column-utm.dc.html">
+<meta property="og:title" content="UTMパラメータとは？Meta広告での設定方法と、動的パラメータの使い方">
+<meta property="og:description" content="UTMパラメータの意味と5つの種類、Meta広告マネージャの「URLパラメータ」欄での設定方法、campaign.nameなどの動的パラメータの使い方と注意点、Googleアナリティクスでの確認方法を解説します。">
+<meta property="og:image" content="https://admoat.net/assets/column-utm.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta property="article:published_time" content="2026-10-09">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="UTMパラメータとは？Meta広告での設定方法と、動的パラメータの使い方">
+<meta name="twitter:description" content="UTMパラメータの意味と5つの種類、Meta広告マネージャの「URLパラメータ」欄での設定方法、campaign.nameなどの動的パラメータの使い方と注意点、Googleアナリティクスでの確認方法を解説します。">
+<meta name="twitter:image" content="https://admoat.net/assets/column-utm.jpg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "UTMパラメータとは？Meta広告での設定方法と、動的パラメータの使い方", "description": "UTMパラメータの意味と5つの種類、Meta広告マネージャの「URLパラメータ」欄での設定方法、campaign.nameなどの動的パラメータの使い方と注意点、Googleアナリティクスでの確認方法を解説します。", "image": ["https://admoat.net/assets/column-utm.jpg"], "datePublished": "2026-10-09", "dateModified": "2026-10-09", "inLanguage": "ja", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://admoat.net/column-utm.dc.html"}, "author": {"@type": "Organization", "name": "合同会社AdMoat", "url": "https://admoat.net/"}, "publisher": {"@type": "Organization", "name": "合同会社AdMoat", "url": "https://admoat.net/", "logo": {"@type": "ImageObject", "url": "https://admoat.net/assets/logo.png"}}}</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/><link rel="stylesheet" href="responsive.css"/><style>*{box-sizing:border-box;}body{margin:0;background:#FAF8F4;color:#211C17;font-family:'Noto Sans JP',sans-serif;-webkit-font-smoothing:antialiased;}a{color:inherit;}.wrap{max-width:1120px;margin:0 auto;padding:0 32px;}.disp{font-family:'Noto Serif JP',serif;font-weight:400;color:#211C17;letter-spacing:0.03em;}.lead{font-size:15px;line-height:2.2;color:#5A544C;}.btn{display:inline-block;text-decoration:none;font-size:13px;letter-spacing:0.1em;font-weight:500;color:#fff;background:#211C17;padding:16px 34px;border-radius:2px;}.lnk{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-size:13px;letter-spacing:0.08em;color:#211C17;border-bottom:1px solid #211C17;padding-bottom:4px;}.tag{display:inline-block;font-size:11px;font-weight:500;letter-spacing:0.06em;color:#fff;background:#BC4A28;padding:5px 12px;border-radius:2px;}.postdate{margin-left:12px;font-size:12px;color:#A89F92;letter-spacing:0.05em;}.posthero{margin-top:32px;border:1px solid #E1DACE;border-radius:4px;overflow:hidden;background:#F3EFE8;}.posthero img{width:100%;height:auto;display:block;}.body{font-size:15px;line-height:2.1;color:#3A352E;}.body p{margin:0 0 24px;}.body h2{font-family:'Noto Serif JP',serif;font-weight:500;font-size:22px;line-height:1.6;color:#211C17;margin:56px 0 20px;padding-bottom:12px;border-bottom:1px solid #E1DACE;}.body h3{font-weight:500;font-size:17px;color:#211C17;margin:32px 0 12px;}.body ul,.body ol{margin:0 0 24px;padding-left:1.4em;}.body li{margin:0 0 8px;}.formula{margin:0 0 24px;padding:18px 22px;background:#fff;border:1px solid #E1DACE;border-left:3px solid #BC4A28;font-weight:500;color:#211C17;line-height:1.8;}.codebox{margin:0 0 24px;padding:18px 20px;background:#211C17;color:#FAF8F4;border-radius:4px;font-size:13px;line-height:1.8;white-space:pre-wrap;word-break:break-all;}.tblwrap{margin:0 0 24px;overflow-x:auto;}.body table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.8;background:#fff;}.body th,.body td{border:1px solid #E1DACE;padding:10px 14px;text-align:left;vertical-align:top;}.body th{background:#F3EFE8;font-weight:500;color:#211C17;}.refs{margin-top:48px;padding-top:24px;border-top:1px solid #E1DACE;font-size:13px;line-height:1.9;color:#6F6860;}.refs a{color:#BC4A28;}.related{margin-top:40px;}.related a{display:block;padding:14px 0;border-top:1px solid #E1DACE;text-decoration:none;font-size:14px;color:#211C17;}.ctabox{background:#fff;border-top:1px solid #E7E1D7;}</style></helmet>
+<dc-import name="Header" active="blog" hint-size="100%,73px"></dc-import>
+<main style="overflow-x:hidden;">
+  <section style="background:#fff;border-bottom:1px solid #E7E1D7;">
+    <div class="wrap" style="max-width:760px;padding-top:56px;padding-bottom:56px;">
+      <a href="blog.dc.html" class="lnk" style-hover="color:#BC4A28;border-color:#BC4A28;">← ブログ一覧へ</a>
+      <div style="margin-top:28px;"><span class="tag">用語・計測</span><span class="postdate">2026.10.09</span></div>
+      <h1 class="disp" style="margin:18px 0 0;font-size:30px;line-height:1.6;">UTMパラメータとは？Meta広告での設定方法と、動的パラメータの使い方</h1>
+      <div class="posthero"><img src="assets/column-utm.jpg" alt="UTMパラメータの設定方法と動的パラメータ" width="1200" height="630"/></div>
+    </div>
+  </section>
+  <section style="padding:56px 0 72px;">
+    <div class="wrap" style="max-width:760px;">
+      <div class="body">
+        <p>Googleアナリティクスなどのアクセス解析で、「どの広告から来た人が予約したのか」を見分けたいときに使うのがUTMパラメータです。Meta広告では、広告マネージャの設定で、広告ごとにUTMパラメータを自動で付けることができます。この記事では、UTMパラメータの基本と、Meta広告での設定方法を解説します。</p>
+        <h2>UTMパラメータとは</h2>
+        <p>UTMパラメータは、URLの末尾に付ける「目印」です。たとえば「https://example.com/?utm_source=ig&amp;utm_medium=paid_social」のように付けておくと、アクセス解析ツールが、その訪問がどこから来たのかを記録できます。ページの表示内容には影響しません。</p>
+        <div class="tblwrap"><table><thead><tr><th>パラメータ</th><th>意味</th><th>例</th></tr></thead><tbody><tr><td>utm_source</td><td>流入元</td><td>fb、igなど</td></tr><tr><td>utm_medium</td><td>媒体の種類</td><td>paid_socialなど</td></tr><tr><td>utm_campaign</td><td>キャンペーン名</td><td>spring_trialなど</td></tr><tr><td>utm_content</td><td>広告やクリエイティブの区別</td><td>video_aなど</td></tr><tr><td>utm_term</td><td>キーワードなど（Meta広告では広告セット名に使うことが多い）</td><td>area_5kmなど</td></tr></tbody></table></div>
+        <h2>Meta広告での設定場所</h2>
+        <p>Meta広告では、広告の設定画面にある「トラッキング」の項目の「URLパラメータ」欄に入力します。「URLパラメータを作成」から、画面の案内に沿って作ることもできます。ウェブサイトURL欄そのものにUTMを書き込むのではなく、URLパラメータ欄を使うのが基本です。Metaのヘルプセンターによると、この欄に入力したパラメータは、重複しない限りウェブサイトURLに付け加えられます。</p>
+        <h2>動的パラメータで、広告ごとの名前を自動で入れる</h2>
+        <p>Meta広告には、キャンペーン名や広告名などを自動で埋め込める「動的パラメータ」があります。Metaのヘルプセンターで案内されている主なものは次のとおりです。</p>
+        <div class="tblwrap"><table><thead><tr><th>動的パラメータ</th><th>入る値</th></tr></thead><tbody><tr><td>{{ lb }}campaign.name{{ rb }}／{{ lb }}campaign.id{{ rb }}</td><td>キャンペーンの名前／ID</td></tr><tr><td>{{ lb }}adset.name{{ rb }}／{{ lb }}adset.id{{ rb }}</td><td>広告セットの名前／ID</td></tr><tr><td>{{ lb }}ad.name{{ rb }}／{{ lb }}ad.id{{ rb }}</td><td>広告の名前／ID</td></tr><tr><td>{{ lb }}placement{{ rb }}</td><td>配置（表示された面）</td></tr><tr><td>{{ lb }}site_source_name{{ rb }}</td><td>配信先のサイト（Facebook、Instagramなど）</td></tr></tbody></table></div>
+        <p>たとえば、URLパラメータ欄に次のように入力すると、広告ごとにキャンペーン名・広告セット名・広告名が自動で入ります。</p>
+        <pre class="codebox"><code>utm_source={{ lb }}site_source_name{{ rb }}&amp;utm_medium=paid_social&amp;utm_campaign={{ lb }}campaign.name{{ rb }}&amp;utm_term={{ lb }}adset.name{{ rb }}&amp;utm_content={{ lb }}ad.name{{ rb }}</code></pre>
+        <h2>設定するときの注意点</h2>
+        <ul><li>名前系の動的パラメータには、最初に公開したときの名前が使われる。公開後に名前を変えても、パラメータの値は変わらない</li><li>キャンペーン名や広告名は、アクセス解析で読んでわかる命名ルールを決めておく（例：目的_商品_日付）</li><li>表記ゆれ（大文字・小文字、全角・半角）があると、アクセス解析で別のものとして集計されることがある</li><li>他の場所（Instagramの設定など）で付けたパラメータは、広告マネージャのURLパラメータで上書きされることがある</li></ul>
+        <h2>Googleアナリティクスでの確認</h2>
+        <p>Googleアナリティクス4（GA4）では、集客のレポートで「セッションの参照元／メディア」や「セッションのキャンペーン」などのディメンションを選ぶと、UTMパラメータで付けた値ごとに訪問数や成果を確認できます。広告マネージャの数字とGA4の数字は数え方が異なるため、件数が一致しないことはよくあります。それぞれの役割を分けて使いましょう。</p>
+        <h2>よくある質問</h2>
+        <h3>Q. UTMパラメータを付けると、Meta広告の成果に影響しますか？</h3>
+        <p>URLの末尾に目印が付くだけなので、広告の配信や表示内容には基本的に影響しません。ただし、パラメータ付きのURLが正しく開けるかは、公開前にプレビューで確認しておきましょう。</p>
+        <h3>Q. 予約サイトにもUTMパラメータは使えますか？</h3>
+        <p>外部の予約サイトでは、パラメータを付けても、そのサイトのデータを自社のアクセス解析で見ることはできないのが一般的です。自社サイトを経由する導線にするか、予約サイト側の流入元の分析機能を確認しましょう。</p>
+        <h3>Q. utm_mediumは何と書けばよいですか？</h3>
+        <p>決まりはありませんが、GA4のチャネル分類に合わせたい場合は、Googleが案内しているチャネルの定義を確認して値を決めましょう。大切なのは、社内で表記を統一することです。</p>
+        <h2>まとめ</h2>
+        <p>UTMパラメータは、URLに付ける目印で、アクセス解析で広告ごとの成果を見分けるために使います。Meta広告では広告の「URLパラメータ」欄に設定し、動的パラメータを使えば、キャンペーン名や広告名を自動で入れられます。命名ルールを決めておくと、どの広告が予約につながったのかを、自分たちで振り返れるようになります。</p>
+      </div>
+      <div class="refs"><div style="font-weight:500;color:#211C17;">参考（Meta公式）</div><div><a href="https://www.facebook.com/business/help/2360940870872492" target="_blank" rel="noopener">動的URLパラメータの仕様（Metaビジネスヘルプセンター）</a></div><div><a href="https://www.facebook.com/business/help/1016122818401732" target="_blank" rel="noopener">Meta広告にURLパラメータを追加する（Metaビジネスヘルプセンター）</a></div><div style="margin-top:8px;">※記事の内容は公開日時点の情報です。Meta広告の仕様や管理画面の表記は変更されることがあります。</div></div>
+      <div class="related"><div style="font-weight:500;font-size:14px;color:#211C17;margin-bottom:6px;">あわせて読みたい</div><a href="column-cpa.dc.html" style-hover="color:#BC4A28;">CPAとは？Meta広告の獲得単価の計算方法と、店舗が決めるべき「上限CPA」</a><a href="column-roas.dc.html" style-hover="color:#BC4A28;">ROASとは？計算方法・ROIとの違いと、店舗が目安にすべき「損益分岐ROAS」</a><a href="column-cpm-cpc-ctr.dc.html" style-hover="color:#BC4A28;">CPM・CPC・CTRとは？Meta広告の基本指標の意味と、数字から原因を見つける方法</a></div>
+    </div>
+  </section>
+  <section class="ctabox" style="padding:96px 0;">
+    <div class="wrap" style="max-width:720px;text-align:center;">
+      <div style="font-size:11px;letter-spacing:0.24em;color:#BC4A28;font-weight:500;">CONSULTATION</div>
+      <h2 class="disp" style="margin:18px 0 0;font-size:28px;line-height:1.7;">広告の数字を、<br/>自分たちで判断できる店舗へ。</h2>
+      <p class="lead" style="margin:24px auto 0;max-width:560px;text-align:left;">AdMoatは運用代行をやめ、店舗が広告を内製化できるまで隣で走る「Meta広告伴走支援」に専念しています。指標の見方や計測の設定から、改善の判断まで、実際の広告画面と店舗の数字を見ながら一緒に進めます。初回のご相談は無料です。</p>
+      <div style="display:flex;gap:26px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:38px;"><a href="contact.dc.html" class="btn" style-hover="background:#BC4A28;">無料で相談する</a><a href="https://bansou.admoat.net/service/" class="lnk" style-hover="color:#BC4A28;border-color:#BC4A28;">伴走支援の詳細を見る</a></div>
+    </div>
+  </section>
+</main>
+<dc-import name="Footer" hint-size="100%,300px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:820}}">
+class Component extends DCLogic {
+  renderVals() {
+    return { lb: '{{', rb: '}}' };
+  }
+}
+</script>
+</body>
+</html>
