@@ -7,7 +7,7 @@
 </head>
 <body>
 <x-dc>
-<helmet><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/><link rel="stylesheet" href="responsive.css"/><style>.hdr{position:fixed;top:0;left:0;right:0;width:100%;z-index:60;background:rgba(250,248,244,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #E7E1D7;font-family:'Noto Sans JP',sans-serif;}.hdrin{max-width:1120px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;}.bmark{font-weight:500;font-size:19px;letter-spacing:0.08em;color:#211C17;}.burger{display:none;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid #E7E1D7;border-radius:4px;background:#fff;cursor:pointer;font-size:17px;color:#211C17;line-height:1;padding:0;}.nav{display:flex;align-items:center;gap:30px;justify-content:flex-end;}.cta{text-decoration:none;font-size:12px;font-weight:500;letter-spacing:0.1em;color:#211C17;padding:11px 22px;border:1px solid #211C17;border-radius:2px;}.spacer{height:73px;}</style></helmet><header class="hdr"><div class="hdrin"><a href="./" class="brand"><img src="assets/logo.png" alt="AdMoat" style="height:28px;width:auto;display:block;"/><span class="bmark">AdMoat</span></a><button type="button" class="burger am-burger" onClick="{{ onToggle }}" aria-label="メニュー">{{ burgerIcon }}</button><nav class="nav am-nav" data-open="{{ openStr }}"><sc-for list="{{ links }}" as="it" hint-placeholder-count="6"><a href="{{ it.href }}" style="{{ it.style }}" style-hover="color:#BC4A28;">{{ it.label }}</a></sc-for><a href="contact.dc.html" class="cta am-cta" style-hover="background:#211C17;color:#fff;">お問い合わせ</a></nav></div></header><div class="spacer"></div>
+<helmet><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/><link rel="stylesheet" href="responsive.css"/><style>.hdr{position:fixed;top:0;left:0;right:0;width:100%;z-index:60;background:rgba(250,248,244,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #E7E1D7;font-family:'Noto Sans JP',sans-serif;}.hdrin{max-width:1120px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;}.bmark{font-weight:500;font-size:19px;letter-spacing:0.08em;color:#211C17;}.burger{display:none;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid #E7E1D7;border-radius:4px;background:#fff;cursor:pointer;font-size:17px;color:#211C17;line-height:1;padding:0;}.nav{display:flex;align-items:center;gap:34px;justify-content:flex-end;}.cta{text-decoration:none;font-size:12px;font-weight:500;letter-spacing:0.1em;color:#211C17;padding:11px 22px;border:1px solid #211C17;border-radius:2px;}.spacer{height:73px;}</style><link rel="stylesheet" href="theme.css"/></helmet><header class="hdr"><div class="hdrin"><a href="./" class="brand"><img src="assets/logo.png" alt="AdMoat" style="height:28px;width:auto;display:block;"/><span class="bmark">AdMoat</span></a><button type="button" class="burger am-burger" onClick="{{ onToggle }}" aria-label="メニュー">{{ burgerIcon }}</button><nav class="nav am-nav" data-open="{{ openStr }}"><sc-for list="{{ links }}" as="it" hint-placeholder-count="6"><a href="{{ it.href }}" style="{{ it.style }}" style-hover="color:#C2410C;">{{ it.label }}</a></sc-for><a href="contact.dc.html" class="cta am-cta" style-hover="background:#9A3412;color:#fff;">お問い合わせ</a></nav></div></header><div class="spacer"></div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1120,&quot;height&quot;:73},&quot;active&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
 class Component extends DCLogic {
@@ -15,23 +15,23 @@ class Component extends DCLogic {
   renderVals() {
     const active = this.props.active ?? '';
     const items = [
-      { label: 'ホーム', href: './', key: 'home' },
-      { label: 'サービス', href: 'services.dc.html', key: 'services' },
+      { label: '伴走支援', href: 'accompaniment-support.dc.html', key: 'services' },
       { label: '事例', href: 'works.dc.html', key: 'works' },
-      { label: 'お知らせ', href: 'news.dc.html', key: 'news' },
+      { label: 'コラム', href: 'blog.dc.html', key: 'blog' },
       { label: '会社概要', href: 'company.dc.html', key: 'company' },
-      { label: 'ブログ', href: 'blog.dc.html', key: 'blog' },
-      { label: '採用', href: 'recruit.dc.html', key: 'recruit' },
     ];
     const links = items.map(it => ({
       label: it.label,
       href: it.href,
       style: {
         textDecoration: 'none',
-        fontSize: '13px',
-        letterSpacing: '0.04em',
-        fontWeight: active === it.key ? 700 : 400,
-        color: active === it.key ? '#BC4A28' : '#3A352E',
+        fontFamily: "'Shippori Mincho B1','Noto Serif JP',serif",
+        fontSize: '14px',
+        letterSpacing: '0.12em',
+        fontWeight: 700,
+        color: active === it.key ? '#C2410C' : '#333333',
+        paddingBottom: '4px',
+        borderBottom: active === it.key ? '2px solid #C2410C' : '2px solid transparent',
       },
     }));
     return {
