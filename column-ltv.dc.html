@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LTVとは？店舗ビジネスのLTVの計算方法と、広告費の上限を決める手順｜AdMoat</title>
+<meta name="description" content="LTV（顧客生涯価値）の意味と店舗ビジネスでの計算方法、粗利ベースで考える理由、LTVから広告費の上限（許容CPA）を逆算する手順を、計算例つきで解説します。">
+<link rel="canonical" href="https://admoat.net/column-ltv.dc.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="合同会社AdMoat">
+<meta property="og:url" content="https://admoat.net/column-ltv.dc.html">
+<meta property="og:title" content="LTVとは？店舗ビジネスのLTVの計算方法と、広告費の上限を決める手順">
+<meta property="og:description" content="LTV（顧客生涯価値）の意味と店舗ビジネスでの計算方法、粗利ベースで考える理由、LTVから広告費の上限（許容CPA）を逆算する手順を、計算例つきで解説します。">
+<meta property="og:image" content="https://admoat.net/assets/column-ltv.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta property="article:published_time" content="2026-10-09">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LTVとは？店舗ビジネスのLTVの計算方法と、広告費の上限を決める手順">
+<meta name="twitter:description" content="LTV（顧客生涯価値）の意味と店舗ビジネスでの計算方法、粗利ベースで考える理由、LTVから広告費の上限（許容CPA）を逆算する手順を、計算例つきで解説します。">
+<meta name="twitter:image" content="https://admoat.net/assets/column-ltv.jpg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "LTVとは？店舗ビジネスのLTVの計算方法と、広告費の上限を決める手順", "description": "LTV（顧客生涯価値）の意味と店舗ビジネスでの計算方法、粗利ベースで考える理由、LTVから広告費の上限（許容CPA）を逆算する手順を、計算例つきで解説します。", "image": ["https://admoat.net/assets/column-ltv.jpg"], "datePublished": "2026-10-09", "dateModified": "2026-10-09", "inLanguage": "ja", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://admoat.net/column-ltv.dc.html"}, "author": {"@type": "Organization", "name": "合同会社AdMoat", "url": "https://admoat.net/"}, "publisher": {"@type": "Organization", "name": "合同会社AdMoat", "url": "https://admoat.net/", "logo": {"@type": "ImageObject", "url": "https://admoat.net/assets/logo.png"}}}</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/><link rel="stylesheet" href="responsive.css"/><style>*{box-sizing:border-box;}body{margin:0;background:#FAF8F4;color:#211C17;font-family:'Noto Sans JP',sans-serif;-webkit-font-smoothing:antialiased;}a{color:inherit;}.wrap{max-width:1120px;margin:0 auto;padding:0 32px;}.disp{font-family:'Noto Serif JP',serif;font-weight:400;color:#211C17;letter-spacing:0.03em;}.lead{font-size:15px;line-height:2.2;color:#5A544C;}.btn{display:inline-block;text-decoration:none;font-size:13px;letter-spacing:0.1em;font-weight:500;color:#fff;background:#211C17;padding:16px 34px;border-radius:2px;}.lnk{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-size:13px;letter-spacing:0.08em;color:#211C17;border-bottom:1px solid #211C17;padding-bottom:4px;}.tag{display:inline-block;font-size:11px;font-weight:500;letter-spacing:0.06em;color:#fff;background:#BC4A28;padding:5px 12px;border-radius:2px;}.postdate{margin-left:12px;font-size:12px;color:#A89F92;letter-spacing:0.05em;}.posthero{margin-top:32px;border:1px solid #E1DACE;border-radius:4px;overflow:hidden;background:#F3EFE8;}.posthero img{width:100%;height:auto;display:block;}.body{font-size:15px;line-height:2.1;color:#3A352E;}.body p{margin:0 0 24px;}.body h2{font-family:'Noto Serif JP',serif;font-weight:500;font-size:22px;line-height:1.6;color:#211C17;margin:56px 0 20px;padding-bottom:12px;border-bottom:1px solid #E1DACE;}.body h3{font-weight:500;font-size:17px;color:#211C17;margin:32px 0 12px;}.body ul,.body ol{margin:0 0 24px;padding-left:1.4em;}.body li{margin:0 0 8px;}.formula{margin:0 0 24px;padding:18px 22px;background:#fff;border:1px solid #E1DACE;border-left:3px solid #BC4A28;font-weight:500;color:#211C17;line-height:1.8;}.codebox{margin:0 0 24px;padding:18px 20px;background:#211C17;color:#FAF8F4;border-radius:4px;font-size:13px;line-height:1.8;white-space:pre-wrap;word-break:break-all;}.tblwrap{margin:0 0 24px;overflow-x:auto;}.body table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.8;background:#fff;}.body th,.body td{border:1px solid #E1DACE;padding:10px 14px;text-align:left;vertical-align:top;}.body th{background:#F3EFE8;font-weight:500;color:#211C17;}.refs{margin-top:48px;padding-top:24px;border-top:1px solid #E1DACE;font-size:13px;line-height:1.9;color:#6F6860;}.refs a{color:#BC4A28;}.related{margin-top:40px;}.related a{display:block;padding:14px 0;border-top:1px solid #E1DACE;text-decoration:none;font-size:14px;color:#211C17;}.ctabox{background:#fff;border-top:1px solid #E7E1D7;}</style></helmet>
+<dc-import name="Header" active="blog" hint-size="100%,73px"></dc-import>
+<main style="overflow-x:hidden;">
+  <section style="background:#fff;border-bottom:1px solid #E7E1D7;">
+    <div class="wrap" style="max-width:760px;padding-top:56px;padding-bottom:56px;">
+      <a href="blog.dc.html" class="lnk" style-hover="color:#BC4A28;border-color:#BC4A28;">← ブログ一覧へ</a>
+      <div style="margin-top:28px;"><span class="tag">用語・計測</span><span class="postdate">2026.10.09</span></div>
+      <h1 class="disp" style="margin:18px 0 0;font-size:30px;line-height:1.6;">LTVとは？店舗ビジネスのLTVの計算方法と、広告費の上限を決める手順</h1>
+      <div class="posthero"><img src="assets/column-ltv.jpg" alt="LTVから広告費の上限を決める" width="1200" height="630"/></div>
+    </div>
+  </section>
+  <section style="padding:56px 0 72px;">
+    <div class="wrap" style="max-width:760px;">
+      <div class="body">
+        <p>広告の成果を初回の売上だけで判断すると、「広告費が高すぎる」と感じて、本来続けるべき広告を止めてしまうことがあります。継続利用やリピートが前提の店舗ビジネスでは、お客様1人が長い期間でもたらす価値「LTV」を知ることが、広告費を判断する土台になります。この記事では、LTVの計算方法と、LTVから広告費の上限を決める手順を解説します。</p>
+        <h2>LTVとは「お客様1人が、取引期間全体でもたらす価値」</h2>
+        <p>LTVは「Life Time Value」の略で、顧客生涯価値と訳されます。1人のお客様が、最初の利用からやめるまでの間に、店舗にもたらす売上や利益の合計を表します。</p>
+        <h2>店舗ビジネスでのLTVの基本的な計算方法</h2>
+        <p>LTVの計算方法にはいくつかの考え方がありますが、店舗で使いやすいのは次の式です。</p>
+        <div class="formula">LTV（売上）＝ 平均客単価 × 平均利用頻度（年あたり）× 平均継続期間（年）</div>
+        <p>広告費の判断に使う場合は、売上ではなく粗利で考えるのがおすすめです。売上から原価や施術・提供にかかる直接費用を差し引いた粗利から、広告費を払うことになるからです。</p>
+        <div class="formula">粗利ベースのLTV ＝ LTV（売上）× 粗利率</div>
+        <p>月額制のサービスであれば、「月額料金 × 平均継続月数 × 粗利率」で計算できます。平均継続月数がわからない場合は、まず直近の会員や顧客のデータから、何か月続いているかを集計するところから始めましょう。</p>
+        <h2>LTVから広告費の上限を逆算する手順</h2>
+        <p>LTVがわかると、「新規のお客様1人を獲得するために、いくらまで広告費を使えるか」を決められます。手順は次のとおりです。</p>
+        <ol><li>粗利ベースのLTVを計算する</li><li>そこから、確保したい利益を差し引き、顧客1人あたりの上限獲得コストを決める</li><li>広告で計測する成果（予約や問い合わせ）から、成約までの割合（来店率・成約率など）を掛けて、成果1件あたりの上限に換算する</li></ol>
+        <h3>計算例（仮の数字）</h3>
+        <p>月額1万円・粗利率60%・平均継続10か月のサービスの場合、粗利ベースのLTVは6万円です。このうち3万円を利益として残したいなら、顧客1人の獲得に使える上限は3万円になります。体験予約からの来店率が80%、来店からの入会率が50%なら、体験予約1件あたりの上限は3万円×0.8×0.5＝1万2,000円です。</p>
+        <p>この「1万2,000円」が、Meta広告マネージャで見る予約1件あたりの単価（CPA）の上限の目安になります。初回の売上だけで見ると高く感じる金額でも、LTVで見れば十分に利益が出る、ということがわかります。</p>
+        <h2>LTVを使うときの注意点</h2>
+        <ul><li>平均値は、開業直後やデータが少ない時期には大きくぶれる。最初は控えめな数字で計算する</li><li>広告経由のお客様と、紹介や口コミ経由のお客様では、継続率が違うことがある。できれば分けて見る</li><li>LTVは「使える上限」であり、広告費をそこまで使うべきという意味ではない。資金繰りや回収期間もあわせて考える</li></ul>
+        <p>特に回収期間は重要です。LTVで見て黒字でも、広告費を先に払い、利益は何か月もかけて回収することになるため、手元資金に余裕がないと続けられません。何か月で広告費を回収できるかも、あわせて計算しておきましょう。</p>
+        <h2>LTVを集計するときに用意したいデータ</h2>
+        <ul><li>お客様ごとの初回利用日と最終利用日（継続期間の計算に使う）</li><li>期間内の利用回数と支払金額の合計</li><li>商品・メニューごとの原価や直接費用（粗利率の計算に使う）</li><li>どの経路で来店したか（広告・紹介・検索など）</li></ul>
+        <p>予約システムやPOSレジのデータを書き出せれば、表計算ソフトで集計できます。最初から完璧を目指さず、まずは直近1年分など、手元にあるデータで計算してみましょう。</p>
+        <h2>よくある質問</h2>
+        <h3>Q. 開業したばかりで、LTVのデータがありません。</h3>
+        <p>最初は、想定する継続期間を控えめに置いて計算し、実績がたまったら更新していきましょう。同業他社の一般的な数字を参考にする場合も、自店の実績で必ず見直すことが大切です。</p>
+        <h3>Q. LTVを上げるには、何から取り組めばよいですか？</h3>
+        <p>継続期間、利用頻度、客単価のどれかを伸ばすことになります。店舗では、初回来店後のフォローや次回予約の取り方など、広告の外側の取り組みが大きく影響します。広告だけで判断せず、接客やフォローとあわせて改善しましょう。</p>
+        <h3>Q. LTVは売上と粗利、どちらで計算すべきですか？</h3>
+        <p>広告費の上限を決める目的なら、粗利で計算するのがおすすめです。売上ベースのLTVで上限を決めると、原価や直接費用の分だけ広告費を使いすぎてしまうおそれがあります。</p>
+        <h2>まとめ</h2>
+        <p>LTVは、客単価・利用頻度・継続期間から計算でき、粗利ベースで見ることで広告費の上限を決める根拠になります。LTVから逆算した上限CPAを持っておけば、管理画面の数字を見たときに「続ける」「改善する」「止める」を自分たちで判断できるようになります。まずは自店の平均客単価と継続期間を集計するところから始めてみてください。</p>
+      </div>
+      
+      <div class="related"><div style="font-weight:500;font-size:14px;color:#211C17;margin-bottom:6px;">あわせて読みたい</div><a href="column-frequency.dc.html" style-hover="color:#BC4A28;">フリークエンシーとは？Meta広告の表示回数の目安と、広告疲れを防ぐ見方</a><a href="column-learning-phase.dc.html" style-hover="color:#BC4A28;">Meta広告の学習期間（学習フェーズ）とは？終わる条件と、やってはいけない編集</a><a href="column-utm.dc.html" style-hover="color:#BC4A28;">UTMパラメータとは？Meta広告での設定方法と、動的パラメータの使い方</a></div>
+    </div>
+  </section>
+  <section class="ctabox" style="padding:96px 0;">
+    <div class="wrap" style="max-width:720px;text-align:center;">
+      <div style="font-size:11px;letter-spacing:0.24em;color:#BC4A28;font-weight:500;">CONSULTATION</div>
+      <h2 class="disp" style="margin:18px 0 0;font-size:28px;line-height:1.7;">広告の数字を、<br/>自分たちで判断できる店舗へ。</h2>
+      <p class="lead" style="margin:24px auto 0;max-width:560px;text-align:left;">AdMoatは運用代行をやめ、店舗が広告を内製化できるまで隣で走る「Meta広告伴走支援」に専念しています。指標の見方や計測の設定から、改善の判断まで、実際の広告画面と店舗の数字を見ながら一緒に進めます。初回のご相談は無料です。</p>
+      <div style="display:flex;gap:26px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:38px;"><a href="contact.dc.html" class="btn" style-hover="background:#BC4A28;">無料で相談する</a><a href="https://bansou.admoat.net/service/" class="lnk" style-hover="color:#BC4A28;border-color:#BC4A28;">伴走支援の詳細を見る</a></div>
+    </div>
+  </section>
+</main>
+<dc-import name="Footer" hint-size="100%,300px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:820}}">
+class Component extends DCLogic {
+  renderVals() {
+    return { lb: '{{', rb: '}}' };
+  }
+}
+</script>
+</body>
+</html>

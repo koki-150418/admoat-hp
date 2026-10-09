@@ -32,6 +32,7 @@
 | `/news.dc.html` | ニュース |
 | `/recruit.dc.html` | 採用情報 |
 | `/blog.dc.html` ・ `/blog-post.dc.html` | ブログ（一覧・記事） |
+| `/column-*.dc.html` | 用語・計測コラム（10本。手動管理・スプレッドシート同期の対象外。一覧は `blog.dc.html` の `columns` 配列、sitemapは `COLUMNS (manual)` 欄） |
 | `/faq.dc.html` | よくある質問 |
 | `/contact.dc.html` | お問い合わせ |
 

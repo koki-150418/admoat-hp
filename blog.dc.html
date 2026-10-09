@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ブログ｜Meta広告の用語・計測の基本｜合同会社AdMoat</title>
+<meta name="description" content="CPA・ROAS・CTRなどのMeta広告用語、Metaピクセルやコンバージョン計測の基本、店舗集客のヒントを、店舗ビジネス向けにわかりやすく解説します。">
+<link rel="canonical" href="https://admoat.net/blog.dc.html">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -16,7 +19,7 @@
     <div class="wrap" style="padding-top:80px;padding-bottom:72px;">
       <div class="eyebrow">BLOG</div>
       <h1 class="disp" style="margin:24px 0 0;font-size:40px;line-height:1.5;">ブログ</h1>
-      <p class="lead" style="margin:24px 0 0;max-width:600px;">Meta広告・運用ノウハウ・店舗集客のヒントを発信します。</p>
+      <p class="lead" style="margin:24px 0 0;max-width:600px;">Meta広告の用語・計測の基本から、店舗集客のヒントまで発信します。</p>
     </div>
   </section>
 
@@ -58,6 +61,19 @@
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:820}}">
 class Component extends DCLogic {
   renderVals() {
+    // 用語・計測コラム（手動管理。スプレッドシート同期の対象外）
+    const columns = [
+      { cat: '用語・計測', date: '2026.10.09', title: "CPAとは？Meta広告の獲得単価の計算方法と、店舗が決めるべき「上限CPA」", excerpt: "CPAの計算式から、利益をもとに「いくらまで使えるか」を決める考え方まで整理しました。", href: 'column-cpa.dc.html', imgStyle: 'background:url(assets/column-cpa.jpg) center/cover no-repeat;', hasImage: true },
+      { cat: '用語・計測', date: '2026.10.09', title: "ROASとは？計算方法・ROIとの違いと、店舗が目安にすべき「損益分岐ROAS」", excerpt: "ROASの計算式と、粗利率から「黒字になるライン」を出す方法をまとめました。", href: 'column-roas.dc.html', imgStyle: 'background:url(assets/column-roas.jpg) center/cover no-repeat;', hasImage: true },
+      { cat: '用語・計測', date: '2026.10.09', title: "CPM・CPC・CTRとは？Meta広告の基本指標の意味と、数字から原因を見つける方法", excerpt: "CPM・CPC・CTRの意味と、3つの関係から改善ポイントを見つける方法を整理しました。", href: 'column-cpm-cpc-ctr.dc.html', imgStyle: 'background:url(assets/column-cpm-cpc-ctr.jpg) center/cover no-repeat;', hasImage: true },
+      { cat: '用語・計測', date: '2026.10.09', title: "Metaピクセルとは？できることと設置方法、店舗サイトで計測したいイベント", excerpt: "Metaピクセルの役割と設置手順、店舗が計測したい標準イベントをまとめました。", href: 'column-meta-pixel.dc.html', imgStyle: 'background:url(assets/column-meta-pixel.jpg) center/cover no-repeat;', hasImage: true },
+      { cat: '用語・計測', date: '2026.10.09', title: "コンバージョンAPIとは？Metaピクセルとの違いと、併用するときの重複排除", excerpt: "コンバージョンAPIがピクセルを補う理由と、併用時に欠かせない重複排除の考え方を解説します。", href: 'column-conversions-api.dc.html', imgStyle: 'background:url(assets/column-conversions-api.jpg) center/cover no-repeat;', hasImage: true },
+      { cat: '用語・計測', date: '2026.10.09', title: "Meta広告のコンバージョン数が合わない理由｜アトリビューション設定と計測のズレ", excerpt: "管理画面の成果数と実際の予約数がずれる主な理由と、アトリビューション設定の読み方を解説します。", href: 'column-attribution.dc.html', imgStyle: 'background:url(assets/column-attribution.jpg) center/cover no-repeat;', hasImage: true },
+      { cat: '用語・計測', date: '2026.10.09', title: "LTVとは？店舗ビジネスのLTVの計算方法と、広告費の上限を決める手順", excerpt: "店舗のLTVの出し方と、そこから「1件あたりいくらまで広告費を使えるか」を逆算する方法です。", href: 'column-ltv.dc.html', imgStyle: 'background:url(assets/column-ltv.jpg) center/cover no-repeat;', hasImage: true },
+      { cat: '用語・計測', date: '2026.10.09', title: "フリークエンシーとは？Meta広告の表示回数の目安と、広告疲れを防ぐ見方", excerpt: "フリークエンシーの意味と、商圏の狭い店舗が気をつけたい「広告疲れ」の見分け方です。", href: 'column-frequency.dc.html', imgStyle: 'background:url(assets/column-frequency.jpg) center/cover no-repeat;', hasImage: true },
+      { cat: '用語・計測', date: '2026.10.09', title: "Meta広告の学習期間（学習フェーズ）とは？終わる条件と、やってはいけない編集", excerpt: "学習期間が終わる目安と、学習をやり直しにしてしまう編集、学習が制限される原因をまとめました。", href: 'column-learning-phase.dc.html', imgStyle: 'background:url(assets/column-learning-phase.jpg) center/cover no-repeat;', hasImage: true },
+      { cat: '用語・計測', date: '2026.10.09', title: "UTMパラメータとは？Meta広告での設定方法と、動的パラメータの使い方", excerpt: "Meta広告にUTMパラメータを設定して、どの広告からの訪問かをアクセス解析で見分ける方法です。", href: 'column-utm.dc.html', imgStyle: 'background:url(assets/column-utm.jpg) center/cover no-repeat;', hasImage: true },
+    ];
     const posts = [
       /* POSTS:START */
       { cat: '運用ノウハウ', date: '2026.06.20', title: 'Meta広告で"最初の1万円"を無駄にしない初期設計の考え方', excerpt: 'はじめてのMeta広告で意識したい、予算配分とターゲティングの基本を整理しました。', href: 'post-twv0yew6gwri.dc.html', imgStyle: '', hasImage: false },
@@ -65,7 +81,7 @@ class Component extends DCLogic {
       { cat: '採用広告', date: '2026.06.03', title: '求人媒体に頼らない。Meta広告で採用母集団をつくる', excerpt: '採用にもMeta広告が有効な理由と、応募に繋げるための配信設計を紹介します。', href: 'post-1783256251770dy3kt2m3.dc.html', imgStyle: '', hasImage: false },
       /* POSTS:END */
     ];
-    return { posts };
+    return { posts: [...columns, ...posts] };
   }
 }
 </script>

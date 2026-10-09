@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CPM・CPC・CTRとは？Meta広告の基本指標の意味と、数字から原因を見つける方法｜AdMoat</title>
+<meta name="description" content="Meta広告のCPM（1,000インプレッション単価）・CPC（リンククリックの単価）・CTR（リンククリック率）の意味と計算式、3つの関係と、数字が悪いときにどこを見直すかを解説します。">
+<link rel="canonical" href="https://admoat.net/column-cpm-cpc-ctr.dc.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="合同会社AdMoat">
+<meta property="og:url" content="https://admoat.net/column-cpm-cpc-ctr.dc.html">
+<meta property="og:title" content="CPM・CPC・CTRとは？Meta広告の基本指標の意味と、数字から原因を見つける方法">
+<meta property="og:description" content="Meta広告のCPM（1,000インプレッション単価）・CPC（リンククリックの単価）・CTR（リンククリック率）の意味と計算式、3つの関係と、数字が悪いときにどこを見直すかを解説します。">
+<meta property="og:image" content="https://admoat.net/assets/column-cpm-cpc-ctr.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta property="article:published_time" content="2026-10-09">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CPM・CPC・CTRとは？Meta広告の基本指標の意味と、数字から原因を見つける方法">
+<meta name="twitter:description" content="Meta広告のCPM（1,000インプレッション単価）・CPC（リンククリックの単価）・CTR（リンククリック率）の意味と計算式、3つの関係と、数字が悪いときにどこを見直すかを解説します。">
+<meta name="twitter:image" content="https://admoat.net/assets/column-cpm-cpc-ctr.jpg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "CPM・CPC・CTRとは？Meta広告の基本指標の意味と、数字から原因を見つける方法", "description": "Meta広告のCPM（1,000インプレッション単価）・CPC（リンククリックの単価）・CTR（リンククリック率）の意味と計算式、3つの関係と、数字が悪いときにどこを見直すかを解説します。", "image": ["https://admoat.net/assets/column-cpm-cpc-ctr.jpg"], "datePublished": "2026-10-09", "dateModified": "2026-10-09", "inLanguage": "ja", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://admoat.net/column-cpm-cpc-ctr.dc.html"}, "author": {"@type": "Organization", "name": "合同会社AdMoat", "url": "https://admoat.net/"}, "publisher": {"@type": "Organization", "name": "合同会社AdMoat", "url": "https://admoat.net/", "logo": {"@type": "ImageObject", "url": "https://admoat.net/assets/logo.png"}}}</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/><link rel="stylesheet" href="responsive.css"/><style>*{box-sizing:border-box;}body{margin:0;background:#FAF8F4;color:#211C17;font-family:'Noto Sans JP',sans-serif;-webkit-font-smoothing:antialiased;}a{color:inherit;}.wrap{max-width:1120px;margin:0 auto;padding:0 32px;}.disp{font-family:'Noto Serif JP',serif;font-weight:400;color:#211C17;letter-spacing:0.03em;}.lead{font-size:15px;line-height:2.2;color:#5A544C;}.btn{display:inline-block;text-decoration:none;font-size:13px;letter-spacing:0.1em;font-weight:500;color:#fff;background:#211C17;padding:16px 34px;border-radius:2px;}.lnk{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-size:13px;letter-spacing:0.08em;color:#211C17;border-bottom:1px solid #211C17;padding-bottom:4px;}.tag{display:inline-block;font-size:11px;font-weight:500;letter-spacing:0.06em;color:#fff;background:#BC4A28;padding:5px 12px;border-radius:2px;}.postdate{margin-left:12px;font-size:12px;color:#A89F92;letter-spacing:0.05em;}.posthero{margin-top:32px;border:1px solid #E1DACE;border-radius:4px;overflow:hidden;background:#F3EFE8;}.posthero img{width:100%;height:auto;display:block;}.body{font-size:15px;line-height:2.1;color:#3A352E;}.body p{margin:0 0 24px;}.body h2{font-family:'Noto Serif JP',serif;font-weight:500;font-size:22px;line-height:1.6;color:#211C17;margin:56px 0 20px;padding-bottom:12px;border-bottom:1px solid #E1DACE;}.body h3{font-weight:500;font-size:17px;color:#211C17;margin:32px 0 12px;}.body ul,.body ol{margin:0 0 24px;padding-left:1.4em;}.body li{margin:0 0 8px;}.formula{margin:0 0 24px;padding:18px 22px;background:#fff;border:1px solid #E1DACE;border-left:3px solid #BC4A28;font-weight:500;color:#211C17;line-height:1.8;}.codebox{margin:0 0 24px;padding:18px 20px;background:#211C17;color:#FAF8F4;border-radius:4px;font-size:13px;line-height:1.8;white-space:pre-wrap;word-break:break-all;}.tblwrap{margin:0 0 24px;overflow-x:auto;}.body table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.8;background:#fff;}.body th,.body td{border:1px solid #E1DACE;padding:10px 14px;text-align:left;vertical-align:top;}.body th{background:#F3EFE8;font-weight:500;color:#211C17;}.refs{margin-top:48px;padding-top:24px;border-top:1px solid #E1DACE;font-size:13px;line-height:1.9;color:#6F6860;}.refs a{color:#BC4A28;}.related{margin-top:40px;}.related a{display:block;padding:14px 0;border-top:1px solid #E1DACE;text-decoration:none;font-size:14px;color:#211C17;}.ctabox{background:#fff;border-top:1px solid #E7E1D7;}</style></helmet>
+<dc-import name="Header" active="blog" hint-size="100%,73px"></dc-import>
+<main style="overflow-x:hidden;">
+  <section style="background:#fff;border-bottom:1px solid #E7E1D7;">
+    <div class="wrap" style="max-width:760px;padding-top:56px;padding-bottom:56px;">
+      <a href="blog.dc.html" class="lnk" style-hover="color:#BC4A28;border-color:#BC4A28;">← ブログ一覧へ</a>
+      <div style="margin-top:28px;"><span class="tag">用語・計測</span><span class="postdate">2026.10.09</span></div>
+      <h1 class="disp" style="margin:18px 0 0;font-size:30px;line-height:1.6;">CPM・CPC・CTRとは？Meta広告の基本指標の意味と、数字から原因を見つける方法</h1>
+      <div class="posthero"><img src="assets/column-cpm-cpc-ctr.jpg" alt="CPM・CPC・CTRとは？数字から原因を見つける" width="1200" height="630"/></div>
+    </div>
+  </section>
+  <section style="padding:56px 0 72px;">
+    <div class="wrap" style="max-width:760px;">
+      <div class="body">
+        <p>Meta広告マネージャを開くと、CPM、CPC、CTRといったアルファベットの指標が並んでいます。どれも広告の状態を知るための基本指標ですが、意味と関係を理解しておかないと、「どこが悪いのか」を判断できません。この記事では、3つの指標の意味と計算式、そして数字から改善ポイントを見つける考え方を解説します。</p>
+        <h2>CPM：広告が1,000回表示されるのにかかった費用</h2>
+        <p>CPMは「Cost Per Mille」の略で、広告が1,000回表示（インプレッション）されるごとにかかった平均費用です。</p>
+        <div class="formula">CPM ＝ 消化金額 ÷ インプレッション数 × 1,000</div>
+        <p>CPMは、広告を見せるための「場所代」のようなものです。配信先の競合が多い時期やターゲット、配信面によって変動します。同じ広告でも、CPMが上がれば同じ予算で表示できる回数は減ります。</p>
+        <h2>CPC：リンクが1回クリックされるのにかかった費用</h2>
+        <p>CPCは「Cost Per Click」の略です。Meta広告マネージャでは「CPC（リンククリックの単価）」と「CPC（すべて）」が分かれています。Metaのヘルプセンターでは、CPC（リンククリックの単価）は消化金額をリンククリック数で割ったものと説明されています。</p>
+        <div class="formula">CPC（リンククリックの単価）＝ 消化金額 ÷ リンククリック数</div>
+        <p>「（すべて）」のほうには、いいねやプロフィールへのクリック、画像を広げる操作など、サイトへの移動以外のクリックも含まれます。予約ページやLPへの誘導が目的なら、リンククリックの指標を見るのが基本です。</p>
+        <h2>CTR：広告を見た人のうち、リンクをクリックした割合</h2>
+        <p>CTRは「Click Through Rate」の略で、クリック率のことです。こちらも「CTR（リンククリックスルー率）」と「CTR（すべて）」があり、前者はインプレッションのうちリンククリックが発生した割合を表します。</p>
+        <div class="formula">CTR（リンククリックスルー率）＝ リンククリック数 ÷ インプレッション数 × 100（%）</div>
+        <p>CTRは、広告クリエイティブや訴求が、見た人にとって「クリックしたい」と思える内容かどうかを測る目安になります。</p>
+        <h2>3つの指標の関係を知ると、原因が見つけやすくなる</h2>
+        <p>CPM・CPC・CTRは、次のような関係でつながっています。</p>
+        <div class="formula">CPC ＝ CPM ÷（CTR × 1,000）　※CTRは小数で計算（1%なら0.01）</div>
+        <p>たとえばCPMが1,000円、CTRが1%ならCPCは100円です。CTRが2%に上がればCPCは50円になります（仮の数字による計算例です）。つまり、CPCが高いときは「表示単価が高い（CPM）」のか「クリックされていない（CTR）」のかを分けて見ることで、原因を絞り込めます。</p>
+        <ul><li>CPMが高い：競合が多い時期やターゲット、配信面の影響を確認する。ターゲットを狭めすぎていないかも見直す</li><li>CTRが低い：画像・動画の最初の数秒、見出し、オファーなど、クリエイティブと訴求を見直す</li><li>CTRは高いのに成果が出ない：広告とLP・予約ページの内容がずれていないか、ページで離脱していないかを確認する</li></ul>
+        <h2>指標は「成果」までつなげて見る</h2>
+        <p>CPM・CPC・CTRは、広告の途中経過を表す指標です。CTRが高くても予約につながらなければ、店舗にとっての価値は生まれません。最終的には、予約・来店・成約までの数字とつなげ、「どこで詰まっているか」を見つけるために使うことが大切です。</p>
+        <h2>数字を見るときの3つのコツ</h2>
+        <ul><li>期間をそろえる：曜日や月初・月末で数字は動くため、同じ長さの期間同士で比べる</li><li>件数が少ないうちは判断しない：表示回数やクリック数が少ないと、数字が大きくぶれる</li><li>「（すべて）」と「リンク」を混ぜない：比較するときは、どちらの指標を使うかを決めておく</li></ul>
+        <h2>よくある質問</h2>
+        <h3>Q. CTRは何%あれば良いですか？</h3>
+        <p>業種、配信面、クリエイティブの形式、目的によって大きく変わるため、一律の基準はありません。自店の過去の数字や、同じ広告セット内のクリエイティブ同士を比べて、相対的に良し悪しを判断するのがおすすめです。</p>
+        <h3>Q. CPMが高いのは悪いことですか？</h3>
+        <p>必ずしも悪いとは限りません。CPMが高くても、CTRや成約率が高く、最終的なCPAが上限以内に収まっていれば問題ありません。CPMは、他の指標とあわせて見ることで意味を持ちます。</p>
+        <h3>Q. 「リンクのクリック」と「アウトバウンドクリック」は何が違いますか？</h3>
+        <p>どちらもMeta広告マネージャの指標ですが、アウトバウンドクリックはMetaのサービスの外へ移動したクリックを数えるもので、リンクのクリックより範囲が限られます。予約ページなど外部サイトへの誘導を見たいときは、両方の定義をヘルプセンターで確認したうえで、比較に使う指標をそろえましょう。</p>
+        <h2>まとめ</h2>
+        <p>CPMは表示の単価、CPCはクリックの単価、CTRはクリックされた割合です。CPCはCPMとCTRに分解できるため、数字が悪いときは「表示単価の問題か、クリエイティブの問題か、その先のページの問題か」を順番に確認していきましょう。指標の意味がわかると、管理画面の数字から次の一手を自分たちで決められるようになります。</p>
+      </div>
+      <div class="refs"><div style="font-weight:500;color:#211C17;">参考（Meta公式）</div><div><a href="https://www.facebook.com/business/help/683065845109838" target="_blank" rel="noopener">CPC（リンククリックの単価）（Metaビジネスヘルプセンター）</a></div><div><a href="https://www.facebook.com/business/help/877711998984611" target="_blank" rel="noopener">CTR（リンククリックスルー率）（Metaビジネスヘルプセンター）</a></div><div><a href="https://www.facebook.com/business/help/753932008002620" target="_blank" rel="noopener">CPM（Metaビジネスヘルプセンター）</a></div><div style="margin-top:8px;">※記事の内容は公開日時点の情報です。Meta広告の仕様や管理画面の表記は変更されることがあります。</div></div>
+      <div class="related"><div style="font-weight:500;font-size:14px;color:#211C17;margin-bottom:6px;">あわせて読みたい</div><a href="column-meta-pixel.dc.html" style-hover="color:#BC4A28;">Metaピクセルとは？できることと設置方法、店舗サイトで計測したいイベント</a><a href="column-conversions-api.dc.html" style-hover="color:#BC4A28;">コンバージョンAPIとは？Metaピクセルとの違いと、併用するときの重複排除</a><a href="column-attribution.dc.html" style-hover="color:#BC4A28;">Meta広告のコンバージョン数が合わない理由｜アトリビューション設定と計測のズレ</a></div>
+    </div>
+  </section>
+  <section class="ctabox" style="padding:96px 0;">
+    <div class="wrap" style="max-width:720px;text-align:center;">
+      <div style="font-size:11px;letter-spacing:0.24em;color:#BC4A28;font-weight:500;">CONSULTATION</div>
+      <h2 class="disp" style="margin:18px 0 0;font-size:28px;line-height:1.7;">広告の数字を、<br/>自分たちで判断できる店舗へ。</h2>
+      <p class="lead" style="margin:24px auto 0;max-width:560px;text-align:left;">AdMoatは運用代行をやめ、店舗が広告を内製化できるまで隣で走る「Meta広告伴走支援」に専念しています。指標の見方や計測の設定から、改善の判断まで、実際の広告画面と店舗の数字を見ながら一緒に進めます。初回のご相談は無料です。</p>
+      <div style="display:flex;gap:26px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:38px;"><a href="contact.dc.html" class="btn" style-hover="background:#BC4A28;">無料で相談する</a><a href="https://bansou.admoat.net/service/" class="lnk" style-hover="color:#BC4A28;border-color:#BC4A28;">伴走支援の詳細を見る</a></div>
+    </div>
+  </section>
+</main>
+<dc-import name="Footer" hint-size="100%,300px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:820}}">
+class Component extends DCLogic {
+  renderVals() {
+    return { lb: '{{', rb: '}}' };
+  }
+}
+</script>
+</body>
+</html>

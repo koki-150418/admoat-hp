@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meta広告のコンバージョン数が合わない理由｜アトリビューション設定と計測のズレ｜AdMoat</title>
+<meta name="description" content="Meta広告マネージャの成果数が、予約台帳やGoogleアナリティクスと合わない理由を解説。アトリビューション設定（クリック・エンゲージスルー・ビュースルー）の意味と、ズレとの付き合い方をまとめます。">
+<link rel="canonical" href="https://admoat.net/column-attribution.dc.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="合同会社AdMoat">
+<meta property="og:url" content="https://admoat.net/column-attribution.dc.html">
+<meta property="og:title" content="Meta広告のコンバージョン数が合わない理由｜アトリビューション設定と計測のズレ">
+<meta property="og:description" content="Meta広告マネージャの成果数が、予約台帳やGoogleアナリティクスと合わない理由を解説。アトリビューション設定（クリック・エンゲージスルー・ビュースルー）の意味と、ズレとの付き合い方をまとめます。">
+<meta property="og:image" content="https://admoat.net/assets/column-attribution.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta property="article:published_time" content="2026-10-09">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Meta広告のコンバージョン数が合わない理由｜アトリビューション設定と計測のズレ">
+<meta name="twitter:description" content="Meta広告マネージャの成果数が、予約台帳やGoogleアナリティクスと合わない理由を解説。アトリビューション設定（クリック・エンゲージスルー・ビュースルー）の意味と、ズレとの付き合い方をまとめます。">
+<meta name="twitter:image" content="https://admoat.net/assets/column-attribution.jpg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Meta広告のコンバージョン数が合わない理由｜アトリビューション設定と計測のズレ", "description": "Meta広告マネージャの成果数が、予約台帳やGoogleアナリティクスと合わない理由を解説。アトリビューション設定（クリック・エンゲージスルー・ビュースルー）の意味と、ズレとの付き合い方をまとめます。", "image": ["https://admoat.net/assets/column-attribution.jpg"], "datePublished": "2026-10-09", "dateModified": "2026-10-09", "inLanguage": "ja", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://admoat.net/column-attribution.dc.html"}, "author": {"@type": "Organization", "name": "合同会社AdMoat", "url": "https://admoat.net/"}, "publisher": {"@type": "Organization", "name": "合同会社AdMoat", "url": "https://admoat.net/", "logo": {"@type": "ImageObject", "url": "https://admoat.net/assets/logo.png"}}}</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/><link rel="stylesheet" href="responsive.css"/><style>*{box-sizing:border-box;}body{margin:0;background:#FAF8F4;color:#211C17;font-family:'Noto Sans JP',sans-serif;-webkit-font-smoothing:antialiased;}a{color:inherit;}.wrap{max-width:1120px;margin:0 auto;padding:0 32px;}.disp{font-family:'Noto Serif JP',serif;font-weight:400;color:#211C17;letter-spacing:0.03em;}.lead{font-size:15px;line-height:2.2;color:#5A544C;}.btn{display:inline-block;text-decoration:none;font-size:13px;letter-spacing:0.1em;font-weight:500;color:#fff;background:#211C17;padding:16px 34px;border-radius:2px;}.lnk{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-size:13px;letter-spacing:0.08em;color:#211C17;border-bottom:1px solid #211C17;padding-bottom:4px;}.tag{display:inline-block;font-size:11px;font-weight:500;letter-spacing:0.06em;color:#fff;background:#BC4A28;padding:5px 12px;border-radius:2px;}.postdate{margin-left:12px;font-size:12px;color:#A89F92;letter-spacing:0.05em;}.posthero{margin-top:32px;border:1px solid #E1DACE;border-radius:4px;overflow:hidden;background:#F3EFE8;}.posthero img{width:100%;height:auto;display:block;}.body{font-size:15px;line-height:2.1;color:#3A352E;}.body p{margin:0 0 24px;}.body h2{font-family:'Noto Serif JP',serif;font-weight:500;font-size:22px;line-height:1.6;color:#211C17;margin:56px 0 20px;padding-bottom:12px;border-bottom:1px solid #E1DACE;}.body h3{font-weight:500;font-size:17px;color:#211C17;margin:32px 0 12px;}.body ul,.body ol{margin:0 0 24px;padding-left:1.4em;}.body li{margin:0 0 8px;}.formula{margin:0 0 24px;padding:18px 22px;background:#fff;border:1px solid #E1DACE;border-left:3px solid #BC4A28;font-weight:500;color:#211C17;line-height:1.8;}.codebox{margin:0 0 24px;padding:18px 20px;background:#211C17;color:#FAF8F4;border-radius:4px;font-size:13px;line-height:1.8;white-space:pre-wrap;word-break:break-all;}.tblwrap{margin:0 0 24px;overflow-x:auto;}.body table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.8;background:#fff;}.body th,.body td{border:1px solid #E1DACE;padding:10px 14px;text-align:left;vertical-align:top;}.body th{background:#F3EFE8;font-weight:500;color:#211C17;}.refs{margin-top:48px;padding-top:24px;border-top:1px solid #E1DACE;font-size:13px;line-height:1.9;color:#6F6860;}.refs a{color:#BC4A28;}.related{margin-top:40px;}.related a{display:block;padding:14px 0;border-top:1px solid #E1DACE;text-decoration:none;font-size:14px;color:#211C17;}.ctabox{background:#fff;border-top:1px solid #E7E1D7;}</style></helmet>
+<dc-import name="Header" active="blog" hint-size="100%,73px"></dc-import>
+<main style="overflow-x:hidden;">
+  <section style="background:#fff;border-bottom:1px solid #E7E1D7;">
+    <div class="wrap" style="max-width:760px;padding-top:56px;padding-bottom:56px;">
+      <a href="blog.dc.html" class="lnk" style-hover="color:#BC4A28;border-color:#BC4A28;">← ブログ一覧へ</a>
+      <div style="margin-top:28px;"><span class="tag">用語・計測</span><span class="postdate">2026.10.09</span></div>
+      <h1 class="disp" style="margin:18px 0 0;font-size:30px;line-height:1.6;">Meta広告のコンバージョン数が合わない理由｜アトリビューション設定と計測のズレ</h1>
+      <div class="posthero"><img src="assets/column-attribution.jpg" alt="アトリビューション成果数が合わない理由" width="1200" height="630"/></div>
+    </div>
+  </section>
+  <section style="padding:56px 0 72px;">
+    <div class="wrap" style="max-width:760px;">
+      <div class="body">
+        <p>「広告マネージャでは予約が30件なのに、予約台帳では20件しかない」「Googleアナリティクスと数字がまったく違う」。Meta広告を運用していると、こうした計測のズレに必ず出会います。ズレそのものは珍しいことではありませんが、理由を知らないまま数字を信じると、判断を誤ってしまいます。この記事では、ズレが起きる主な理由と、アトリビューション設定の読み方を解説します。</p>
+        <h2>アトリビューションとは「どの成果を広告の手柄と数えるか」</h2>
+        <p>アトリビューションとは、コンバージョン（成果）を、どの広告接触のおかげと数えるかを決めるルールのことです。Meta広告では、広告セットごとにアトリビューション設定を選び、その範囲で起きた成果が広告の成果として計上されます。</p>
+        <h2>Meta広告のアトリビューション設定（標準）</h2>
+        <p>Metaのヘルプセンターによると、ウェブサイトや店舗でのコンバージョンについて、標準のアトリビューション設定では次のような考え方で成果を数えます。</p>
+        <div class="tblwrap"><table><thead><tr><th>種類</th><th>数える成果</th></tr></thead><tbody><tr><td>クリックスルー</td><td>広告のリンクをクリックしてから1日または7日以内に起きた成果</td></tr><tr><td>エンゲージスルー</td><td>リンク以外の操作（いいね・保存・シェアなど）や、動画を一定以上再生してから1日以内に起きた成果</td></tr><tr><td>ビュースルー</td><td>広告を表示しただけ（クリックなし）で、1日以内に起きた成果</td></tr></tbody></table></div>
+        <p>2026年時点で、ウェブサイトのコンバージョンを最大化する広告セットの初期設定は「7日間のクリック、1日間のエンゲージスルー、1日間のビュースルー」です。クリックスルーは1日・7日から選べ、エンゲージスルーやビュースルーはオフにすることもできます。設定は変更されることがあるため、実際の画面とMetaの最新の案内で確認してください。</p>
+        <h2>数字がズレる主な理由</h2>
+        <ul><li>数える範囲が違う：Metaは広告を見ただけの人の成果（ビュースルー）や、7日前のクリックからの成果も数えるが、Googleアナリティクスなど他のツールは別のルールで数える</li><li>同じ成果を複数の媒体が数える：Instagram広告を見た後に検索して予約した場合、Metaも検索広告も、それぞれ自分の成果として数えることがある</li><li>計測の取りこぼし：ブラウザの制限や通信エラー、外部の予約サイトなど、ピクセルが動かない場所で起きた成果は数えられない</li><li>重複計上：完了ページの再読み込みや、ピクセルとコンバージョンAPIの重複排除ができていない場合、1件が2件になる</li><li>集計期間やタイムゾーンの違い：広告アカウントのタイムゾーンや、集計する日付の区切りが台帳と異なる</li></ul>
+        <h2>ズレとどう付き合うか</h2>
+        <p>計測のズレを完全になくすことはできません。大切なのは、ズレがある前提で「判断に使う数字」を決めておくことです。</p>
+        <ul><li>最終的な判断は、予約台帳やレジなど、店舗側の実際の数字で行う</li><li>広告マネージャの数字は、広告同士・期間同士を比べる「相対的なものさし」として使う</li><li>アトリビューション設定は途中でむやみに変えず、比較する広告セット同士でそろえる</li><li>広告費を増減したときに、店舗全体の予約数・来店数がどう動いたかもあわせて見る</li></ul>
+        <p>たとえば、広告マネージャ上の予約数と予約台帳の「広告経由」の件数の比率を毎月記録しておくと、管理画面の数字から実際の件数をある程度見積もれるようになります。</p>
+        <h2>店舗で決めておきたい「成果の数え方」</h2>
+        <p>ズレに振り回されないために、社内で次の3点を決めておくと判断が早くなります。</p>
+        <ol><li>広告の良し悪しを判断するときに使う数字（例：予約台帳の広告経由の件数）</li><li>広告マネージャで比較に使うアトリビューション設定</li><li>数字を確認するタイミング（例：毎週月曜に前週分を確認）</li></ol>
+        <h2>よくある質問</h2>
+        <h3>Q. アトリビューション設定は、短いほうが正確ですか？</h3>
+        <p>短くすると、広告の成果として数える範囲が狭くなるだけで、「正確になる」わけではありません。検討期間が長い商材なら、7日間のクリックのほうが実態に近いこともあります。大切なのは、比較する期間や広告セットで設定をそろえることです。</p>
+        <h3>Q. ビュースルーの成果は信用してよいですか？</h3>
+        <p>広告を見ただけで、クリックせずに成果につながった人を数えるものです。広告の影響があったケースもあれば、もともと予約するつもりだった人が含まれることもあります。ビュースルーを含む数字と含まない数字を比べて、傾向をつかむのがおすすめです。</p>
+        <h3>Q. 広告の本当の効果を知る方法はありますか？</h3>
+        <p>Meta広告には、広告を見せたグループと見せないグループを比べて、広告による上乗せ効果を測る仕組み（コンバージョンリフト調査など）もあります。利用できる条件があるため、検討する際はMetaの最新の案内を確認してください。</p>
+        <h2>まとめ</h2>
+        <p>Meta広告の成果数が実際と合わないのは、多くの場合、数え方のルール（アトリビューション）と計測の仕組みの違いによるものです。設定の意味を理解し、管理画面の数字と店舗の実数を並べて見る習慣をつければ、ズレに振り回されずに広告の良し悪しを判断できるようになります。</p>
+      </div>
+      <div class="refs"><div style="font-weight:500;color:#211C17;">参考（Meta公式）</div><div><a href="https://www.facebook.com/business/help/460276478298895" target="_blank" rel="noopener">アトリビューションモデルとアトリビューション設定について（Metaビジネスヘルプセンター）</a></div><div><a href="https://www.facebook.com/business/help/1055388958765938" target="_blank" rel="noopener">エンゲージスルーの設定（Metaビジネスヘルプセンター）</a></div><div style="margin-top:8px;">※記事の内容は公開日時点の情報です。Meta広告の仕様や管理画面の表記は変更されることがあります。</div></div>
+      <div class="related"><div style="font-weight:500;font-size:14px;color:#211C17;margin-bottom:6px;">あわせて読みたい</div><a href="column-ltv.dc.html" style-hover="color:#BC4A28;">LTVとは？店舗ビジネスのLTVの計算方法と、広告費の上限を決める手順</a><a href="column-frequency.dc.html" style-hover="color:#BC4A28;">フリークエンシーとは？Meta広告の表示回数の目安と、広告疲れを防ぐ見方</a><a href="column-learning-phase.dc.html" style-hover="color:#BC4A28;">Meta広告の学習期間（学習フェーズ）とは？終わる条件と、やってはいけない編集</a></div>
+    </div>
+  </section>
+  <section class="ctabox" style="padding:96px 0;">
+    <div class="wrap" style="max-width:720px;text-align:center;">
+      <div style="font-size:11px;letter-spacing:0.24em;color:#BC4A28;font-weight:500;">CONSULTATION</div>
+      <h2 class="disp" style="margin:18px 0 0;font-size:28px;line-height:1.7;">広告の数字を、<br/>自分たちで判断できる店舗へ。</h2>
+      <p class="lead" style="margin:24px auto 0;max-width:560px;text-align:left;">AdMoatは運用代行をやめ、店舗が広告を内製化できるまで隣で走る「Meta広告伴走支援」に専念しています。指標の見方や計測の設定から、改善の判断まで、実際の広告画面と店舗の数字を見ながら一緒に進めます。初回のご相談は無料です。</p>
+      <div style="display:flex;gap:26px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:38px;"><a href="contact.dc.html" class="btn" style-hover="background:#BC4A28;">無料で相談する</a><a href="https://bansou.admoat.net/service/" class="lnk" style-hover="color:#BC4A28;border-color:#BC4A28;">伴走支援の詳細を見る</a></div>
+    </div>
+  </section>
+</main>
+<dc-import name="Footer" hint-size="100%,300px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:820}}">
+class Component extends DCLogic {
+  renderVals() {
+    return { lb: '{{', rb: '}}' };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>コンバージョンAPIとは？Metaピクセルとの違いと、併用するときの重複排除｜AdMoat</title>
+<meta name="description" content="MetaのコンバージョンAPI（CAPI）の仕組みとMetaピクセルとの違い、Metaが推奨する併用（冗長設定）と、event_idによる重複排除、導入方法の選び方をわかりやすく解説します。">
+<link rel="canonical" href="https://admoat.net/column-conversions-api.dc.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="合同会社AdMoat">
+<meta property="og:url" content="https://admoat.net/column-conversions-api.dc.html">
+<meta property="og:title" content="コンバージョンAPIとは？Metaピクセルとの違いと、併用するときの重複排除">
+<meta property="og:description" content="MetaのコンバージョンAPI（CAPI）の仕組みとMetaピクセルとの違い、Metaが推奨する併用（冗長設定）と、event_idによる重複排除、導入方法の選び方をわかりやすく解説します。">
+<meta property="og:image" content="https://admoat.net/assets/column-conversions-api.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta property="article:published_time" content="2026-10-09">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="コンバージョンAPIとは？Metaピクセルとの違いと、併用するときの重複排除">
+<meta name="twitter:description" content="MetaのコンバージョンAPI（CAPI）の仕組みとMetaピクセルとの違い、Metaが推奨する併用（冗長設定）と、event_idによる重複排除、導入方法の選び方をわかりやすく解説します。">
+<meta name="twitter:image" content="https://admoat.net/assets/column-conversions-api.jpg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "コンバージョンAPIとは？Metaピクセルとの違いと、併用するときの重複排除", "description": "MetaのコンバージョンAPI（CAPI）の仕組みとMetaピクセルとの違い、Metaが推奨する併用（冗長設定）と、event_idによる重複排除、導入方法の選び方をわかりやすく解説します。", "image": ["https://admoat.net/assets/column-conversions-api.jpg"], "datePublished": "2026-10-09", "dateModified": "2026-10-09", "inLanguage": "ja", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://admoat.net/column-conversions-api.dc.html"}, "author": {"@type": "Organization", "name": "合同会社AdMoat", "url": "https://admoat.net/"}, "publisher": {"@type": "Organization", "name": "合同会社AdMoat", "url": "https://admoat.net/", "logo": {"@type": "ImageObject", "url": "https://admoat.net/assets/logo.png"}}}</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/><link rel="stylesheet" href="responsive.css"/><style>*{box-sizing:border-box;}body{margin:0;background:#FAF8F4;color:#211C17;font-family:'Noto Sans JP',sans-serif;-webkit-font-smoothing:antialiased;}a{color:inherit;}.wrap{max-width:1120px;margin:0 auto;padding:0 32px;}.disp{font-family:'Noto Serif JP',serif;font-weight:400;color:#211C17;letter-spacing:0.03em;}.lead{font-size:15px;line-height:2.2;color:#5A544C;}.btn{display:inline-block;text-decoration:none;font-size:13px;letter-spacing:0.1em;font-weight:500;color:#fff;background:#211C17;padding:16px 34px;border-radius:2px;}.lnk{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-size:13px;letter-spacing:0.08em;color:#211C17;border-bottom:1px solid #211C17;padding-bottom:4px;}.tag{display:inline-block;font-size:11px;font-weight:500;letter-spacing:0.06em;color:#fff;background:#BC4A28;padding:5px 12px;border-radius:2px;}.postdate{margin-left:12px;font-size:12px;color:#A89F92;letter-spacing:0.05em;}.posthero{margin-top:32px;border:1px solid #E1DACE;border-radius:4px;overflow:hidden;background:#F3EFE8;}.posthero img{width:100%;height:auto;display:block;}.body{font-size:15px;line-height:2.1;color:#3A352E;}.body p{margin:0 0 24px;}.body h2{font-family:'Noto Serif JP',serif;font-weight:500;font-size:22px;line-height:1.6;color:#211C17;margin:56px 0 20px;padding-bottom:12px;border-bottom:1px solid #E1DACE;}.body h3{font-weight:500;font-size:17px;color:#211C17;margin:32px 0 12px;}.body ul,.body ol{margin:0 0 24px;padding-left:1.4em;}.body li{margin:0 0 8px;}.formula{margin:0 0 24px;padding:18px 22px;background:#fff;border:1px solid #E1DACE;border-left:3px solid #BC4A28;font-weight:500;color:#211C17;line-height:1.8;}.codebox{margin:0 0 24px;padding:18px 20px;background:#211C17;color:#FAF8F4;border-radius:4px;font-size:13px;line-height:1.8;white-space:pre-wrap;word-break:break-all;}.tblwrap{margin:0 0 24px;overflow-x:auto;}.body table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.8;background:#fff;}.body th,.body td{border:1px solid #E1DACE;padding:10px 14px;text-align:left;vertical-align:top;}.body th{background:#F3EFE8;font-weight:500;color:#211C17;}.refs{margin-top:48px;padding-top:24px;border-top:1px solid #E1DACE;font-size:13px;line-height:1.9;color:#6F6860;}.refs a{color:#BC4A28;}.related{margin-top:40px;}.related a{display:block;padding:14px 0;border-top:1px solid #E1DACE;text-decoration:none;font-size:14px;color:#211C17;}.ctabox{background:#fff;border-top:1px solid #E7E1D7;}</style></helmet>
+<dc-import name="Header" active="blog" hint-size="100%,73px"></dc-import>
+<main style="overflow-x:hidden;">
+  <section style="background:#fff;border-bottom:1px solid #E7E1D7;">
+    <div class="wrap" style="max-width:760px;padding-top:56px;padding-bottom:56px;">
+      <a href="blog.dc.html" class="lnk" style-hover="color:#BC4A28;border-color:#BC4A28;">← ブログ一覧へ</a>
+      <div style="margin-top:28px;"><span class="tag">用語・計測</span><span class="postdate">2026.10.09</span></div>
+      <h1 class="disp" style="margin:18px 0 0;font-size:30px;line-height:1.6;">コンバージョンAPIとは？Metaピクセルとの違いと、併用するときの重複排除</h1>
+      <div class="posthero"><img src="assets/column-conversions-api.jpg" alt="コンバージョンAPIとは？ピクセルとの違いと重複排除" width="1200" height="630"/></div>
+    </div>
+  </section>
+  <section style="padding:56px 0 72px;">
+    <div class="wrap" style="max-width:760px;">
+      <div class="body">
+        <p>Metaピクセルを設置したのに、予約台帳の件数と広告マネージャの成果数が合わない。そんなときに検討したいのが「コンバージョンAPI」です。この記事では、コンバージョンAPIの仕組みとピクセルとの違い、併用するときに欠かせない重複排除の考え方を解説します。</p>
+        <h2>コンバージョンAPIとは</h2>
+        <p>コンバージョンAPI（Conversions API、CAPIとも呼ばれます）は、広告主のサーバーやウェブサイトのプラットフォーム、CRMなどから、Metaに直接イベントを送る仕組みです。Metaの開発者向けドキュメントでは、ウェブサイトのイベントだけでなく、アプリのイベントやオフラインのコンバージョンなども送れると説明されています。</p>
+        <h2>Metaピクセルとの違い</h2>
+        <div class="tblwrap"><table><thead><tr><th></th><th>Metaピクセル</th><th>コンバージョンAPI</th></tr></thead><tbody><tr><td>送信元</td><td>訪問者のブラウザ</td><td>広告主のサーバーやシステム</td></tr><tr><td>設置方法</td><td>サイトにコードを設置</td><td>サーバー側の連携、パートナー連携など</td></tr><tr><td>得意なこと</td><td>サイト上の行動をすぐに計測</td><td>ブラウザで取りこぼした行動や、サイト外・後日の成果を送る</td></tr></tbody></table></div>
+        <p>ピクセルはブラウザ上で動くため、通信状況やページの読み込みエラーなどでイベントを取りこぼすことがあります。Metaのベストプラクティスでも、ピクセルが失ったウェブサイトのイベントをコンバージョンAPIで共有できること、オフラインや後から発生する重要なイベントも送れることが挙げられています。</p>
+        <h2>Metaが推奨するのは「ピクセルとの併用」</h2>
+        <p>Metaは、コンバージョンAPIをピクセルの代わりにするのではなく、ピクセルと同じイベントを両方から送る「冗長設定（redundant setup）」を推奨しています。たとえばピクセルでLeadやSchedule、Contactを送っているなら、同じイベントをサーバーからも送る形です。</p>
+        <h2>併用するときに欠かせない「重複排除」</h2>
+        <p>同じ予約をピクセルとコンバージョンAPIの両方から送ると、そのままでは1件の予約が2件として数えられてしまいます。これを防ぐのが重複排除（デデュプリケーション）です。</p>
+        <ul><li>ピクセル側のイベント名（event）とコンバージョンAPI側のイベント名（event_name）を同じにする</li><li>ピクセル側のeventIDと、コンバージョンAPI側のevent_idに同じ値を入れる（予約番号や注文番号など、1件ごとに異なる値）</li><li>Metaは、同じピクセルIDに対して同じ組み合わせのイベントが48時間以内に届いた場合、後から届いたものを重複として扱う</li></ul>
+        <p>Metaのドキュメントでは、event_idに注文番号や取引IDを使う例が紹介されています。予約システムの予約番号など、1件ごとに一意な値を両方に渡せるかどうかが、導入の重要なポイントになります。</p>
+        <h2>導入方法の選び方</h2>
+        <ul><li>パートナー連携：利用しているウェブサイト作成サービスやECカート、予約システムがMetaとの連携に対応していれば、管理画面の設定で導入できる場合がある</li><li>コンバージョンAPIゲートウェイ：Metaが提供する、比較的少ない開発で導入できる方法</li><li>直接連携：自社サーバーから開発してイベントを送る方法。自由度は高いが、開発と保守が必要</li></ul>
+        <p>また、コンバージョンAPIでメールアドレスや電話番号などの顧客情報を送る場合は、Metaの仕様に沿ってハッシュ化して送る必要があります。どの情報を送るかは、プライバシーポリシーや法令との整合も含めて検討しましょう。</p>
+        <h2>導入後の確認</h2>
+        <p>イベントマネージャでは、サーバーから届いたイベントや重複排除の状況、イベントマッチクオリティ（送った情報でどれだけ利用者と照合できているかの目安）を確認できます。テストイベント機能で、実際にイベントが届くかもあわせて確認しておきましょう。</p>
+        <h2>よくある質問</h2>
+        <h3>Q. 小さな店舗でもコンバージョンAPIは必要ですか？</h3>
+        <p>必須ではありませんが、ピクセルだけでは成果の取りこぼしが気になる場合や、予約システム・CRMの成果をMetaに送りたい場合に効果的です。まずは利用中のサービスがMetaとのパートナー連携に対応しているかを確認するのが近道です。</p>
+        <h3>Q. コンバージョンAPIだけで、ピクセルは外してもよいですか？</h3>
+        <p>Metaは、ピクセルとコンバージョンAPIを併用し、同じイベントを両方から送る冗長設定を推奨しています。ピクセルを外す前に、Metaの最新の推奨を確認しましょう。</p>
+        <h3>Q. 重複排除がうまくいっているかは、どこで確認できますか？</h3>
+        <p>イベントマネージャで、イベントごとにブラウザとサーバーから受け取った件数や、重複排除の状況を確認できます。テストイベント機能で実際に予約や問い合わせを行い、1件として処理されているかも確かめておくと安心です。</p>
+        <h2>まとめ</h2>
+        <p>コンバージョンAPIは、ピクセルだけでは取りこぼしやすい成果をサーバー側から補う仕組みです。Metaが推奨するのはピクセルとの併用で、その際はイベント名とevent_idをそろえた重複排除が欠かせません。計測の精度が上がるほど、配信の最適化も、広告を続けるかどうかの判断も、より確かなものになります。</p>
+      </div>
+      <div class="refs"><div style="font-weight:500;color:#211C17;">参考（Meta公式）</div><div><a href="https://developers.facebook.com/docs/marketing-api/conversions-api" target="_blank" rel="noopener">Conversions API（Meta開発者ドキュメント）</a></div><div><a href="https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events" target="_blank" rel="noopener">Handling Duplicate Pixel and Conversions API Events（Meta開発者ドキュメント）</a></div><div><a href="https://developers.facebook.com/docs/marketing-api/conversions-api/best-practices/" target="_blank" rel="noopener">Best Practices - Conversions API（Meta開発者ドキュメント）</a></div><div style="margin-top:8px;">※記事の内容は公開日時点の情報です。Meta広告の仕様や管理画面の表記は変更されることがあります。</div></div>
+      <div class="related"><div style="font-weight:500;font-size:14px;color:#211C17;margin-bottom:6px;">あわせて読みたい</div><a href="column-attribution.dc.html" style-hover="color:#BC4A28;">Meta広告のコンバージョン数が合わない理由｜アトリビューション設定と計測のズレ</a><a href="column-ltv.dc.html" style-hover="color:#BC4A28;">LTVとは？店舗ビジネスのLTVの計算方法と、広告費の上限を決める手順</a><a href="column-frequency.dc.html" style-hover="color:#BC4A28;">フリークエンシーとは？Meta広告の表示回数の目安と、広告疲れを防ぐ見方</a></div>
+    </div>
+  </section>
+  <section class="ctabox" style="padding:96px 0;">
+    <div class="wrap" style="max-width:720px;text-align:center;">
+      <div style="font-size:11px;letter-spacing:0.24em;color:#BC4A28;font-weight:500;">CONSULTATION</div>
+      <h2 class="disp" style="margin:18px 0 0;font-size:28px;line-height:1.7;">広告の数字を、<br/>自分たちで判断できる店舗へ。</h2>
+      <p class="lead" style="margin:24px auto 0;max-width:560px;text-align:left;">AdMoatは運用代行をやめ、店舗が広告を内製化できるまで隣で走る「Meta広告伴走支援」に専念しています。指標の見方や計測の設定から、改善の判断まで、実際の広告画面と店舗の数字を見ながら一緒に進めます。初回のご相談は無料です。</p>
+      <div style="display:flex;gap:26px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:38px;"><a href="contact.dc.html" class="btn" style-hover="background:#BC4A28;">無料で相談する</a><a href="https://bansou.admoat.net/service/" class="lnk" style-hover="color:#BC4A28;border-color:#BC4A28;">伴走支援の詳細を見る</a></div>
+    </div>
+  </section>
+</main>
+<dc-import name="Footer" hint-size="100%,300px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:820}}">
+class Component extends DCLogic {
+  renderVals() {
+    return { lb: '{{', rb: '}}' };
+  }
+}
+</script>
+</body>
+</html>
