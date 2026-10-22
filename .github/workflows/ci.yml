@@ -1,0 +1,115 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  static-validation:
+    name: Static production validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Record runtime
+        run: python3 --version
+
+      - name: Validate local links and sitemap
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          from urllib.parse import unquote, urlsplit
+          import sys
+          import xml.etree.ElementTree as ET
+
+          root = Path.cwd()
+          failures = []
+
+          class References(HTMLParser):
+              def __init__(self):
+                  super().__init__(convert_charrefs=True)
+                  self.values = []
+
+              def handle_starttag(self, tag, attrs):
+                  for key, value in attrs:
+                      if key in {"href", "src"} and value:
+                          self.values.append(value.strip())
+
+          def local_target(source, raw):
+              if not raw or "{{" in raw or raw.startswith(("#", "mailto:", "tel:", "data:", "javascript:")):
+                  return None
+              parsed = urlsplit(raw)
+              if parsed.scheme or parsed.netloc or raw.startswith("//"):
+                  return None
+              path = unquote(parsed.path)
+              if not path:
+                  return None
+              if path.startswith("/"):
+                  candidate = (root / path.lstrip("/")).resolve()
+              else:
+                  candidate = (source.parent / path).resolve()
+              try:
+                  candidate.relative_to(root.resolve())
+              except ValueError:
+                  failures.append(f"{source}: repository外を参照しています: {raw}")
+                  return None
+              if path.endswith("/"):
+                  candidate = candidate / "index.html"
+              return candidate
+
+          html_files = sorted(root.glob("*.html"))
+          for source in html_files:
+              parser = References()
+              try:
+                  parser.feed(source.read_text(encoding="utf-8"))
+              except Exception as exc:
+                  failures.append(f"{source}: HTML解析失敗: {exc}")
+                  continue
+              for raw in parser.values:
+                  target = local_target(source, raw)
+                  if target is not None and not target.exists():
+                      failures.append(f"{source}: リンク先が存在しません: {raw}")
+
+          sitemap = root / "sitemap.xml"
+          try:
+              tree = ET.parse(sitemap)
+              namespace = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+              for loc in tree.findall(".//sm:loc", namespace):
+                  value = (loc.text or "").strip()
+                  parsed = urlsplit(value)
+                  if parsed.netloc not in {"admoat.net", "www.admoat.net"}:
+                      failures.append(f"sitemap.xml: 想定外のhostです: {value}")
+                      continue
+                  relative = unquote(parsed.path.lstrip("/")) or "index.html"
+                  if not (root / relative).exists():
+                      failures.append(f"sitemap.xml: 対応ファイルが存在しません: {value}")
+          except Exception as exc:
+              failures.append(f"sitemap.xml: XML解析失敗: {exc}")
+
+          if failures:
+              print("\n".join(failures), file=sys.stderr)
+              sys.exit(1)
+
+          print(f"Validated {len(html_files)} HTML files and sitemap.xml")
+          PY
+
+      - name: Confirm static production files
+        run: |
+          test -f index.html
+          test -f CNAME
+          test -f robots.txt
+          test -f sitemap.xml
+          echo "Production Build対象scriptなし: 静的公開ファイルを直接検証しました。"
