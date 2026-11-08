@@ -1376,3 +1376,27 @@ h3 {
 [hidden] {
   display: none !important;
 }
+
+/* 文字の寄せ方：原則は中央寄せ。
+   並びに意味があるもの（お悩みのチェックリスト・流れ・よくある質問・明細・料金プラン・相談の流れ）は左寄せのまま */
+.section-inner {
+  text-align: center;
+}
+
+.worry-list,
+.step-list,
+.faq-list,
+.price-zero,
+.plans,
+.consult-flow {
+  text-align: left;
+}
+
+.cta-button {
+  padding-left: 50px;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+}
