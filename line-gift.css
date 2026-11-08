@@ -1,0 +1,19 @@
+/* 公式LINE登録特典（アカウント設計マニュアル）の案内枠。トップページとコラムで共通 */
+.linegift{padding:72px 0;background:#F3EFE8;}
+.linegift .lg-card{max-width:720px;margin:0 auto;background:#fff;border:1px solid #E1DACE;border-top:4px solid #06C755;padding:40px 44px;text-align:center;box-sizing:border-box;}
+.linegift .lg-badge{display:inline-block;font-size:13px;font-weight:700;color:#fff;background:#06C755;padding:5px 14px;border-radius:999px;letter-spacing:0.04em;}
+.linegift .lg-title{margin:18px 0 0;font-family:'Noto Serif JP','Shippori Mincho B1',serif;font-weight:500;font-size:26px;line-height:1.6;color:#211C17;word-break:keep-all;overflow-wrap:anywhere;}
+.linegift .lg-lead{margin:16px auto 0;max-width:520px;font-size:15px;line-height:2;color:#5A544C;word-break:keep-all;overflow-wrap:anywhere;}
+.linegift .lg-list{display:grid;grid-template-columns:1fr 1fr;gap:6px 24px;max-width:520px;margin:22px auto 0;padding:18px 22px;list-style:none;background:#FAF8F4;text-align:left;font-size:14px;line-height:1.8;color:#211C17;word-break:keep-all;overflow-wrap:anywhere;}
+.linegift .lg-list li::before{content:"✓";color:#06C755;font-weight:700;margin-right:8px;}
+.linegift .lg-btn{display:inline-block;margin-top:28px;padding:17px 40px;background:#06C755;color:#fff;font-size:16px;font-weight:700;letter-spacing:0.06em;text-decoration:none;border-radius:999px;box-shadow:0 4px 0 #04A146;}
+.linegift .lg-btn:hover{opacity:0.9;}
+.linegift .lg-note{margin:12px 0 0;font-size:12.5px;color:#6F6860;}
+@media (max-width:600px){
+ .linegift{padding:48px 0;}
+ .linegift .lg-card{margin:0 16px;padding:28px 16px;}
+ .linegift .lg-title{font-size:21px;}
+ .linegift .lg-lead{font-size:14px;}
+ .linegift .lg-list{grid-template-columns:1fr;padding:12px 14px;font-size:13.5px;}
+ .linegift .lg-btn{display:block;padding:16px 12px;}
+}
