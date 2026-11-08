@@ -38,7 +38,7 @@
     <div class="wrap" style="max-width:760px;">
       <div class="body">
         <p>Metaピクセルを設置したのに、予約台帳の件数と広告マネージャの成果数が合わない。そんなときに検討したいのが「コンバージョンAPI」です。この記事では、コンバージョンAPIの仕組みとピクセルとの違い、併用するときに欠かせない重複排除の考え方を解説します。</p>
-        <h2>コンバージョンAPIとは</h2>
+        <aside class="lgb lgb-top" aria-label="公式LINE登録特典"><a class="lgb-link" href="https://utage-system.com/line/open/BGZ0F8X2kY5e?mtid=YDpcvxuctvY8" target="_blank" rel="noopener"><span class="lgb-img"><img src="assets/line-gift-manual.jpg" alt="アカウント設計マニュアルの画面" width="800" height="450" loading="lazy"/><span class="lgb-free">無料</span></span><span class="lgb-txt"><span class="lgb-badge">公式LINE登録特典</span><span class="lgb-title">Meta広告の<wbr/>アカウント設計<wbr/>マニュアル</span><span class="lgb-sub">8つの手順を、<wbr/>実際の管理画面で<wbr/>1つずつ解説。<wbr/>登録後すぐに届きます。</span><span class="lgb-btn">LINEで無料で受け取る</span></span></a></aside><h2>コンバージョンAPIとは</h2>
         <p>コンバージョンAPI（Conversions API、CAPIとも呼ばれます）は、広告主のサーバーやウェブサイトのプラットフォーム、CRMなどから、Metaに直接イベントを送る仕組みです。Metaの開発者向けドキュメントでは、ウェブサイトのイベントだけでなく、アプリのイベントやオフラインのコンバージョンなども送れると説明されています。</p>
         <h2>Metaピクセルとの違い</h2>
         <div class="tblwrap"><table><thead><tr><th></th><th>Metaピクセル</th><th>コンバージョンAPI</th></tr></thead><tbody><tr><td>送信元</td><td>訪問者のブラウザ</td><td>広告主のサーバーやシステム</td></tr><tr><td>設置方法</td><td>サイトにコードを設置</td><td>サーバー側の連携、パートナー連携など</td></tr><tr><td>得意なこと</td><td>サイト上の行動をすぐに計測</td><td>ブラウザで取りこぼした行動や、サイト外・後日の成果を送る</td></tr></tbody></table></div>
@@ -49,7 +49,7 @@
         <p>同じ予約をピクセルとコンバージョンAPIの両方から送ると、そのままでは1件の予約が2件として数えられてしまいます。これを防ぐのが重複排除（デデュプリケーション）です。</p>
         <ul><li>ピクセル側のイベント名（event）とコンバージョンAPI側のイベント名（event_name）を同じにする</li><li>ピクセル側のeventIDと、コンバージョンAPI側のevent_idに同じ値を入れる（予約番号や注文番号など、1件ごとに異なる値）</li><li>Metaは、同じピクセルIDに対して同じ組み合わせのイベントが48時間以内に届いた場合、後から届いたものを重複として扱う</li></ul>
         <p>Metaのドキュメントでは、event_idに注文番号や取引IDを使う例が紹介されています。予約システムの予約番号など、1件ごとに一意な値を両方に渡せるかどうかが、導入の重要なポイントになります。</p>
-        <h2>導入方法の選び方</h2>
+        <aside class="lgb lgb-mid" aria-label="公式LINE登録特典"><a class="lgb-link" href="https://utage-system.com/line/open/BGZ0F8X2kY5e?mtid=YDpcvxuctvY8" target="_blank" rel="noopener"><span class="lgb-img"><img src="assets/line-gift-manual.jpg" alt="アカウント設計マニュアルの画面" width="800" height="450" loading="lazy"/><span class="lgb-free">無料</span></span><span class="lgb-txt"><span class="lgb-badge">公式LINE登録特典</span><span class="lgb-title">Meta広告の<wbr/>アカウント設計<wbr/>マニュアル</span><span class="lgb-sub">8つの手順を、<wbr/>実際の管理画面で<wbr/>1つずつ解説。<wbr/>登録後すぐに届きます。</span><span class="lgb-btn">LINEで無料で受け取る</span></span></a></aside><h2>導入方法の選び方</h2>
         <ul><li>パートナー連携：利用しているウェブサイト作成サービスやECカート、予約システムがMetaとの連携に対応していれば、管理画面の設定で導入できる場合がある</li><li>コンバージョンAPIゲートウェイ：Metaが提供する、比較的少ない開発で導入できる方法</li><li>直接連携：自社サーバーから開発してイベントを送る方法。自由度は高いが、開発と保守が必要</li></ul>
         <p>また、コンバージョンAPIでメールアドレスや電話番号などの顧客情報を送る場合は、Metaの仕様に沿ってハッシュ化して送る必要があります。どの情報を送るかは、プライバシーポリシーや法令との整合も含めて検討しましょう。</p>
         <h2>導入後の確認</h2>
@@ -87,5 +87,6 @@ class Component extends DCLogic {
   }
 }
 </script>
+<script src="line-gift.js" data-url="https://utage-system.com/line/open/BGZ0F8X2kY5e?mtid=YDpcvxuctvY8" defer></script>
 </body>
 </html>

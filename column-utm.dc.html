@@ -38,7 +38,7 @@
     <div class="wrap" style="max-width:760px;">
       <div class="body">
         <p>Googleアナリティクスなどのアクセス解析で、「どの広告から来た人が予約したのか」を見分けたいときに使うのがUTMパラメータです。Meta広告では、広告マネージャの設定で、広告ごとにUTMパラメータを自動で付けることができます。この記事では、UTMパラメータの基本と、Meta広告での設定方法を解説します。</p>
-        <h2>UTMパラメータとは</h2>
+        <aside class="lgb lgb-top" aria-label="公式LINE登録特典"><a class="lgb-link" href="https://utage-system.com/line/open/BGZ0F8X2kY5e?mtid=YDpcvxuctvY8" target="_blank" rel="noopener"><span class="lgb-img"><img src="assets/line-gift-manual.jpg" alt="アカウント設計マニュアルの画面" width="800" height="450" loading="lazy"/><span class="lgb-free">無料</span></span><span class="lgb-txt"><span class="lgb-badge">公式LINE登録特典</span><span class="lgb-title">Meta広告の<wbr/>アカウント設計<wbr/>マニュアル</span><span class="lgb-sub">8つの手順を、<wbr/>実際の管理画面で<wbr/>1つずつ解説。<wbr/>登録後すぐに届きます。</span><span class="lgb-btn">LINEで無料で受け取る</span></span></a></aside><h2>UTMパラメータとは</h2>
         <p>UTMパラメータは、URLの末尾に付ける「目印」です。たとえば「https://example.com/?utm_source=ig&amp;utm_medium=paid_social」のように付けておくと、アクセス解析ツールが、その訪問がどこから来たのかを記録できます。ページの表示内容には影響しません。</p>
         <div class="tblwrap"><table><thead><tr><th>パラメータ</th><th>意味</th><th>例</th></tr></thead><tbody><tr><td>utm_source</td><td>流入元</td><td>fb、igなど</td></tr><tr><td>utm_medium</td><td>媒体の種類</td><td>paid_socialなど</td></tr><tr><td>utm_campaign</td><td>キャンペーン名</td><td>spring_trialなど</td></tr><tr><td>utm_content</td><td>広告やクリエイティブの区別</td><td>video_aなど</td></tr><tr><td>utm_term</td><td>キーワードなど（Meta広告では広告セット名に使うことが多い）</td><td>area_5kmなど</td></tr></tbody></table></div>
         <h2>Meta広告での設定場所</h2>
@@ -48,7 +48,7 @@
         <div class="tblwrap"><table><thead><tr><th>動的パラメータ</th><th>入る値</th></tr></thead><tbody><tr><td>{{ lb }}campaign.name{{ rb }}／{{ lb }}campaign.id{{ rb }}</td><td>キャンペーンの名前／ID</td></tr><tr><td>{{ lb }}adset.name{{ rb }}／{{ lb }}adset.id{{ rb }}</td><td>広告セットの名前／ID</td></tr><tr><td>{{ lb }}ad.name{{ rb }}／{{ lb }}ad.id{{ rb }}</td><td>広告の名前／ID</td></tr><tr><td>{{ lb }}placement{{ rb }}</td><td>配置（表示された面）</td></tr><tr><td>{{ lb }}site_source_name{{ rb }}</td><td>配信先のサイト（Facebook、Instagramなど）</td></tr></tbody></table></div>
         <p>たとえば、URLパラメータ欄に次のように入力すると、広告ごとにキャンペーン名・広告セット名・広告名が自動で入ります。</p>
         <pre class="codebox"><code>utm_source={{ lb }}site_source_name{{ rb }}&amp;utm_medium=paid_social&amp;utm_campaign={{ lb }}campaign.name{{ rb }}&amp;utm_term={{ lb }}adset.name{{ rb }}&amp;utm_content={{ lb }}ad.name{{ rb }}</code></pre>
-        <h2>設定するときの注意点</h2>
+        <aside class="lgb lgb-mid" aria-label="公式LINE登録特典"><a class="lgb-link" href="https://utage-system.com/line/open/BGZ0F8X2kY5e?mtid=YDpcvxuctvY8" target="_blank" rel="noopener"><span class="lgb-img"><img src="assets/line-gift-manual.jpg" alt="アカウント設計マニュアルの画面" width="800" height="450" loading="lazy"/><span class="lgb-free">無料</span></span><span class="lgb-txt"><span class="lgb-badge">公式LINE登録特典</span><span class="lgb-title">Meta広告の<wbr/>アカウント設計<wbr/>マニュアル</span><span class="lgb-sub">8つの手順を、<wbr/>実際の管理画面で<wbr/>1つずつ解説。<wbr/>登録後すぐに届きます。</span><span class="lgb-btn">LINEで無料で受け取る</span></span></a></aside><h2>設定するときの注意点</h2>
         <ul><li>名前系の動的パラメータには、最初に公開したときの名前が使われる。公開後に名前を変えても、パラメータの値は変わらない</li><li>キャンペーン名や広告名は、アクセス解析で読んでわかる命名ルールを決めておく（例：目的_商品_日付）</li><li>表記ゆれ（大文字・小文字、全角・半角）があると、アクセス解析で別のものとして集計されることがある</li><li>他の場所（Instagramの設定など）で付けたパラメータは、広告マネージャのURLパラメータで上書きされることがある</li></ul>
         <h2>Googleアナリティクスでの確認</h2>
         <p>Googleアナリティクス4（GA4）では、集客のレポートで「セッションの参照元／メディア」や「セッションのキャンペーン」などのディメンションを選ぶと、UTMパラメータで付けた値ごとに訪問数や成果を確認できます。広告マネージャの数字とGA4の数字は数え方が異なるため、件数が一致しないことはよくあります。それぞれの役割を分けて使いましょう。</p>
@@ -85,5 +85,6 @@ class Component extends DCLogic {
   }
 }
 </script>
+<script src="line-gift.js" data-url="https://utage-system.com/line/open/BGZ0F8X2kY5e?mtid=YDpcvxuctvY8" defer></script>
 </body>
 </html>

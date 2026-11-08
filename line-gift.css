@@ -17,3 +17,33 @@
  .linegift .lg-list{grid-template-columns:1fr;padding:12px 14px;font-size:13.5px;}
  .linegift .lg-btn{display:block;padding:16px 12px;}
 }
+
+/* 記事の途中に置く広告バナー風の案内（全体がリンク） */
+.lgb{margin:8px 0 40px;}
+.lgb a.lgb-link{display:grid;grid-template-columns:44% 1fr;align-items:center;gap:0;text-decoration:none;color:#211C17;background:linear-gradient(135deg,#ECFAF1 0%,#FFFFFF 70%);border:2px solid #06C755;border-radius:10px;overflow:hidden;box-shadow:0 6px 18px rgba(6,199,85,.15);transition:transform .15s,box-shadow .15s;}
+.lgb a.lgb-link:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(6,199,85,.22);}
+.lgb-img{position:relative;display:block;padding:14px 0 14px 14px;}
+.lgb-img img{display:block;width:100%;height:auto;border-radius:6px;border:1px solid #D7E9DD;box-shadow:0 4px 12px rgba(0,0,0,.12);}
+.lgb-free{position:absolute;left:4px;top:4px;width:54px;height:54px;border-radius:50%;background:#E53935;color:#fff;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;transform:rotate(-12deg);box-shadow:0 3px 8px rgba(0,0,0,.2);}
+.lgb-txt{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;word-break:keep-all;overflow-wrap:anywhere;}
+.lgb-badge{align-self:flex-start;font-size:12px;font-weight:700;color:#06C755;border:1px solid #06C755;background:#fff;padding:3px 10px;border-radius:999px;}
+.lgb-title{font-size:20px;font-weight:700;line-height:1.5;color:#211C17;}
+.lgb-sub{font-size:13px;line-height:1.8;color:#5A544C;}
+.lgb-btn{margin-top:4px;display:block;text-align:center;background:#06C755;color:#fff;font-size:15px;font-weight:700;padding:12px 10px;border-radius:999px;box-shadow:0 3px 0 #04A146;}
+@media (max-width:600px){
+ .lgb a.lgb-link{grid-template-columns:1fr;}
+ .lgb-img{padding:14px 14px 0;}
+ .lgb-free{left:6px;top:6px;}
+ .lgb-txt{padding:14px 16px 18px;}
+ .lgb-title{font-size:18px;}
+}
+
+/* 画面の下に出る、追いかけ型の登録ボタン（line-gift.js が作る） */
+.lgs{position:fixed;z-index:50;left:0;right:0;bottom:0;display:flex;align-items:center;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid #E1DACE;box-shadow:0 -6px 18px rgba(0,0,0,.08);font-family:'Noto Sans JP',sans-serif;}
+.lgs-txt{flex:1;min-width:0;font-size:14px;font-weight:700;line-height:1.5;color:#211C17;word-break:keep-all;overflow-wrap:anywhere;}
+.lgs-txt b{display:block;font-size:12px;color:#E53935;}
+.lgs-btn{flex:none;text-decoration:none;background:#06C755;color:#fff;font-size:14px;font-weight:700;padding:11px 16px;border-radius:999px;box-shadow:0 3px 0 #04A146;white-space:nowrap;}
+.lgs-x{flex:none;width:28px;height:28px;border:0;background:transparent;color:#8A8278;font-size:20px;line-height:1;cursor:pointer;padding:0;}
+@media (min-width:761px){
+ .lgs{left:auto;right:20px;bottom:20px;width:360px;border:1px solid #E1DACE;border-radius:12px;padding:14px 14px 14px 16px;}
+}

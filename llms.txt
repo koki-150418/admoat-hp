@@ -23,6 +23,7 @@
 
 ## コラム（Meta広告の解説）
 
+- [店舗のMeta広告の始め方【完全版】](https://admoat.net/column-meta-ads-start-guide.dc.html): 初心者向けに、基礎知識・運用戦略・広告制作・アカウント設計・公開と改善の5ステップで解説（YouTube動画の記事版）
 - [コラム一覧](https://admoat.net/blog.dc.html): 用語・計測の基本、業種別の集客、クリエイティブ、予約導線、内製化の進め方など
 - [CPAとは](https://admoat.net/column-cpa.dc.html)
 - [LTVとは](https://admoat.net/column-ltv.dc.html)
